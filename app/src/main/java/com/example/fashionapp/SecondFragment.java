@@ -52,6 +52,14 @@ public class SecondFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_EightFragment);
             }
         });
+
+        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_NinthFragment);
+            }
+        });
     }
 
     @Override

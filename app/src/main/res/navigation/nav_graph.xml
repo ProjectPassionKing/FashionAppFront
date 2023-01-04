@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_EightFragment"
             app:destination="@id/EightFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
 
     <fragment
@@ -103,6 +106,16 @@
 
         <action
             android:id="@+id/action_EightFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/NinthFragment"
+        android:name="com.example.fashionapp.NinthFragment"
+        android:label="@string/ninth_fragment_label"
+        tools:layout="@layout/fragment_ninth">
+
+        <action
+            android:id="@+id/action_NinthFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

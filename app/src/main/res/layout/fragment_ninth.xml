@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeventhFragment">
+    tools:context=".NinthFragment">
 
     <TextView
         android:id="@+id/textview_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="어울리는 상의를 \n 추천해줄게요!"
+        android:text="한 눈에 보기"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textColor="#000000"
@@ -31,4 +31,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_second" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

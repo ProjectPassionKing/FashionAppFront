@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:text="점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?"
         android:textAlignment="center"
-        android:textSize="25dp"
         android:textColor="#000000"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,6 +48,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_second"
         app:layout_constraintVertical_bias="0.321" />
+
+    <Button
+        android:id="@+id/button_tenth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B9B9B9"
+        android:text="Menu"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_second"
+        app:layout_constraintVertical_bias="0.656" />
 
     <Button
         android:id="@+id/button_second"
