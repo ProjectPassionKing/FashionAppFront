@@ -9,12 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentSecondBinding;
+import com.example.fashionapp.databinding.FragmentFourthBinding;
 import com.example.fashionapp.databinding.FragmentThirdBinding;
 
-public class ThirdFragment extends Fragment {
+public class FourthFragment extends Fragment {
 
-    private FragmentThirdBinding binding;
+    private FragmentFourthBinding binding;
 
     @Override
     public View onCreateView(
@@ -22,7 +22,7 @@ public class ThirdFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentThirdBinding.inflate(inflater, container, false);
+        binding = FragmentFourthBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -33,15 +33,8 @@ public class ThirdFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_SecondFragment);
-            }
-        });
-        binding.buttonFourth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FourthFragment);
+                NavHostFragment.findNavController(FourthFragment.this)
+                        .navigate(R.id.action_FourthFragment_to_SecondFragment);
             }
         });
     }
