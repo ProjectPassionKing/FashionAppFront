@@ -10,57 +10,100 @@
         android:id="@+id/textview_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
         android:text="한 눈에 보기"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="51dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textview_second"
+        tools:layout_editor_absoluteX="3dp" />
+
     <Button
         android:id="@+id/button_eleventh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="205dp"
+        android:layout_height="0dp"
         android:backgroundTint="#FFFFFF"
+        android:stateListAnimator="@null"
         android:text="체형 진단"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second"
-        app:layout_constraintVertical_bias="0.414" />
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="39dp"
+        android:layout_height="26dp"
+        android:contentDescription="character"
+        android:src="@drawable/body_scan"
+        app:layout_constraintBottom_toBottomOf="@+id/button_eleventh"
+        app:layout_constraintEnd_toEndOf="@+id/button_eleventh"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="@+id/button_eleventh"
+        app:layout_constraintTop_toTopOf="@+id/button_eleventh"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/button_twelfth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
         android:backgroundTint="#FFFFFF"
+        android:stateListAnimator="@null"
         android:text="옷 추천"
         android:textColor="#000000"
+        android:textSize="18dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
+        app:layout_constraintVertical_bias="0.02"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="39dp"
+        android:layout_height="26dp"
+        android:contentDescription="character"
+        android:src="@drawable/clothes_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/button_twelfth"
+        app:layout_constraintEnd_toEndOf="@+id/button_twelfth"
+        app:layout_constraintHorizontal_bias="0.962"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintTop_toTopOf="@+id/button_twelfth"
+        app:layout_constraintVertical_bias="0.476" />
 
     <ImageButton
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="208dp"
         android:backgroundTint="#FFFFFF"
         android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.414"
-        app:srcCompat="@drawable/home_button" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textview_second"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/close_square" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
