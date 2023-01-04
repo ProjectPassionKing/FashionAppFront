@@ -6,6 +6,7 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="third_fragment_label">Third Fragment</string>
     <string name="fourth_fragment_label">Fourth Fragment</string>
+    <string name="fifth_fragment_label">Fifth Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
