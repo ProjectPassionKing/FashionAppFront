@@ -41,6 +41,7 @@
         android:backgroundTint="#EEEEEE"
         android:text="코디 팁 알려줘"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
