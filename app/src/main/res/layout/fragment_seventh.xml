@@ -10,7 +10,7 @@
         android:id="@+id/textview_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Straight Type \n 코디 팁이야!"
+        android:text="어울리는 상의를 \n 추천해줄게요!"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textColor="#000000"
@@ -19,20 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_eight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F5F5F5"
-        android:text="추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second"
-        app:layout_constraintVertical_bias="0.343" />
 
     <Button
         android:id="@+id/button_second"

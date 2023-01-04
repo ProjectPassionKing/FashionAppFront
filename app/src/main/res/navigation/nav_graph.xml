@@ -78,5 +78,18 @@
         <action
             android:id="@+id/action_SixthFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_SixthFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SeventhFragment"
+        android:name="com.example.fashionapp.SeventhFragment"
+        android:label="@string/seventh_fragment_label"
+        tools:layout="@layout/fragment_seventh">
+
+        <action
+            android:id="@+id/action_SeventhFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>
