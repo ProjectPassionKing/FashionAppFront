@@ -43,6 +43,13 @@ public class FifthFragment extends Fragment {
                         .navigate(R.id.action_FifthFragment_to_SixthFragment);
             }
         });
+        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FifthFragment.this)
+                        .navigate(R.id.action_FifthFragment_to_NinthFragment);
+            }
+        });
     }
 
     @Override

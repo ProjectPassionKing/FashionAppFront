@@ -37,6 +37,13 @@ public class SeventhFragment extends Fragment {
                         .navigate(R.id.action_SeventhFragment_to_SecondFragment);
             }
         });
+        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SeventhFragment.this)
+                        .navigate(R.id.action_SeventhFragment_to_NinthFragment);
+            }
+        });
     }
 
     @Override

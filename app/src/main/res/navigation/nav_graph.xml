@@ -47,6 +47,9 @@
         <action
             android:id="@+id/action_ThirdFragment_to_FourthFragment"
             app:destination="@id/FourthFragment" />
+        <action
+            android:id="@+id/action_ThirdFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
 
     <fragment
@@ -61,6 +64,9 @@
         <action
             android:id="@+id/action_FourthFragment_to_FifthFragment"
             app:destination="@id/FifthFragment" />
+        <action
+            android:id="@+id/action_FourthFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
     <fragment
         android:id="@+id/FifthFragment"
@@ -74,6 +80,9 @@
         <action
             android:id="@+id/action_FifthFragment_to_SixthFragment"
             app:destination="@id/SixthFragment" />
+        <action
+            android:id="@+id/action_FifthFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
     <fragment
         android:id="@+id/SixthFragment"
@@ -87,6 +96,9 @@
         <action
             android:id="@+id/action_SixthFragment_to_SeventhFragment"
             app:destination="@id/SeventhFragment" />
+        <action
+            android:id="@+id/action_SixthFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
     <fragment
         android:id="@+id/SeventhFragment"
@@ -97,6 +109,9 @@
         <action
             android:id="@+id/action_SeventhFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_SeventhFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
     <fragment
         android:id="@+id/EightFragment"
@@ -107,6 +122,9 @@
         <action
             android:id="@+id/action_EightFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_EightFragment_to_NinthFragment"
+            app:destination="@id/NinthFragment" />
     </fragment>
     <fragment
         android:id="@+id/NinthFragment"

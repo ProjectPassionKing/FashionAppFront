@@ -36,6 +36,13 @@ public class EightFragment extends Fragment {
                         .navigate(R.id.action_EightFragment_to_SecondFragment);
             }
         });
+        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(EightFragment.this)
+                        .navigate(R.id.action_EightFragment_to_NinthFragment);
+            }
+        });
     }
 
     @Override
