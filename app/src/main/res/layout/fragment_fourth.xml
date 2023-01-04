@@ -49,15 +49,18 @@
         app:layout_constraintVertical_bias="0.656" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/button_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#011CFE"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#FFFFFF"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintVertical_bias="0.414"
+        app:srcCompat="@drawable/home_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
