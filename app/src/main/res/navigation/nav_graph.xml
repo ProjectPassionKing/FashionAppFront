@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_EightFragment"
+            app:destination="@id/EightFragment" />
     </fragment>
 
     <fragment
@@ -90,6 +93,16 @@
 
         <action
             android:id="@+id/action_SeventhFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EightFragment"
+        android:name="com.example.fashionapp.EightFragment"
+        android:label="@string/eight_fragment_label"
+        tools:layout="@layout/fragment_eight">
+
+        <action
+            android:id="@+id/action_EightFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>
