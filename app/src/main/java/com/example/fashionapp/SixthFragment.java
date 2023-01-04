@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentFifthBinding;
+import com.example.fashionapp.databinding.FragmentSixthBinding;
 
-public class FifthFragment extends Fragment {
+public class SixthFragment extends Fragment {
 
-    private FragmentFifthBinding binding;
+    private FragmentSixthBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class FifthFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFifthBinding.inflate(inflater, container, false);
+        binding = FragmentSixthBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -32,15 +32,8 @@ public class FifthFragment extends Fragment {
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_FifthFragment_to_SecondFragment);
-            }
-        });
-        binding.buttonSeventh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_FifthFragment_to_SixthFragment);
+                NavHostFragment.findNavController(SixthFragment.this)
+                        .navigate(R.id.action_SixthFragment_to_SecondFragment);
             }
         });
     }
