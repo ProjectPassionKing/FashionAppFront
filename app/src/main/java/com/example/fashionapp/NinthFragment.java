@@ -36,6 +36,20 @@ public class NinthFragment extends Fragment {
                         .navigate(R.id.action_NinthFragment_to_SecondFragment);
             }
         });
+        binding.buttonEleventh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(NinthFragment.this)
+                        .navigate(R.id.action_NinthFragment_to_ThirdFragment);
+            }
+        });
+        binding.buttonTwelfth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(NinthFragment.this)
+                        .navigate(R.id.action_NinthFragment_to_SeventhFragment);
+            }
+        });
     }
 
     @Override

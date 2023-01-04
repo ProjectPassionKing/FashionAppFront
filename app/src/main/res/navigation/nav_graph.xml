@@ -135,5 +135,11 @@
         <action
             android:id="@+id/action_NinthFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_NinthFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+        <action
+            android:id="@+id/action_NinthFragment_to_SeventhFragment"
+            app:destination="@id/SeventhFragment" />
     </fragment>
 </navigation>
