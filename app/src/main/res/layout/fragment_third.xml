@@ -35,17 +35,47 @@
         app:layout_constraintVertical_bias="0.135" />
 
     <Button
-        android:id="@+id/button_fourth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#D6F8FF"
-        android:text="선택지"
+        android:id="@+id/button_third"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#EEEEEE"
+        android:stateListAnimator="@null"
+        android:text="Q. 성별을 선택해주세요"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_fourth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/textview_second"
+        app:layout_constraintVertical_bias="0.952" />
+
+    <Button
+        android:id="@+id/button_fourth"
+        android:layout_width="215dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#D6F8FF"
+        android:text="여자"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_fourth_clone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_fourth_clone"
+        android:layout_width="216dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#D6F8FF"
+        android:text="남자"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/button_tenth"
