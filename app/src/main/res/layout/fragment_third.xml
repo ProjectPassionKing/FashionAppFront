@@ -34,47 +34,67 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.135" />
 
-    <android.widget.Button
+    <TextView
         android:id="@+id/button_third"
-        android:layout_width="237dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/text_square"
         android:stateListAnimator="@null"
-        android:text="Q. 성별을 선택해주세요"
+        android:text="Q. 손의 특징은?"
+        android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_fourth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textview_second"
-        app:layout_constraintVertical_bias="0.952" />
+        app:layout_constraintVertical_bias="0.911" />
+
 
     <android.widget.Button
         android:id="@+id/button_fourth"
-        android:layout_width="215dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/text_square_selectable"
-        android:text="여자"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/select_textbox"
+        android:text="A. 신장에 비해 작은 사이즈"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_fourth_clone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <android.widget.Button
         android:id="@+id/button_fourth_clone"
-        android:layout_width="216dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/text_square_selectable"
-        android:text="남자"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/select_textbox"
+        android:text="B. 신장과 밸런스가 맞는 사이즈"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/button_c"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/select_textbox"
+        android:text="C. 신장에 비해 큰 사이즈"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
