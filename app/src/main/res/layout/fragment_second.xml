@@ -7,7 +7,7 @@
     tools:context=".SecondFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_img"
         android:layout_width="310dp"
         android:layout_height="351dp"
         android:layout_marginStart="61dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?"
@@ -30,15 +30,15 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.621"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
         app:layout_constraintVertical_bias="0.195" />
 
     <android.widget.Button
-        android:id="@+id/button_third"
+        android:id="@+id/question_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -48,7 +48,7 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
 
     <android.widget.Button
         android:id="@+id/button_ninth"
@@ -61,18 +61,18 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toEndOf="@+id/button_third"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toEndOf="@+id/question_txtview"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
 
     <ImageButton
-        android:id="@+id/button_tenth"
+        android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@android:color/transparent"
         android:text="Menu"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/hamburger_menu" />
 
     <ImageButton
-        android:id="@+id/button_second"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -89,6 +89,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_third"
+        app:layout_constraintTop_toBottomOf="@+id/question_txtview"
         app:srcCompat="@drawable/home_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,21 +7,21 @@
     tools:context=".SixthFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_img"
         android:layout_width="125dp"
         android:layout_height="225dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:contentDescription="character"
         android:src="@drawable/character_2"
-        app:layout_constraintEnd_toStartOf="@+id/textview_second"
+        app:layout_constraintEnd_toStartOf="@+id/adot_talk_txtview"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_tenth" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
 
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
@@ -46,12 +46,26 @@
         android:textColor="@color/black"
         android:padding="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <android.widget.Button
+        android:id="@+id/cordi_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/text_square"
+        android:padding="20dp"
+        android:text="추천 하의는 일자핏, 부츠컷, H라인, 슬림핏"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_eight"
+        app:layout_constraintTop_toBottomOf="@+id/button_eight" />
+
     <ImageButton
-        android:id="@+id/button_tenth"
+        android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -67,7 +81,7 @@
 
 
     <ImageButton
-        android:id="@+id/button_second"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

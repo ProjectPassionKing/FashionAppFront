@@ -7,7 +7,7 @@
     tools:context=".SeventhFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_img"
         android:layout_width="310dp"
         android:layout_height="351dp"
         android:contentDescription="character"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="어울리는 상의를 \n 추천해줄게요!"
@@ -28,31 +28,43 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
         app:layout_constraintVertical_bias="0.135" />
 
     <android.widget.Button
-        android:id="@+id/button_third"
+        android:id="@+id/question_txtview"
         android:layout_width="237dp"
         android:layout_height="50dp"
-        android:layout_marginTop="262dp"
-        android:layout_marginBottom="144dp"
         android:background="@drawable/text_square"
         android:stateListAnimator="@null"
         android:text="누르면 11번가 링크로 이동해요"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_second"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.widget.Button
+        android:id="@+id/other_recommand_btn"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
+        android:background="@drawable/text_square"
+        android:stateListAnimator="@null"
+        android:text="다른 옷 추천 보기"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question_txtview"
+        android:layout_marginTop="10dp"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/button_tenth"
+        android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -68,7 +80,7 @@
 
 
     <ImageButton
-        android:id="@+id/button_second"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

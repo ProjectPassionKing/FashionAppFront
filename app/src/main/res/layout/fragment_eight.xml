@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_img"
         android:layout_width="310dp"
         android:layout_height="351dp"
         android:layout_marginBottom="104dp"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/button_third"
+        android:id="@+id/question_txtview"
         android:layout_width="237dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -28,14 +28,14 @@
         android:text="촬영하기"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_second"
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -46,10 +46,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_tenth" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
 
     <ImageButton
-        android:id="@+id/button_tenth"
+        android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -65,7 +65,7 @@
 
 
     <ImageButton
-        android:id="@+id/button_second"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
