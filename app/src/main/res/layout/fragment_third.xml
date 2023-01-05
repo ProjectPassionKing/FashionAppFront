@@ -7,7 +7,7 @@
     tools:context=".ThirdFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_img"
         android:layout_width="310dp"
         android:layout_height="351dp"
         android:contentDescription="character"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.142" />
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="진단을 진행할게요! \n 해당하는 칸을 눌러주세요"
@@ -28,14 +28,14 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
         app:layout_constraintVertical_bias="0.135" />
 
     <TextView
-        android:id="@+id/button_third"
+        android:id="@+id/question_txtview"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
@@ -46,15 +46,15 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_fourth"
+        app:layout_constraintBottom_toTopOf="@+id/answer1_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textview_second"
+        app:layout_constraintTop_toTopOf="@+id/adot_talk_txtview"
         app:layout_constraintVertical_bias="0.911" />
 
 
     <android.widget.Button
-        android:id="@+id/button_fourth"
+        android:id="@+id/answer1_btn"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
@@ -62,14 +62,14 @@
         android:text="A. 신장에 비해 작은 사이즈"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_fourth_clone"
+        app:layout_constraintBottom_toTopOf="@+id/answer2_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <android.widget.Button
-        android:id="@+id/button_fourth_clone"
+        android:id="@+id/answer2_btn"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
@@ -77,13 +77,14 @@
         android:text="B. 신장과 밸런스가 맞는 사이즈"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_c"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/answer3_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/button_c"
+        android:id="@+id/answer3_btn"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
@@ -92,13 +93,13 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/button_tenth"
+        android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -114,7 +115,7 @@
 
 
     <ImageButton
-        android:id="@+id/button_second"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
