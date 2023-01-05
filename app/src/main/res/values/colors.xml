@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="text_square">#F5F5F5</color>
+    <color name="text_square_selectable">#D6F8FF</color>
+    <color name="text_square_chosen">#FFDDD6</color>
+    <color name="a_dot">#011CFE</color>
 </resources>
