@@ -19,7 +19,7 @@
         android:id="@+id/SecondFragment"
         android:name="com.example.fashionapp.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_main">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
@@ -39,7 +39,7 @@
         android:id="@+id/ThirdFragment"
         android:name="com.example.fashionapp.ThirdFragment"
         android:label="@string/third_fragment_label"
-        tools:layout="@layout/fragment_third">
+        tools:layout="@layout/fragment_diagnosis">
 
         <action
             android:id="@+id/action_ThirdFragment_to_SecondFragment"
@@ -56,7 +56,7 @@
         android:id="@+id/FourthFragment"
         android:name="com.example.fashionapp.FourthFragment"
         android:label="@string/fourth_fragment_label"
-        tools:layout="@layout/fragment_fourth">
+        tools:layout="@layout/fragment_result">
 
         <action
             android:id="@+id/action_FourthFragment_to_SecondFragment"
@@ -72,7 +72,7 @@
         android:id="@+id/FifthFragment"
         android:name="com.example.fashionapp.FifthFragment"
         android:label="@string/fifth_fragment_label"
-        tools:layout="@layout/fragment_fifth">
+        tools:layout="@layout/fragment_detail">
 
         <action
             android:id="@+id/action_FifthFragment_to_SecondFragment"
@@ -88,7 +88,7 @@
         android:id="@+id/SixthFragment"
         android:name="com.example.fashionapp.SixthFragment"
         android:label="@string/sixth_fragment_label"
-        tools:layout="@layout/fragment_sixth">
+        tools:layout="@layout/fragment_cordi_tip">
 
         <action
             android:id="@+id/action_SixthFragment_to_SecondFragment"
@@ -104,7 +104,7 @@
         android:id="@+id/SeventhFragment"
         android:name="com.example.fashionapp.SeventhFragment"
         android:label="@string/seventh_fragment_label"
-        tools:layout="@layout/fragment_seventh">
+        tools:layout="@layout/fragment_recommand">
 
         <action
             android:id="@+id/action_SeventhFragment_to_SecondFragment"
@@ -117,7 +117,7 @@
         android:id="@+id/EightFragment"
         android:name="com.example.fashionapp.EightFragment"
         android:label="@string/eight_fragment_label"
-        tools:layout="@layout/fragment_eight">
+        tools:layout="@layout/fragment_take_photo">
 
         <action
             android:id="@+id/action_EightFragment_to_SecondFragment"
@@ -130,7 +130,7 @@
         android:id="@+id/NinthFragment"
         android:name="com.example.fashionapp.NinthFragment"
         android:label="@string/ninth_fragment_label"
-        tools:layout="@layout/fragment_ninth">
+        tools:layout="@layout/fragment_all_in_one">
 
         <action
             android:id="@+id/action_NinthFragment_to_SecondFragment"

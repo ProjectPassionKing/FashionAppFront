@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ask_scroll"
+    app:layout_constraintTop_toBottomOf="@+id/avatar_img"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        >
+
+        <android.widget.Button
+            android:id="@+id/more_request_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_square"
+            android:text="체형진단해줘"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_img"
+            android:layout_marginStart="10dp"
+            />
+
+        <android.widget.Button
+            android:id="@+id/more_request_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_square"
+            android:text="이런 종류의 옷 찾아줘"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.296"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@+id/more_request_btn1"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
+
+        <android.widget.Button
+            android:id="@+id/more_request_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_square"
+            android:text="날씨에 맞는 옷 추천해줘"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.296"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@+id/more_request_btn2"/>
+    </LinearLayout>
+
+</HorizontalScrollView>
