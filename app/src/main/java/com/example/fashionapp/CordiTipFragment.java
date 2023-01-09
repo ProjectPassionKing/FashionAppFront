@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentSixthBinding;
+import com.example.fashionapp.databinding.FragmentCordiTipBinding;
 
-public class SixthFragment extends Fragment {
+public class CordiTipFragment extends Fragment {
 
-    private FragmentSixthBinding binding;
+    private FragmentCordiTipBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class SixthFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSixthBinding.inflate(inflater, container, false);
+        binding = FragmentCordiTipBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,24 +29,25 @@ public class SixthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SixthFragment.this)
+                NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_SixthFragment_to_SecondFragment);
             }
         });
-        binding.buttonEight.setOnClickListener(new View.OnClickListener() {
+        //second, third 만들기
+        binding.cordiFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SixthFragment.this)
+                NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_SixthFragment_to_SeventhFragment);
             }
         });
-        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SixthFragment.this)
+                NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_SixthFragment_to_NinthFragment);
             }
         });

@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.fashionapp.SecondFragment"
+        android:name="com.example.fashionapp.MainFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_main">
 
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/ThirdFragment"
-        android:name="com.example.fashionapp.ThirdFragment"
+        android:name="com.example.fashionapp.DiagnosisFragment"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_diagnosis">
 
@@ -54,7 +54,7 @@
 
     <fragment
         android:id="@+id/FourthFragment"
-        android:name="com.example.fashionapp.FourthFragment"
+        android:name="com.example.fashionapp.ResultFragment"
         android:label="@string/fourth_fragment_label"
         tools:layout="@layout/fragment_result">
 
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/FifthFragment"
-        android:name="com.example.fashionapp.FifthFragment"
+        android:name="com.example.fashionapp.DetailFragment"
         android:label="@string/fifth_fragment_label"
         tools:layout="@layout/fragment_detail">
 
@@ -86,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/SixthFragment"
-        android:name="com.example.fashionapp.SixthFragment"
+        android:name="com.example.fashionapp.CordiTipFragment"
         android:label="@string/sixth_fragment_label"
         tools:layout="@layout/fragment_cordi_tip">
 
@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/SeventhFragment"
-        android:name="com.example.fashionapp.SeventhFragment"
+        android:name="com.example.fashionapp.RecommandFragment"
         android:label="@string/seventh_fragment_label"
         tools:layout="@layout/fragment_recommand">
 
@@ -115,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/EightFragment"
-        android:name="com.example.fashionapp.EightFragment"
+        android:name="com.example.fashionapp.TakePhotoFragment"
         android:label="@string/eight_fragment_label"
         tools:layout="@layout/fragment_take_photo">
 
@@ -128,7 +128,7 @@
     </fragment>
     <fragment
         android:id="@+id/NinthFragment"
-        android:name="com.example.fashionapp.NinthFragment"
+        android:name="com.example.fashionapp.AllInOneFragment"
         android:label="@string/ninth_fragment_label"
         tools:layout="@layout/fragment_all_in_one">
 

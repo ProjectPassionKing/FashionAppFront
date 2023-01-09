@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentFourthBinding;
+import com.example.fashionapp.databinding.FragmentAllInOneBinding;
 
-public class FourthFragment extends Fragment {
+public class AllInOneFragment extends Fragment {
 
-    private FragmentFourthBinding binding;
+    private FragmentAllInOneBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class FourthFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFourthBinding.inflate(inflater, container, false);
+        binding = FragmentAllInOneBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,25 +29,25 @@ public class FourthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_FourthFragment_to_SecondFragment);
+                NavHostFragment.findNavController(AllInOneFragment.this)
+                        .navigate(R.id.action_NinthFragment_to_SecondFragment);
             }
         });
-        binding.buttonSixth.setOnClickListener(new View.OnClickListener() {
+        binding.buttonEleventh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_FourthFragment_to_FifthFragment);
+                NavHostFragment.findNavController(AllInOneFragment.this)
+                        .navigate(R.id.action_NinthFragment_to_ThirdFragment);
             }
         });
-        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
+        binding.buttonTwelfth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FourthFragment.this)
-                        .navigate(R.id.action_FourthFragment_to_NinthFragment);
+                NavHostFragment.findNavController(AllInOneFragment.this)
+                        .navigate(R.id.action_NinthFragment_to_SeventhFragment);
             }
         });
     }

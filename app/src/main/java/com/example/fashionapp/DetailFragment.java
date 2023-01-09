@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentFifthBinding;
+import com.example.fashionapp.databinding.FragmentDetailBinding;
 
-public class FifthFragment extends Fragment {
+public class DetailFragment extends Fragment {
 
-    private FragmentFifthBinding binding;
+    private FragmentDetailBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +21,7 @@ public class FifthFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFifthBinding.inflate(inflater, container, false);
+        binding = FragmentDetailBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,24 +29,25 @@ public class FifthFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
+                NavHostFragment.findNavController(DetailFragment.this)
                         .navigate(R.id.action_FifthFragment_to_SecondFragment);
             }
         });
-        binding.buttonSeventh.setOnClickListener(new View.OnClickListener() {
+        //스크롤 뷰이므로 따로 만들어서 뺄 것
+//        binding.scrollview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(FifthFragment.this)
+//                        .navigate(R.id.action_FifthFragment_to_SixthFragment);
+//            }
+//        });
+        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
-                        .navigate(R.id.action_FifthFragment_to_SixthFragment);
-            }
-        });
-        binding.buttonTenth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FifthFragment.this)
+                NavHostFragment.findNavController(DetailFragment.this)
                         .navigate(R.id.action_FifthFragment_to_NinthFragment);
             }
         });
