@@ -1,10 +1,16 @@
 package com.example.fashionapp;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
@@ -17,6 +23,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
+
     ) {
 
         binding = FragmentMainBinding.inflate(inflater, container, false);
@@ -34,6 +41,11 @@ public class MainFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
+        MoreHorizontalScrollView moreScroll = new MoreHorizontalScrollView(this.getContext());
+        LinearLayout hscroll = binding.scrollview;
+        hscroll.addView(moreScroll);
+
+        ;
 //스크롤뷰
 //        binding.buttonThird.setOnClickListener(new View.OnClickListener() {
 //            @Override
