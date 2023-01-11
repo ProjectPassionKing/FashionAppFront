@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  진단용 질문 -->
+    <string name="question_1">Q. 전체적인 인상은?</string>
+    <string name="question_2">Q. 손의 특징은?</string>
+    <string name="question_3">Q. 손가락 관절의 크기는?</string>
+    <string name="question_4">Q. 손목의 특징은?</string>
+    <string name="question_5">Q. 손바닥과 손등의 특징은?</string>
+    <string name="question_6">Q. 어깨의 특징은?</string>
+    <string name="question_7">Q. 목의 특징은?</string>
+    <string name="question_8">Q. 쇄골의 특징은?</string>
+    <string name="question_9">Q. 무릎뼈(슬개골)의 특징은?</string>
+    <string name="question_10">Q. 피부의 특징은?</string>
+    <string name="question_11">Q. 신발 사이즈는?</string>
+    <string name="question_12">Q. 나는 살이 찌면...</string>
+    <string name="question_13">Q. 신체의 특징은?</string>
+    <string name="question_14">Q. 나는 흉통이 넓은 편이다.</string>
+    <string name="question_15">Q. 나는 다리가 짧은 편이다.</string>
+    <string name="question_16">Q. 나는 허리가 길고 얇은 편이다.</string>
+
+
+
+    <!--진단 응답 선택지-->
+    <string name="answer1_a">두께감이 있고 육감적이다.</string>
+    <string name="answer1_b">두껍지 않고 평면적이다.</string>
+    <string name="answer1_c">골격이 발달하여 프레임워크가 눈에 띈다.</string>
+
+    <string name="answer2_a">신장에 비해 작은 사이즈</string>
+    <string name="answer2_b">신장과 밸런스가 맞는 사이즈</string>
+    <string name="answer2_c">신장에 비해 큰 사이즈</string>
+
+    <string name="answer3_a">작다.</string>
+    <string name="answer3_b">보통이다.</string>
+    <string name="answer3_c">크다.</string>
+
+    <string name="answer4_a">가늘고 둥근 형태에 가깝다.</string>
+    <string name="answer4_b">너비가 있고 둥글 납작한 형태에 가깝다.</string>
+    <string name="answer4_c">손목뼈가 확실하게 나와있다.</string>
+
+    <string name="answer5_a">두께감이 있는 편이다.</string>
+    <string name="answer5_b">두께감이 없는 편이다.</string>
+    <string name="answer5_c">손등의 힘줄이 매우 눈에 띈다.</string>
+
+    <string name="answer6_a">적당히 넓은 편이다.</string>
+    <string name="answer6_b">둥글고 얇은 편이다.</string>
+    <string name="answer6_c">어깨가 넓은 편이다.</string>
+
+    <string name="answer7_a">짧은 편이다.</string>
+    <string name="answer7_b">긴 편이다.</string>
+    <string name="answer7_c">관절이 눈에 띈다.</string>
+
+    <string name="answer8_a">그다지 눈에 띄지 않는다.</string>
+    <string name="answer8_b">살짝 나와있다.</string>
+    <string name="answer8_c">크고 확실하게 나와있다.</string>
+
+    <string name="answer9_a">작고 눈에 띄지 않는다.</string>
+    <string name="answer9_b">크지도 작지도 않다.</string>
+    <string name="answer9_c">크다.</string>
+
+    <string name="answer10_a">탄력있는 편이다.</string>
+    <string name="answer10_b">폭신하고 부드럽다.</string>
+    <string name="answer10_c">약간 두껍고 드라이한 편이다.</string>
+
+    <string name="answer11_a">신장에 비해 작다.</string>
+    <string name="answer11_b">신장과 밸런스가 맞다.</string>
+    <string name="answer11_c">신장에 비해 크다.</string>
+
+    <string name="answer12_a">복부 주변부터 찐다.</string>
+    <string name="answer12_b">하체부터 찐다.</string>
+    <string name="answer12_c">살이 잘 안찌는 체질, 전체적으로 찐다.</string>
+
+    <string name="answer13_a">근육이 발달했으며, 골격이 균형잡힌 편이다.</string>
+    <string name="answer13_b">근육이 잘 붙지 않고, 골격이 가는 편이다.</string>
+    <string name="answer13_c">골격이 튼튼하고 강인한 편이다.</string>
+
+    <string name="answer14_a">O</string>
+    <string name="answer14_c">X</string>
+
+    <string name="answer15_b">O</string>
+    <string name="answer15_c">X</string>
+
+    <string name="answer16_b">O</string>
+    <string name="answer16_a">X</string>
+
+</resources>

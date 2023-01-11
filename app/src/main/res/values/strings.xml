@@ -59,13 +59,6 @@
     <string name="link_11st">누르면 11번가 링크로 이동해요</string>
     <string name="other_recommand">다른 옷 추천 보기</string>
 
-<!--  진단용 질문 - 추가 예정  -->
-    <string name="question_1">Q. 손의 특징은?</string>
-
-<!--진단 응답 선택지-->
-    <string name="answer1_a">A. 신장에 비해 작은 사이즈</string>
-    <string name="answer1_b">B. 신장과 밸런스가 맞는 사이즈</string>
-    <string name="answer1_c">C. 신장에 비해 큰 사이즈</string>
 
 <!--Straight type-->
     <string name="straight_fabric">어울리는 소재는 면, 울(모), 데님, 가죽입니다.</string>
@@ -74,6 +67,10 @@
     <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴</string>
     <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
+
+<!--  Wave type  -->'
+
+<!--Neutral type-->
 
 
 </resources>
