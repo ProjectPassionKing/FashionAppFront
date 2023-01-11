@@ -2,12 +2,9 @@ package com.example.fashionapp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,8 +13,16 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment {
-
     private FragmentMainBinding binding;
+
+    //context nullable처리 나중에
+//    public Context context1;
+//
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//        context1 = context;
+//    }
 
     @Override
     public View onCreateView(
@@ -33,7 +38,6 @@ public class MainFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,19 +45,10 @@ public class MainFragment extends Fragment {
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
-        MoreHorizontalScrollView moreScroll = new MoreHorizontalScrollView(this.getContext());
-        LinearLayout hscroll = binding.scrollview;
-        hscroll.addView(moreScroll);
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
 
-        ;
 //스크롤뷰
-//        binding.buttonThird.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(SecondFragment.this)
-//                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
-//            }
-//        });
 //
 //        binding.buttonNinth.setOnClickListener(new View.OnClickListener() {
 //            @Override
