@@ -1,5 +1,6 @@
 package com.example.fashionapp;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
 
+import java.io.IOException;
+
+
 public class MainFragment extends Fragment {
 
+    private MediaPlayer mediaPlayer;
     private FragmentMainBinding binding;
 
     @Override
@@ -24,8 +29,14 @@ public class MainFragment extends Fragment {
 
     }
 
+    public void playSound() {
+        mediaPlayer.start();
+    }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
+        playSound();
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
