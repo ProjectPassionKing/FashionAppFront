@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-20dp"
-        android:text="점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?"
+        android:text="@string/weather_main"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"

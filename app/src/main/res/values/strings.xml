@@ -26,7 +26,54 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="camera">촬영하기</string>
 
+<!--    타입-->
+    <string name="straight">Straight</string>
+    <string name="wave">Wave</string>
+    <string name="Neutral">Neutral</string>
+
+
+<!--    스크롤 뷰 추가질문-->
+    <string name="more_req1">체형진단해줘</string>
+    <string name="detail_diagnosis">더 자세하게 진단 받을게요</string>
+    <string name="ask_find_cl">이런 종류의 옷 찾아줘</string>
+<!--    <string name="ask_wether">날씨에 맞는 옷 추천해줘</string>-->
+
+    <!--
+    Resources res = getResources();
+    String text = String.format(res.getString(R.string.hello), "아이", "선생님");
+    로 변수(문자열) 넣어주기
+    -->
+
+<!--    에이닷이 말하는 대사들-->
+    <string name="weather_main">점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?</string>
+    <string name="type_detail">%1$s Type에 \n 대해 내가 자세히 \n 알려줄게!</string>
+    <string name="recommand_cl">어울리는 %1$s를 \n 추천해줄게요!</string>
+    <string name="cordi_tip">%1$s \n 코디 팁이야!</string>
+    <string name="result_type">체형 진단 결과가 나왔어요!</string>
+    <string name="take_photo">사진을 찍어주세요!</string>
+    <string name="diagnosis">진단을 진행할게요! \n 해당하는 칸을 눌러주세요</string>
+
+<!--    square box-->
+    <string name="link_11st">누르면 11번가 링크로 이동해요</string>
+    <string name="other_recommand">다른 옷 추천 보기</string>
+
+<!--  진단용 질문 - 추가 예정  -->
+    <string name="question_1">Q. 손의 특징은?</string>
+
+<!--진단 응답 선택지-->
+    <string name="answer1_a">A. 신장에 비해 작은 사이즈</string>
+    <string name="answer1_b">B. 신장과 밸런스가 맞는 사이즈</string>
+    <string name="answer1_c">C. 신장에 비해 큰 사이즈</string>
+
+<!--Straight type-->
+    <string name="straight_fabric">어울리는 소재는 면, 울(모), 데님, 가죽입니다.</string>
+    <string name="straight_pattern">어울리는 패턴은 스트라이프, 도트, 플로랄, 보더입니다.</string>
+    <string name="straight_total">전체적으로 균형잡힌 몸이며 오버핏보다는 정사이즈가 잘 어울려요.</string>
+    <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
+    <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴</string>
+    <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
 
 
 </resources>
