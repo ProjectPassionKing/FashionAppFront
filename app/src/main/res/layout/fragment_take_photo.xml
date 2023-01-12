@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/question_txtview"
+        android:id="@+id/camera_button"
         android:layout_width="237dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -33,6 +33,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/click_image"
+        android:layout_width="328dp"
+        android:layout_height="391dp"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camera_button"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"

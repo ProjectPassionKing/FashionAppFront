@@ -54,10 +54,10 @@ public class MainFragment extends Fragment {
 //            }
 //        });
 //
-//        binding.buttonNinth.setOnClickListener(new View.OnClickListener() {
+//        binding.moreRequestBtn2.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                NavHostFragment.findNavController(SecondFragment.this)
+//                NavHostFragment.findNavController(MainFragment.this)
 //                        .navigate(R.id.action_SecondFragment_to_EightFragment);
 //            }
 //        });
