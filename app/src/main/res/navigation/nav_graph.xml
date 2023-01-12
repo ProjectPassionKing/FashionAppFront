@@ -12,134 +12,134 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/MainFragment"
         android:name="com.example.fashionapp.MainFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_main">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_MainFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
         <action
-            android:id="@+id/action_SecondFragment_to_ThirdFragment"
-            app:destination="@id/ThirdFragment" />
+            android:id="@+id/action_MainFragment_to_DiagnosisFragment"
+            app:destination="@id/DiagnosisFragment" />
         <action
-            android:id="@+id/action_SecondFragment_to_EightFragment"
-            app:destination="@id/EightFragment" />
+            android:id="@+id/action_MainFragment_to_TakePhotoFragment"
+            app:destination="@id/TakePhotoFragment" />
         <action
-            android:id="@+id/action_SecondFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_MainFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ThirdFragment"
+        android:id="@+id/DiagnosisFragment"
         android:name="com.example.fashionapp.DiagnosisFragment"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_diagnosis">
 
         <action
-            android:id="@+id/action_ThirdFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_DiagnosisFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_ThirdFragment_to_FourthFragment"
-            app:destination="@id/FourthFragment" />
+            android:id="@+id/action_DiagnosisFragment_to_ResultFragment"
+            app:destination="@id/ResultFragment" />
         <action
-            android:id="@+id/action_ThirdFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_DiagnosisFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/FourthFragment"
+        android:id="@+id/ResultFragment"
         android:name="com.example.fashionapp.ResultFragment"
         android:label="@string/fourth_fragment_label"
         tools:layout="@layout/fragment_result">
 
         <action
-            android:id="@+id/action_FourthFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ResultFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_FourthFragment_to_FifthFragment"
-            app:destination="@id/FifthFragment" />
+            android:id="@+id/action_ResultFragment_to_DetailFragment"
+            app:destination="@id/DetailFragment" />
         <action
-            android:id="@+id/action_FourthFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_ResultFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
     <fragment
-        android:id="@+id/FifthFragment"
+        android:id="@+id/DetailFragment"
         android:name="com.example.fashionapp.DetailFragment"
         android:label="@string/fifth_fragment_label"
         tools:layout="@layout/fragment_detail">
 
         <action
-            android:id="@+id/action_FifthFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_DetailFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_FifthFragment_to_SixthFragment"
-            app:destination="@id/SixthFragment" />
+            android:id="@+id/action_DetailFragment_to_CordiTipFragment"
+            app:destination="@id/CordiTipFragment" />
         <action
-            android:id="@+id/action_FifthFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_DetailFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SixthFragment"
+        android:id="@+id/CordiTipFragment"
         android:name="com.example.fashionapp.CordiTipFragment"
         android:label="@string/sixth_fragment_label"
         tools:layout="@layout/fragment_cordi_tip">
 
         <action
-            android:id="@+id/action_SixthFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_CordiTipFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_SixthFragment_to_SeventhFragment"
-            app:destination="@id/SeventhFragment" />
+            android:id="@+id/action_CordiTipFragment_to_RecommandFragment"
+            app:destination="@id/RecommandFragment" />
         <action
             android:id="@+id/action_SixthFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            app:destination="@id/AllinOneFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SeventhFragment"
+        android:id="@+id/RecommandFragment"
         android:name="com.example.fashionapp.RecommandFragment"
         android:label="@string/seventh_fragment_label"
         tools:layout="@layout/fragment_recommand">
 
         <action
-            android:id="@+id/action_SeventhFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_RecommandFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_SeventhFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_RecommandFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
     <fragment
-        android:id="@+id/EightFragment"
+        android:id="@+id/TakePhotoFragment"
         android:name="com.example.fashionapp.TakePhotoFragment"
         android:label="@string/eight_fragment_label"
         tools:layout="@layout/fragment_take_photo">
 
         <action
-            android:id="@+id/action_EightFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_TakePhotoFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_EightFragment_to_NinthFragment"
-            app:destination="@id/NinthFragment" />
+            android:id="@+id/action_TakePhototFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
     </fragment>
     <fragment
-        android:id="@+id/NinthFragment"
+        android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.AllInOneFragment"
         android:label="@string/ninth_fragment_label"
         tools:layout="@layout/fragment_all_in_one">
 
         <action
-            android:id="@+id/action_NinthFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_AllinOneFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
         <action
-            android:id="@+id/action_NinthFragment_to_ThirdFragment"
-            app:destination="@id/ThirdFragment" />
+            android:id="@+id/action_AllinOneFragment_to_DiagnosisFragment"
+            app:destination="@id/DiagnosisFragment" />
         <action
-            android:id="@+id/action_NinthFragment_to_SeventhFragment"
-            app:destination="@id/SeventhFragment" />
+            android:id="@+id/action_AllinOneFragment_to_RecommandFragment"
+            app:destination="@id/RecommandFragment" />
     </fragment>
 </navigation>

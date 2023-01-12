@@ -33,7 +33,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DetailFragment.this)
-                        .navigate(R.id.action_FifthFragment_to_SecondFragment);
+                        .navigate(R.id.action_DetailFragment_to_MainFragment);
             }
         });
         //스크롤 뷰이므로 따로 만들어서 뺄 것
@@ -48,7 +48,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DetailFragment.this)
-                        .navigate(R.id.action_FifthFragment_to_NinthFragment);
+                        .navigate(R.id.action_DetailFragment_to_AllinOneFragment);
             }
         });
     }

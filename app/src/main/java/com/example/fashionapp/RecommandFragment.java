@@ -40,14 +40,14 @@ public class RecommandFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_SeventhFragment_to_SecondFragment);
+                        .navigate(R.id.action_RecommandFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_SeventhFragment_to_NinthFragment);
+                        .navigate(R.id.action_RecommandFragment_to_AllinOneFragment);
             }
         });
     }
