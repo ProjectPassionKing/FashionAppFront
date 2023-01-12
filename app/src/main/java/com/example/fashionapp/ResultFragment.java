@@ -15,6 +15,7 @@ public class ResultFragment extends Fragment {
 
     private MediaPlayer mediaPlayer;
     private FragmentResultBinding binding;
+    public static String result;
 
     @Override
     public View onCreateView(
@@ -23,6 +24,7 @@ public class ResultFragment extends Fragment {
     ) {
 
         binding = FragmentResultBinding.inflate(inflater, container, false);
+        binding.questionTxtview.setText(result);
         return binding.getRoot();
 
     }

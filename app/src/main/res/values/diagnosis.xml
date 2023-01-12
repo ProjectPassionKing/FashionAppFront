@@ -75,12 +75,15 @@
     <string name="answer13_c">골격이 튼튼하고 강인한 편이다.</string>
 
     <string name="answer14_a">O</string>
+    <string name="answer14_b"></string>
     <string name="answer14_c">X</string>
 
+    <string name="answer15_a"></string>
     <string name="answer15_b">O</string>
     <string name="answer15_c">X</string>
 
     <string name="answer16_b">O</string>
     <string name="answer16_a">X</string>
+    <string name="answer16_c"></string>
 
 </resources>

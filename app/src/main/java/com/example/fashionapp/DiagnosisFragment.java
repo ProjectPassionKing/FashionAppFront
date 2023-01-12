@@ -12,10 +12,17 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.databinding.FragmentDiagnosisBinding;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class DiagnosisFragment extends Fragment {
 
     private MediaPlayer mediaPlayer;
     private FragmentDiagnosisBinding binding;
+    private int page;
+    Map<String, Integer> map = new HashMap<String, Integer>();
 
     @Override
     public View onCreateView(
@@ -23,6 +30,10 @@ public class DiagnosisFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
+        page = 0;
+        map.put("A", 0);
+        map.put("B", 0);
+        map.put("C", 0);
         binding = FragmentDiagnosisBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -47,15 +58,27 @@ public class DiagnosisFragment extends Fragment {
         binding.answer1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
+                page += 1;
+                map.put("A", map.get("A")+1);
+                getPage();
+
             }
         });
         binding.answer2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
+
+                page += 1;
+                map.put("B", map.get("B")+1);
+                getPage();
+            }
+        });
+        binding.answer3Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                page += 1;
+                map.put("C", map.get("C")+1);
+                getPage();
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +88,78 @@ public class DiagnosisFragment extends Fragment {
                         .navigate(R.id.action_DiagnosisFragment_to_AllinOneFragment);
             }
         });
+    }
+
+    private void getPage() {
+        if (page > 12) {
+            Map.Entry<Character, Integer> maxEntry = null;
+            int maxValue = Collections.max(map.values());
+            String maxKey = "";
+            ArrayList<String> keys = new ArrayList<>();
+            int count = 0;
+
+            for (String key : map.keySet()) {
+                Integer value = map.get(key);
+                if (value == maxValue) {
+                    maxKey = key;
+                    keys.add(key);
+                    count++;
+                }
+            }
+
+            if (count > 1) {
+                switch (keys.toString()) {
+                    case "[A, B]":
+                        page = 15;
+                        binding.answer3Btn.setVisibility(View.INVISIBLE);
+                        break;
+                    case "[B, C]":
+                        page = 14;
+                        binding.answer1Btn.setVisibility(View.INVISIBLE);
+                        break;
+                    case "[A, C]":
+                        page = 13;
+                        binding.answer2Btn.setVisibility(View.INVISIBLE);
+                        break;
+                    default:
+                        System.out.println("error");
+                        break;
+                }
+                int resIdQ = getResources().getIdentifier("question_"+(page+1),
+                        "string", getActivity().getPackageName());
+                int resIdA = getResources().getIdentifier("answer"+(page+1)+"_a",
+                        "string", getActivity().getPackageName());
+                int resIdB = getResources().getIdentifier("answer"+(page+1)+"_b",
+                        "string", getActivity().getPackageName());
+                int resIdC = getResources().getIdentifier("answer"+(page+1)+"_c",
+                        "string", getActivity().getPackageName());
+
+                binding.questionTxtview.setText(getResources().getString(resIdQ));
+                binding.answer1Btn.setText(getResources().getString(resIdA));
+                binding.answer2Btn.setText(getResources().getString(resIdB));
+                binding.answer3Btn.setText(getResources().getString(resIdC));
+                return;
+            }
+
+            ResultFragment.result = maxKey;
+
+            NavHostFragment.findNavController(DiagnosisFragment.this)
+                    .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
+        } else {
+            int resIdQ = getResources().getIdentifier("question_"+(page+1),
+                    "string", getActivity().getPackageName());
+            int resIdA = getResources().getIdentifier("answer"+(page+1)+"_a",
+                    "string", getActivity().getPackageName());
+            int resIdB = getResources().getIdentifier("answer"+(page+1)+"_b",
+                    "string", getActivity().getPackageName());
+            int resIdC = getResources().getIdentifier("answer"+(page+1)+"_c",
+                    "string", getActivity().getPackageName());
+
+            binding.questionTxtview.setText(getResources().getString(resIdQ));
+            binding.answer1Btn.setText(getResources().getString(resIdA));
+            binding.answer2Btn.setText(getResources().getString(resIdB));
+            binding.answer3Btn.setText(getResources().getString(resIdC));
+        }
     }
 
     @Override
