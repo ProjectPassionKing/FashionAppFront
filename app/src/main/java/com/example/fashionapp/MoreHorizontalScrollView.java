@@ -1,6 +1,5 @@
 package com.example.fashionapp;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -9,8 +8,6 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.databinding.ScrollBinding;
@@ -42,11 +39,29 @@ public class MoreHorizontalScrollView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 System.out.println("******* more request btn 1 clicked!! ******");
-                //navigator fragment 이름 때문에 구분이 안 됨...
-                NavHostFragment.findNavController(fragment)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                changeFragment(fragment, new DiagnosisFragment());
+//                fragment.getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new DiagnosisFragment()).commit();
             }
         });
+
+        findViewById(R.id.more_request_btn2).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeFragment(fragment, new TakePhotoFragment());
+            }
+        });
+
+//        findViewById(R.id.more_request_btn3).setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                changeFragment(fragment, new );
+//            }
+//        });
+    }
+
+    private void changeFragment(Fragment startFragment, Fragment targetFragment){
+        startFragment.getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, targetFragment).commit();
+
     }
 
 }
