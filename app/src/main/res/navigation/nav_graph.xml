@@ -8,15 +8,14 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.fashionapp.FirstFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@+id/main_fragment" />
     </fragment>
     <fragment
-        android:id="@+id/MainFragment"
+        android:id="@+id/main_fragment"
         android:name="com.example.fashionapp.MainFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_main">
@@ -26,7 +25,7 @@
             app:destination="@id/FirstFragment" />
         <action
             android:id="@+id/action_MainFragment_to_DiagnosisFragment"
-            app:destination="@id/DiagnosisFragment" />
+            app:destination="@id/diagnosis_fragment" />
         <action
             android:id="@+id/action_MainFragment_to_TakePhotoFragment"
             app:destination="@id/TakePhotoFragment" />
@@ -36,20 +35,20 @@
     </fragment>
 
     <fragment
-        android:id="@+id/DiagnosisFragment"
+        android:id="@+id/diagnosis_fragment"
         android:name="com.example.fashionapp.DiagnosisFragment"
         android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_diagnosis">
 
-        <action
-            android:id="@+id/action_DiagnosisFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
         <action
             android:id="@+id/action_DiagnosisFragment_to_ResultFragment"
             app:destination="@id/ResultFragment" />
         <action
             android:id="@+id/action_DiagnosisFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
+        <action
+            android:id="@+id/action_DiagnosisFragment_to_MainFragment"
+            app:destination="@id/main_fragment" />
     </fragment>
 
     <fragment
@@ -60,7 +59,7 @@
 
         <action
             android:id="@+id/action_ResultFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_ResultFragment_to_DetailFragment"
             app:destination="@id/DetailFragment" />
@@ -76,7 +75,7 @@
 
         <action
             android:id="@+id/action_DetailFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_DetailFragment_to_CordiTipFragment"
             app:destination="@id/CordiTipFragment" />
@@ -92,7 +91,7 @@
 
         <action
             android:id="@+id/action_CordiTipFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_CordiTipFragment_to_RecommandFragment"
             app:destination="@id/RecommandFragment" />
@@ -108,7 +107,7 @@
 
         <action
             android:id="@+id/action_RecommandFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_RecommandFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
@@ -121,7 +120,7 @@
 
         <action
             android:id="@+id/action_TakePhotoFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_TakePhototFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
@@ -134,10 +133,10 @@
 
         <action
             android:id="@+id/action_AllinOneFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_AllinOneFragment_to_DiagnosisFragment"
-            app:destination="@id/DiagnosisFragment" />
+            app:destination="@id/diagnosis_fragment" />
         <action
             android:id="@+id/action_AllinOneFragment_to_RecommandFragment"
             app:destination="@id/RecommandFragment" />

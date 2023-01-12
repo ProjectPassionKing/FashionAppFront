@@ -30,7 +30,7 @@ public class MoreHorizontalScrollView extends LinearLayout {
         init(fragment);
     }
 
-    private void init(@NotNull Fragment fragment){
+    private void init(@NotNull Fragment fragment) {
         //context null 처리 나중에
         LayoutInflater inflater = (LayoutInflater) fragment.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.scroll, this, true);
@@ -39,7 +39,9 @@ public class MoreHorizontalScrollView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 System.out.println("******* more request btn 1 clicked!! ******");
-                changeFragment(fragment, new DiagnosisFragment());
+//                changeFragment(fragment, new DiagnosisFragment());
+                NavHostFragment.findNavController(fragment)
+                        .navigate(R.id.action_MainFragment_to_DiagnosisFragment);
 //                fragment.getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, new DiagnosisFragment()).commit();
             }
         });
@@ -47,7 +49,9 @@ public class MoreHorizontalScrollView extends LinearLayout {
         findViewById(R.id.more_request_btn2).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeFragment(fragment, new TakePhotoFragment());
+//                changeFragment(fragment, new TakePhotoFragment());
+                NavHostFragment.findNavController(fragment)
+                        .navigate(R.id.action_MainFragment_to_TakePhotoFragment);
             }
         });
 
@@ -59,9 +63,11 @@ public class MoreHorizontalScrollView extends LinearLayout {
 //        });
     }
 
-    private void changeFragment(Fragment startFragment, Fragment targetFragment){
+    private void changeFragment(Fragment startFragment, Fragment targetFragment) {
+//        startFragment.getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, targetFragment, null).addToBackStack(null).commit();
         startFragment.getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_content_main, targetFragment).commit();
-
+//        NavHostFragment.findNavController(startFragment)
+//                .navigate(R.id.action_MainFragment_to_DiagnosisFragment);
     }
 
 }

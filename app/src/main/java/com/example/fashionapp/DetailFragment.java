@@ -36,14 +36,10 @@ public class DetailFragment extends Fragment {
                         .navigate(R.id.action_DetailFragment_to_MainFragment);
             }
         });
-        //스크롤 뷰이므로 따로 만들어서 뺄 것
-//        binding.scrollview.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(FifthFragment.this)
-//                        .navigate(R.id.action_FifthFragment_to_SixthFragment);
-//            }
-//        });
+
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
+
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

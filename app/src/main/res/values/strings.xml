@@ -2,7 +2,9 @@
     <string name="app_name">FashionApp</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
+    <string name="main_fragment_label">Main Fragment</string>
     <string name="first_fragment_label">First Fragment</string>
+
     <string name="second_fragment_label">Second Fragment</string>
     <string name="third_fragment_label">Third Fragment</string>
     <string name="fourth_fragment_label">Fourth Fragment</string>
