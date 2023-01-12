@@ -54,13 +54,13 @@ public class MainFragment extends Fragment {
 //            }
 //        });
 //
-        binding.moreRequestBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_EightFragment);
-            }
-        });
+//        binding.moreRequestBtn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                NavHostFragment.findNavController(MainFragment.this)
+//                        .navigate(R.id.action_SecondFragment_to_EightFragment);
+//            }
+//        });
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override

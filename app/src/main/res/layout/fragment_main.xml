@@ -38,19 +38,6 @@
         app:layout_constraintTop_toTopOf="@+id/avatar_img" />
 
 <!--코드에서 add View로 scroll (Linear Layout) 넣어주시면 됩니다 -->
-    <android.widget.Button
-        android:id="@+id/more_request_btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/text_square"
-        android:text="@string/ask_find_cl"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        android:layout_marginStart="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
-
    <LinearLayout
        android:id="@+id/scrollview"
        android:layout_width="match_parent"
