@@ -33,14 +33,14 @@ public class TakePhotoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_EightFragment_to_SecondFragment);
+                        .navigate(R.id.action_TakePhotoFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_EightFragment_to_NinthFragment);
+                        .navigate(R.id.action_TakePhototFragment_to_AllinOneFragment);
             }
         });
     }

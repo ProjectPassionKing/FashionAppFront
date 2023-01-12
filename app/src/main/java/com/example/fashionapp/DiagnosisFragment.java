@@ -33,28 +33,28 @@ public class DiagnosisFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_SecondFragment);
+                        .navigate(R.id.action_DiagnosisFragment_to_MainFragment);
             }
         });
         binding.answer1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FourthFragment);
+                        .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
             }
         });
         binding.answer2Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_FourthFragment);
+                        .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_ThirdFragment_to_NinthFragment);
+                        .navigate(R.id.action_DiagnosisFragment_to_AllinOneFragment);
             }
         });
     }

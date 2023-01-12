@@ -1,13 +1,11 @@
 package com.example.fashionapp;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
@@ -42,7 +40,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_MainFragment_to_FirstFragment);
             }
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
@@ -62,7 +60,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_NinthFragment);
+                        .navigate(R.id.action_MainFragment_to_AllinOneFragment);
             }
         });
     }

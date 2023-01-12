@@ -32,7 +32,7 @@ public class ResultFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ResultFragment.this)
-                        .navigate(R.id.action_FourthFragment_to_SecondFragment);
+                        .navigate(R.id.action_ResultFragment_to_MainFragment);
             }
         });
 //        binding.scrollview.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +46,7 @@ public class ResultFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ResultFragment.this)
-                        .navigate(R.id.action_FourthFragment_to_NinthFragment);
+                        .navigate(R.id.action_ResultFragment_to_AllinOneFragment);
             }
         });
     }

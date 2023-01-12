@@ -33,7 +33,7 @@ public class CordiTipFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_SixthFragment_to_SecondFragment);
+                        .navigate(R.id.action_CordiTipFragment_to_MainFragment);
             }
         });
         //second, third 만들기
@@ -41,7 +41,7 @@ public class CordiTipFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_SixthFragment_to_SeventhFragment);
+                        .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
