@@ -6,46 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/text_square"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weather_api"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
     <ImageView
         android:id="@+id/avatar_img"
-        android:layout_width="310dp"
-        android:layout_height="351dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="226dp"
+        android:layout_width="220dp"
+        android:layout_height="285dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="150dp"
         android:contentDescription="character"
         android:src="@drawable/character"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
         android:text="@string/weather_main"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/avatar_img" />
 
-   <LinearLayout
-       android:id="@+id/scrollview"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="horizontal"
-       android:background="@android:color/transparent"
-       app:layout_constraintBottom_toTopOf="@+id/home_btn"
-       android:layout_marginBottom="35dp"
-       />
+    <LinearLayout
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
@@ -53,7 +67,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@android:color/transparent"
-        android:text="Menu"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,11 +80,10 @@
         android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         android:background="@android:color/transparent"
-        android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="30dp"
         app:srcCompat="@drawable/home_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

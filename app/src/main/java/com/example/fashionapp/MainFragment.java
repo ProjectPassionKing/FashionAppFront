@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
-
+        binding.weatherApi.addView(new WeatherView(this.getContext()));
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

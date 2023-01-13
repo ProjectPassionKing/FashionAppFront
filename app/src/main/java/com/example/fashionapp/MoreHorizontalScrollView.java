@@ -66,13 +66,18 @@ public class MoreHorizontalScrollView extends LinearLayout {
         //메인, 체형진단(사진), 결과, 자세히, 코디 팁, 추천
         System.out.println(fragment.getClass()+"*****");
 
-        if((fragment.getClass() == ResultFragment.class)) {
+        if(fragment.getClass() == ResultFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_detail));
-        } if((fragment.getClass() == DetailFragment.class)) {
+        } if(fragment.getClass() == DetailFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_cordi));
-        } if((fragment.getClass() == RecommandFragment.class)) {
+            ((Button) findViewById(R.id.more_request_btn3)).setText(getTxtfromStr(R.string.more_req_diagnosis));
+
+        } if(fragment.getClass() == RecommandFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_photo));
             ((Button) findViewById(R.id.more_request_btn2)).setText(getTxtfromStr(R.string.more_req_detail));
+        }if(fragment.getClass() == CordiTipFragment.class){
+            ((Button) findViewById(R.id.more_request_btn3)).setText(getTxtfromStr(R.string.more_req_detail));
+
         }
     }
 
