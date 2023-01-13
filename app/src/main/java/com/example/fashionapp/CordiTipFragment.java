@@ -38,7 +38,7 @@ public class CordiTipFragment extends Fragment {
         binding.scrollview.addView(moreScrollView);
 
         //second, third 만들기
-        binding.cordiFirst.setOnClickListener(new View.OnClickListener() {
+        binding.cordi2nd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CordiTipFragment.this)

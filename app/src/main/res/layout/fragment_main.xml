@@ -37,7 +37,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/avatar_img" />
 
-<!--코드에서 add View로 scroll (Linear Layout) 넣어주시면 됩니다 -->
    <LinearLayout
        android:id="@+id/scrollview"
        android:layout_width="match_parent"
@@ -45,7 +44,7 @@
        android:orientation="horizontal"
        android:background="@android:color/transparent"
        app:layout_constraintBottom_toTopOf="@+id/home_btn"
-       android:layout_marginBottom="50dp"
+       android:layout_marginBottom="35dp"
        />
 
     <ImageButton
