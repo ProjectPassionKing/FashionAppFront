@@ -6,22 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
-    <ImageView
-        android:id="@+id/avatar_img"
-        android:layout_width="409dp"
-        android:layout_height="532dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="226dp"
+    <VideoView
+        android:id="@+id/avatar_video"
+        android:layout_width="336dp"
+        android:layout_height="353dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="character"
-        android:src="@drawable/first_screen"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintTop_toBottomOf="@+id/button_first"
+        app:layout_constraintVertical_bias="0.873" />
 
     <TextView
         android:id="@+id/textview_first"
