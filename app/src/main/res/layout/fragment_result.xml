@@ -20,6 +20,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.142" />
 
+    <android.widget.Button
+        android:id="@+id/photo_simulation_button"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
+        android:background="@drawable/text_square"
+        android:text="옷 입은 내 모습 미리보기"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
@@ -49,18 +63,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"/>
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/home_btn"
         android:layout_marginBottom="50dp"
-        />
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"

@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_ResultFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
+        <action
+            android:id="@+id/action_ResultFragment_to_SimulateFragment"
+            app:destination="@id/SimulateFragment" />
     </fragment>
     <fragment
         android:id="@+id/DetailFragment"
@@ -172,4 +175,17 @@
             app:destination="@id/AllinOneFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/SimulateFragment"
+        android:name="com.example.fashionapp.SimulateFragment"
+        android:label="@string/eleventh_fragment_label"
+        tools:layout="@layout/fragment_simulate">
+
+        <action
+            android:id="@+id/action_SimulateFragment_to_MainFragment"
+            app:destination="@id/main_fragment" />
+        <action
+            android:id="@+id/action_SimulateFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
+    </fragment>
 </navigation>
