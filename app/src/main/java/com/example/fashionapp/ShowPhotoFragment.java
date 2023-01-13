@@ -1,14 +1,13 @@
 package com.example.fashionapp;
 
 import static android.app.Activity.RESULT_OK;
-import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,18 +22,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentTakePhotoBinding;
+import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
 
-public class TakePhotoFragment extends Fragment {
+public class ShowPhotoFragment extends Fragment {
 
-    private FragmentTakePhotoBinding binding;
+    private FragmentShowPhotoBinding binding;
     Button camera_open_id;
     ImageView click_image_id;
 
@@ -46,7 +40,7 @@ public class TakePhotoFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentTakePhotoBinding.inflate(inflater, container, false);
+        binding = FragmentShowPhotoBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -54,8 +48,23 @@ public class TakePhotoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        camera_open_id = getView().findViewById(R.id.camera_button);
+        File mostRecentFile = null;
+        long mostRecentModified = Long.MIN_VALUE;
+
+        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+
+        for (File file : storageDir.listFiles()) {
+            if (file.isFile() && file.lastModified() > mostRecentModified) {
+                mostRecentFile = file;
+                mostRecentModified = file.lastModified();
+            }
+        }
+
+        Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
         click_image_id = getView().findViewById(R.id.click_image);
+        click_image_id.setImageBitmap(bitmap);
+
+        camera_open_id = getView().findViewById(R.id.camera_button);
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
@@ -63,31 +72,6 @@ public class TakePhotoFragment extends Fragment {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     Bitmap photo = (Bitmap) result.getData().getExtras().get("data");
                     click_image_id.setImageBitmap(photo);
-
-                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                    String imageFileName = "JPEG_" + timeStamp + "_";
-                    File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-                    File image = null;
-                    try {
-                        image = File.createTempFile(
-                                imageFileName,  /* prefix */
-                                ".jpg",         /* suffix */
-                                storageDir      /* directory */
-                        );
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    try {
-                        FileOutputStream fos = new FileOutputStream(image);
-                        photo.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-                        fos.close();
-                    } catch (IOException e) {
-                        Log.e(TAG, "Error saving image file: " + e.getMessage());
-                    }
-
-                    NavHostFragment.findNavController(TakePhotoFragment.this)
-                            .navigate(R.id.action_TakePhototFragment_to_ShowPhotoFragment);
                 }
             }
         });
@@ -95,15 +79,15 @@ public class TakePhotoFragment extends Fragment {
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_TakePhotoFragment_to_MainFragment);
+                NavHostFragment.findNavController(ShowPhotoFragment.this)
+                        .navigate(R.id.action_ShowPhotoFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_TakePhototFragment_to_AllinOneFragment);
+                NavHostFragment.findNavController(ShowPhotoFragment.this)
+                        .navigate(R.id.action_ShowPhotoFragment_to_AllinOneFragment);
             }
         });
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {
