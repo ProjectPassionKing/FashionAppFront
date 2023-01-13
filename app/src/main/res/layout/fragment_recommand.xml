@@ -63,6 +63,16 @@
         android:layout_marginTop="10dp"
         app:layout_constraintVertical_bias="0.0" />
 
+    <LinearLayout
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn"
+        android:layout_marginBottom="50dp"
+        />
+
     <ImageButton
         android:id="@+id/menu_hamburger"
         android:layout_width="wrap_content"

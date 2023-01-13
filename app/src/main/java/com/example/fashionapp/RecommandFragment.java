@@ -50,6 +50,10 @@ public class RecommandFragment extends Fragment {
                         .navigate(R.id.action_RecommandFragment_to_AllinOneFragment);
             }
         });
+
+
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
     }
 
     @Override

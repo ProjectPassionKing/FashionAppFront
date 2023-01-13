@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@android:color/transparent"
+        android:paddingBottom="10dp"
         >
 
         <android.widget.Button
@@ -22,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/text_square"
-            android:text="@string/more_req1"
+            android:text="@string/more_req_diagnosis"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/text_square"
-            android:text="@string/ask_find_cl"
+            android:text="@string/more_req_photo"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/text_square"
-            android:text="날씨에 맞는 옷 추천해줘"
+            android:text="@string/more_req_cordi"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

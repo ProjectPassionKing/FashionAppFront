@@ -37,7 +37,10 @@ public class ResultFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightresult);
         playSound();
-//홈이랑 메뉴 버튼은 다른 화면에서도 계속 쓸 거면 클래스나 함수화해서 밖으로 빼는 게 낫지 않나
+
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
+
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,13 +48,7 @@ public class ResultFragment extends Fragment {
                         .navigate(R.id.action_ResultFragment_to_MainFragment);
             }
         });
-//        binding.scrollview.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(FourthFragment.this)
-//                        .navigate(R.id.action_FourthFragment_to_FifthFragment);
-//            }
-//        });
+
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

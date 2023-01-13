@@ -141,4 +141,17 @@
             android:id="@+id/action_AllinOneFragment_to_RecommandFragment"
             app:destination="@id/RecommandFragment" />
     </fragment>
+    <action
+        android:id="@+id/action_global_diagnosis_fragment"
+        app:destination="@id/diagnosis_fragment" />
+    <action
+        android:id="@+id/action_global_TakePhotoFragment"
+        app:destination="@id/TakePhotoFragment" />
+    <action
+        android:id="@+id/action_global_CordiTipFragment"
+        app:destination="@id/CordiTipFragment" />
+    <action
+        android:id="@+id/action_global_DetailFragment"
+        app:destination="@id/DetailFragment" />
+
 </navigation>

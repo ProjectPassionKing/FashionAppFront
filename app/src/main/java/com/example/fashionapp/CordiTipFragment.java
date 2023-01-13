@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentCordiTipBinding;
 
 public class CordiTipFragment extends Fragment {
-
     private FragmentCordiTipBinding binding;
 
     @Override
@@ -20,10 +19,8 @@ public class CordiTipFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentCordiTipBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -36,6 +33,10 @@ public class CordiTipFragment extends Fragment {
                         .navigate(R.id.action_CordiTipFragment_to_MainFragment);
             }
         });
+
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
+
         //second, third 만들기
         binding.cordiFirst.setOnClickListener(new View.OnClickListener() {
             @Override
