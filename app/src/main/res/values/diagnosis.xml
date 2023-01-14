@@ -17,7 +17,7 @@
     <string name="question_13">Q. 신체의 특징은?</string>
     <string name="question_14">Q. 나는 흉통이 넓은 편이다.</string>
     <string name="question_15">Q. 나는 다리가 짧은 편이다.</string>
-    <string name="question_16">Q. 나는 허리가 길고 얇은 편이다.</string>
+    <string name="question_16">Q. 나는 허리가 짧고 두꺼운 편이다.</string>
 
 
 
@@ -82,8 +82,8 @@
     <string name="answer15_b">O</string>
     <string name="answer15_c">X</string>
 
-    <string name="answer16_b">O</string>
-    <string name="answer16_a">X</string>
+    <string name="answer16_a">O</string>
+    <string name="answer16_b">X</string>
     <string name="answer16_c"></string>
 
 </resources>
