@@ -140,7 +140,22 @@ public class DiagnosisFragment extends Fragment {
                 binding.answer3Btn.setText(getResources().getString(resIdC));
                 return;
             }
-
+            
+            switch (maxKey) {
+                case "A":
+                    maxKey = "Straight";
+                    break;
+                case "B":
+                    maxKey = "Wave";
+                    break;
+                case "C":
+                    maxKey = "Natural";
+                    break;
+                default:
+                    maxKey = "Straight";
+                    break;
+            }
+            
             ResultFragment.result = maxKey;
 
             NavHostFragment.findNavController(DiagnosisFragment.this)
