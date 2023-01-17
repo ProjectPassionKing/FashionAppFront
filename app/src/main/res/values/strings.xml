@@ -14,6 +14,7 @@
     <string name="eight_fragment_label">Eight Fragment</string>
     <string name="ninth_fragment_label">Ninth Fragment</string>
     <string name="tenth_fragment_label">Tenth Fragment</string>
+    <string name="eleventh_fragment_label">Eleventh Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -73,7 +74,6 @@
     <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴</string>
     <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
-    <string name="eleventh_fragment_label" />
 
     <!--  Wave type  -->'
 
