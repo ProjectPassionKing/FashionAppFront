@@ -11,7 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
 
+import org.json.JSONException;
+
 import java.io.IOException;
+import java.util.Date;
+import java.util.concurrent.Executors;
 
 
 public class MainFragment extends Fragment {
@@ -64,6 +68,22 @@ public class MainFragment extends Fragment {
                         .navigate(R.id.action_MainFragment_to_AllinOneFragment);
             }
         });
+
+        RequestHttpConnection con = new RequestHttpConnection();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    con.callApi();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 
     @Override
