@@ -1,6 +1,5 @@
 package com.example.fashionapp;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.os.Build;
 
@@ -10,25 +9,26 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -39,16 +39,19 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 public class RequestHttpConnection {
-//    private Context context;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void callApi(Context fcontext) throws IOException, JSONException, NoSuchAlgorithmException, KeyManagementException, CertificateException, KeyStoreException {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Map<String, String> callApi(Context fcontext) throws IOException, JSONException, NoSuchAlgorithmException, KeyManagementException, CertificateException, KeyStoreException, NoSuchProviderException {
+
+        String ydate = LocalDate.now().minusDays(1).toString().replaceAll("-", "");
+        String ctime = LocalTime.now().minusHours(1).toString().substring(0, 2) + "00";
+
+
         String service_key = "byka7IIvsckHZJ1Gmr7CQMbdVSnXEjP4AFAbPrThEKFDRRCRmH9r%2FYtjgdch%2BDfTx11uQrrUp7Ukw03rATjLcw%3D%3D";
-        String num_of_rows = "12";
+        String num_of_rows = "290";
         String page_num = "1";
         String data_type = "JSON";
-        String base_date = "20230125";
-        String base_time = "1100";
+        String base_time = "2300";
         String nx = "37";
         String ny = "127";
 
@@ -57,36 +60,18 @@ public class RequestHttpConnection {
                 "&pageNo=" + page_num +
                 "&numOfRows=" + num_of_rows +
                 "&dataType=" + data_type +
-                "&base_date=" + base_date +
+                "&base_date=" + ydate +
                 "&base_time=" + base_time +
                 "&nx=" + nx +
                 "&ny=" + ny;
 
         URL req_url = new URL(url);
 
-//        System.out.println("Response code: " + connection.getResponseCode());
-//        BufferedReader rd;
-//
-//        if (connection.getResponseCode() >= 200 && connection.getResponseCode() <= 300) {
-//            rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//        } else {
-//            rd = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-//        }
-//        StringBuilder sb = new StringBuilder();
-//        String line;
-//        while ((line = rd.readLine()) != null) {
-//            sb.append(line);
-//        }
-//        rd.close();
-//        connection.disconnect();
-//        System.out.println(sb.toString());
-
         CertificateFactory cf = CertificateFactory.getInstance("X.509");
         InputStream caInput = fcontext.getResources().openRawResource(R.raw.gsrsaovsslca2018);
         Certificate ca;
         try {
             ca = cf.generateCertificate(caInput);
-            System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
         } finally {
             caInput.close();
         }
@@ -117,33 +102,24 @@ public class RequestHttpConnection {
                 .lines()
                 .collect(Collectors.joining("\n"));
 
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-//
-//        if (urlConnection.getResponseCode() == 200){
-//            bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-//        }else{
-//            //error
-//        }
-//
-//        StringBuilder sb = new StringBuilder();
-//        String line;
-//        while((line = bufferedReader.readLine())!=null){
-//            sb.append(line);
-//        }
-//        bufferedReader.close();
-//        String result = sb.toString();
         urlConnection.disconnect();
-//
-//        JSONObject mainObject = new JSONObject(result);
-////        JSONArray mainObject = new JSONArray(result);
-//        JSONArray itemArray = mainObject.getJSONObject("response").getJSONObject("body").getJSONObject("items").getJSONArray("item");
-//
-//        for(int i=0;i< itemArray.length();i++){
-//            JSONObject item = itemArray.getJSONObject(i);
-//            String category = item.getString("category");
-//            String value = item.getString("fcstValue");
-//            System.out.println(category+"" + value);
-//        }
-//    }
+
+        JSONObject mainObject = new JSONObject(text);
+        JSONArray itemArray = mainObject.getJSONObject("response").getJSONObject("body").getJSONObject("items").getJSONArray("item");
+
+        Map<String, String> result = new HashMap<>();
+
+        for (int i = 0; i < itemArray.length(); i++) {
+            JSONObject item = itemArray.getJSONObject(i);
+            String category = item.getString("category");
+            String value = item.getString("fcstValue");
+            if (item.getString("category").equals("TMN") || item.getString("category").equals("TMX")) {
+                result.put(category, value);
+            }
+            if (item.getString("fcstTime").equals(ctime)) {
+                result.put(category, value);
+            }
+        }
+        return result;
     }
 }
