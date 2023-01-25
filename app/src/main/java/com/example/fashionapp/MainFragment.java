@@ -14,6 +14,10 @@ import com.example.fashionapp.databinding.FragmentMainBinding;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
 import java.util.Date;
 import java.util.concurrent.Executors;
 
@@ -75,10 +79,8 @@ public class MainFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    con.callApi();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
+                    con.callApi(getContext());
+                } catch (IOException | JSONException | NoSuchAlgorithmException | KeyManagementException | CertificateException | KeyStoreException e) {
                     e.printStackTrace();
                 }
             }
