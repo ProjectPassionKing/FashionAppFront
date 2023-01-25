@@ -46,7 +46,7 @@ public class RequestHttpConnection {
         String ydate = LocalDate.now().minusDays(1).toString().replaceAll("-", "");
         String ctime = LocalTime.now().minusHours(1).toString().substring(0, 2) + "00";
 
-
+        System.out.println(ydate +" "+ ctime);
         String service_key = "byka7IIvsckHZJ1Gmr7CQMbdVSnXEjP4AFAbPrThEKFDRRCRmH9r%2FYtjgdch%2BDfTx11uQrrUp7Ukw03rATjLcw%3D%3D";
         String num_of_rows = "290";
         String page_num = "1";
@@ -108,7 +108,6 @@ public class RequestHttpConnection {
         JSONArray itemArray = mainObject.getJSONObject("response").getJSONObject("body").getJSONObject("items").getJSONArray("item");
 
         Map<String, String> result = new HashMap<>();
-
         for (int i = 0; i < itemArray.length(); i++) {
             JSONObject item = itemArray.getJSONObject(i);
             String category = item.getString("category");
@@ -119,6 +118,7 @@ public class RequestHttpConnection {
             if (item.getString("fcstTime").equals(ctime)) {
                 result.put(category, value);
             }
+            System.out.println(category + " " + value);
         }
         return result;
     }

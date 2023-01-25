@@ -1,14 +1,21 @@
 package com.example.fashionapp;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.fashionapp.databinding.FragmentMainBinding;
 
 import org.json.JSONException;
@@ -17,23 +24,15 @@ import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
 import java.security.cert.CertificateException;
-import java.util.Date;
-import java.util.concurrent.Executors;
+import java.util.Map;
 
 
 public class MainFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     private FragmentMainBinding binding;
-
-    //context nullable처리 나중에
-//    public Context context1;
-//
-//    @Override
-//    public void onAttach(@NonNull Context context) {
-//        super.onAttach(context);
-//        context1 = context;
-//    }
+    private Map<String, String> apiresult;
 
     @Override
     public View onCreateView(
@@ -41,16 +40,15 @@ public class MainFragment extends Fragment {
             Bundle savedInstanceState
 
     ) {
-
         binding = FragmentMainBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void playSound() {
         mediaPlayer.start();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
@@ -64,7 +62,18 @@ public class MainFragment extends Fragment {
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
-        binding.weatherApi.addView(new WeatherView(this.getContext()));
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    binding.weatherApi.addView(new WeatherView(getContext(), apiresult));
+                } catch (JSONException | CertificateException | IOException | NoSuchAlgorithmException | KeyStoreException | NoSuchProviderException | KeyManagementException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,21 +81,8 @@ public class MainFragment extends Fragment {
                         .navigate(R.id.action_MainFragment_to_AllinOneFragment);
             }
         });
-
-        RequestHttpConnection con = new RequestHttpConnection();
-
-        Executors.newSingleThreadExecutor().execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    con.callApi(getContext());
-                } catch (IOException | JSONException | NoSuchAlgorithmException | KeyManagementException | CertificateException | KeyStoreException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
     }
+
 
     @Override
     public void onDestroyView() {
