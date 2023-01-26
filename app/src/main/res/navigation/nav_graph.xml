@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_MainFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_WardrobeFragment"
+            app:destination="@id/WardrobeFragment" />
     </fragment>
 
     <fragment
@@ -170,5 +173,11 @@
         <action
             android:id="@+id/action_ShowPhotoFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/WardrobeFragment"
+        android:name="com.example.fashionapp.WardrobeFragment"
+        android:label="@string/eleventh_fragment_label"
+        tools:layout="@layout/fragment_wardrobe">
     </fragment>
 </navigation>
