@@ -52,7 +52,7 @@ public class ShowPhotoFragment extends Fragment {
     Button camera_open_id;
     ImageView click_image_id;
     TextView prediction;
-    String url = "http://127.0.0.1:5000/prediction";
+    String url = "https://fashionback.onrender.com/predict";
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
