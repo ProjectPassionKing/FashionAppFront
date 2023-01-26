@@ -73,13 +73,6 @@ public class MainFragment extends Fragment {
                         .navigate(R.id.action_MainFragment_to_AllinOneFragment);
             }
         });
-        binding.wardrobeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_MainFragment_to_WardrobeFragment);
-            }
-        });
 
         recordButton = getView().findViewById(R.id.mic_btn);
         binding.micBtn.setOnTouchListener(new View.OnTouchListener()  {
