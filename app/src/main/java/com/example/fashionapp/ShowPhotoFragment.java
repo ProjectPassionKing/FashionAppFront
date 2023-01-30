@@ -38,6 +38,7 @@ import com.android.volley.toolbox.Volley;
 
 import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
 
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,7 +53,6 @@ public class ShowPhotoFragment extends Fragment {
     Button camera_open_id;
     ImageView click_image_id;
     TextView prediction;
-    String url = "https://fashionback.azurewebsites.net/predict";
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
@@ -99,44 +99,43 @@ public class ShowPhotoFragment extends Fragment {
 
         prediction = getView().findViewById(R.id.prediction);
 
-        File finalMostRecentFile = mostRecentFile;
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener() {
-                    @Override
-                    public void onResponse(Object response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject((String) response);
-                            String data = jsonObject.getString("prediction");
-                            prediction.setText(data);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+        new Thread(() ->
+        {
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+            byte[] byteArray = byteArrayOutputStream.toByteArray();
+            String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
+            StringRequest request = new StringRequest(Request.Method.POST, "https://fashionback.azurewebsites.net/predict",
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject((String) response);
+                                String data = jsonObject.getString("prediction");
+                                prediction.setText(data);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
                         }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }){
-            @Override
-            protected Map getParams() {
-
-                String base64Image = null;
-                try {
-                    base64Image = Base64.encodeToString(readFileToByteArray(finalMostRecentFile), Base64.DEFAULT);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // handle error
+                        }
+                    }) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("file", encoded);
+                    return params;
                 }
+            };
 
-                Map params = new HashMap();
-                params.put("file", base64Image);
-                return params;
-
-            }
-        };
-        RequestQueue queue = Volley.newRequestQueue(getContext());
-        queue.add(stringRequest);
+            RequestQueue queue = Volley.newRequestQueue(getContext());
+            queue.add(request);
+        }).start();
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
