@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -17,19 +16,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentMainBinding;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+import androidx.annotation.RequiresApi;
 
 public class MainFragment extends Fragment {
     private MediaPlayer mediaPlayer;
@@ -38,17 +33,7 @@ public class MainFragment extends Fragment {
 
     Intent intent;
     SpeechRecognizer speechRecognizer;
-
     final int PERMISSION = 1;
-
-    //context nullable처리 나중에
-//    public Context context1;
-//
-//    @Override
-//    public void onAttach(@NonNull Context context) {
-//        super.onAttach(context);
-//        context1 = context;
-//    }
 
     @Override
     public View onCreateView(
@@ -58,13 +43,14 @@ public class MainFragment extends Fragment {
     ) {
         binding = FragmentMainBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     public void playSound() {
         mediaPlayer.start();
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -85,6 +71,18 @@ public class MainFragment extends Fragment {
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
+
+        WeatherView weatherView = new WeatherView(getContext());
+        try {
+            weatherView.connectapi(getContext(), getActivity());
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+
+        binding.weatherApi.addView(weatherView);
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -32,6 +32,9 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="camera">촬영하기</string>
 
+<!--    날씨 관련 -->
+    <string name="temperature">%s°C</string>
+
 <!--    타입-->
     <string name="straight">Straight</string>
     <string name="wave">Wave</string>
