@@ -33,7 +33,16 @@
     <string name="camera">촬영하기</string>
 
 <!--    날씨 관련 -->
-    <string name="temperature">%s°C</string>
+    <string name="temperature">°C</string>
+    <string name="sky1">맑음</string>
+    <string name="sky2">구름 조금</string>
+    <string name="sky3">구름 많음</string>
+    <string name="sky4">흐림</string>
+
+    <string name="rain">비</string>
+    <string name="rainsnow">비/눈</string>
+    <string name="snow">눈</string>
+    <string name="shower">소나기</string>
 
 <!--    타입-->
     <string name="straight">Straight</string>

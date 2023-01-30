@@ -12,10 +12,11 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/weather_icon"
+            android:src="@drawable/day_clear"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="20dp"
+            android:paddingTop="10dp"
 
             />
 
@@ -38,14 +39,15 @@
             android:id="@+id/weather_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="구름 조금"
+            android:text="@string/sky1"
             android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/icon_img"
+            app:layout_constraintEnd_toEndOf="@+id/icon_img"
             app:layout_constraintTop_toBottomOf="@+id/icon_img"
-
-            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:padding="3dp"
             />
 
         <TextView
