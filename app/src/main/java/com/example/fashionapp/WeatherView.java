@@ -6,20 +6,16 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import org.json.JSONException;
-
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.cert.CertificateException;
-import java.util.HashMap;
 import java.util.Map;
 
 public class WeatherView extends ConstraintLayout {
@@ -65,7 +61,6 @@ public class WeatherView extends ConstraintLayout {
 //            String pop = result.get("POP"); //강수확률 %
             String sno = result.get("SNO"); //신적설 량 (cm)
 
-            System.out.println("sno: " + sno);
             if (!sno.equals("적설없응")){
                 skycondition(sky, pty, sno);
             }
@@ -101,7 +96,7 @@ public class WeatherView extends ConstraintLayout {
             changeweathertxt(getTxtfromStr(R.string.snow) + pcp, R.drawable.snow);
         }
         if (pty.equals("4")) {
-            changeweathertxt(getTxtfromStr(R.string.shower) + pcp, R.drawable.rain);
+            changeweathertxt(getTxtfromStr(R.string.shower) + pcp, R.drawable.day_rain);
         }
     }
 
