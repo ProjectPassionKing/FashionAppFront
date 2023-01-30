@@ -29,9 +29,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -46,6 +44,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class ShowPhotoFragment extends Fragment {
 
@@ -99,42 +104,28 @@ public class ShowPhotoFragment extends Fragment {
 
         prediction = getView().findViewById(R.id.prediction);
 
+        File finalMostRecentFile = mostRecentFile;
+
         new Thread(() ->
         {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-            byte[] byteArray = byteArrayOutputStream.toByteArray();
-            String encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
+            OkHttpClient client = new OkHttpClient();
 
-            StringRequest request = new StringRequest(Request.Method.POST, "https://fashionback.azurewebsites.net/predict",
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject((String) response);
-                                String data = jsonObject.getString("prediction");
-                                prediction.setText(data);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            // handle error
-                        }
-                    }) {
-                @Override
-                protected Map<String, String> getParams() {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("file", encoded);
-                    return params;
-                }
-            };
+            RequestBody requestBody = new MultipartBody.Builder()
+                    .setType(MultipartBody.FORM)
+                    .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
+                    .build();
 
-            RequestQueue queue = Volley.newRequestQueue(getContext());
-            queue.add(request);
+            Request request = new Request.Builder()
+                    .url("https://fashionback.azurewebsites.net/predict")
+                    .post(requestBody)
+                    .build();
+
+            try {
+                client.newCall(request).execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }).start();
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
