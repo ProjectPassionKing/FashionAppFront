@@ -46,7 +46,6 @@ public class RequestHttpConnection {
         String ydate = LocalDate.now().minusDays(1).toString().replaceAll("-", "");
         String ctime = LocalTime.now().minusHours(1).toString().substring(0, 2) + "00";
 
-        System.out.println(ydate +" "+ ctime);
         String service_key = "byka7IIvsckHZJ1Gmr7CQMbdVSnXEjP4AFAbPrThEKFDRRCRmH9r%2FYtjgdch%2BDfTx11uQrrUp7Ukw03rATjLcw%3D%3D";
         String num_of_rows = "290";
         String page_num = "1";
@@ -106,7 +105,7 @@ public class RequestHttpConnection {
 
         JSONObject mainObject = new JSONObject(text);
         JSONArray itemArray = mainObject.getJSONObject("response").getJSONObject("body").getJSONObject("items").getJSONArray("item");
-
+        System.out.println("API CALL");
         Map<String, String> result = new HashMap<>();
         for (int i = 0; i < itemArray.length(); i++) {
             JSONObject item = itemArray.getJSONObject(i);
@@ -114,11 +113,15 @@ public class RequestHttpConnection {
             String value = item.getString("fcstValue");
             if (item.getString("category").equals("TMN") || item.getString("category").equals("TMX")) {
                 result.put(category, value);
+                System.out.println("category:"+category +" "+ value);
             }
             if (item.getString("fcstTime").equals(ctime)) {
                 result.put(category, value);
+                if (item.getString("category").equals("TMP")){
+                    System.out.println(category + " " + value);
+                }
             }
-            System.out.println(category + " " + value);
+
         }
         return result;
     }
