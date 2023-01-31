@@ -57,7 +57,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/text_square"
+        android:background="@drawable/text_button"
         android:padding="20dp"
         android:text="@string/straight_cordi_top"
         android:textColor="@color/black"
@@ -71,7 +71,7 @@
         android:id="@+id/cordi_3rd"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/text_square"
+        android:background="@drawable/text_button"
         android:padding="15dp"
         android:text="@string/straight_cordi_bottom"
         android:textColor="@color/black"
@@ -112,12 +112,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/button_circle"
         android:text="@string/menu_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.414"
-        app:srcCompat="@drawable/home_button" />
+        app:srcCompat="@drawable/home_button"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

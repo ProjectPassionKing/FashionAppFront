@@ -2,6 +2,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true" android:drawable="@drawable/text_square_chosen"/>
     <item android:state_focused="true" android:drawable="@drawable/text_square_chosen"/>
-    <item android:drawable="@drawable/text_square_selectable"/>
-
+    <item android:drawable="@drawable/text_square"/>
 </selector>
