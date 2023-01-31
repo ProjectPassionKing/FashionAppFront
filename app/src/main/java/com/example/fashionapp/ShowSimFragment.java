@@ -2,24 +2,19 @@ package com.example.fashionapp;
 
 import static android.app.Activity.RESULT_OK;
 
-import static org.apache.commons.io.FileUtils.readFileToByteArray;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.FileUtils;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -29,33 +24,20 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpResponse;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
-
-import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.fashionapp.databinding.FragmentShowSimBinding;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class ShowPhotoFragment extends Fragment {
+public class ShowSimFragment extends Fragment {
 
-    private FragmentShowPhotoBinding binding;
+    private FragmentShowSimBinding binding;
     Button camera_open_id;
     ImageView click_image_id;
     TextView prediction;
@@ -67,7 +49,7 @@ public class ShowPhotoFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentShowPhotoBinding.inflate(inflater, container, false);
+        binding = FragmentShowSimBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -117,7 +99,7 @@ public class ShowPhotoFragment extends Fragment {
                     .build();
 
             Request request = new Request.Builder()
-                    .url("http://172.23.247.89:5000/pred")
+                    .url("http://172.23.247.89:5000/sim")
                     .post(requestBody)
                     .build();
 
@@ -126,22 +108,17 @@ public class ShowPhotoFragment extends Fragment {
                 String responseBodyString = response.body().string();
                 System.out.println(responseBodyString);
 
-                try {
-                    JSONObject jsonObject = new JSONObject(responseBodyString);
-                    String data = jsonObject.getString("prediction");
+                byte[] decodedString = Base64.decode(responseBodyString, Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            prediction.setText(data);
-                        }
-                    });
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        click_image_id.setImageBitmap(decodedByte);
+                    }
+                });
 
-                    response.close();
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                response.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -153,15 +130,15 @@ public class ShowPhotoFragment extends Fragment {
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_MainFragment);
+                NavHostFragment.findNavController(ShowSimFragment.this)
+                        .navigate(R.id.action_ShowSimFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_AllinOneFragment);
+                NavHostFragment.findNavController(ShowSimFragment.this)
+                        .navigate(R.id.action_ShowSimFragment_to_AllinOneFragment);
             }
         });
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {
