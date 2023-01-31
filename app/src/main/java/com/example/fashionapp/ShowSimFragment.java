@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
+import com.example.fashionapp.databinding.FragmentShowSimBinding;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,7 @@ import okhttp3.Response;
 
 public class ShowSimFragment extends Fragment {
 
-    private FragmentShowPhotoBinding binding;
+    private FragmentShowSimBinding binding;
     Button camera_open_id;
     ImageView click_image_id;
     TextView prediction;
@@ -49,7 +49,7 @@ public class ShowSimFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentShowPhotoBinding.inflate(inflater, container, false);
+        binding = FragmentShowSimBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -131,14 +131,14 @@ public class ShowSimFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_MainFragment);
+                        .navigate(R.id.action_ShowSimFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_ShowSimFragment_to_AllinOneFragment);
             }
         });
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {

@@ -132,6 +132,22 @@
             app:destination="@id/ShowPhotoFragment" />
     </fragment>
     <fragment
+        android:id="@+id/TakeSimFragment"
+        android:name="com.example.fashionapp.TakeSimFragment"
+        android:label="@string/sim_fragment_label"
+        tools:layout="@layout/fragment_take_sim">
+
+        <action
+            android:id="@+id/action_TakeSimFragment_to_MainFragment"
+            app:destination="@id/main_fragment" />
+        <action
+            android:id="@+id/action_TakeSimFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
+        <action
+            android:id="@+id/action_TakeSimFragment_to_ShowSimFragment"
+            app:destination="@id/ShowSimFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.AllInOneFragment"
         android:label="@string/ninth_fragment_label"
@@ -160,6 +176,9 @@
     <action
         android:id="@+id/action_global_DetailFragment"
         app:destination="@id/DetailFragment" />
+    <action
+        android:id="@+id/action_global_TakeSimFragment"
+        app:destination="@id/TakeSimFragment" />
 
     <fragment
         android:id="@+id/ShowPhotoFragment"
@@ -172,6 +191,19 @@
             app:destination="@id/main_fragment" />
         <action
             android:id="@+id/action_ShowPhotoFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ShowSimFragment"
+        android:name="com.example.fashionapp.ShowSimFragment"
+        android:label="@string/tenth_fragment_label"
+        tools:layout="@layout/fragment_show_sim">
+
+        <action
+            android:id="@+id/action_ShowSimFragment_to_MainFragment"
+            app:destination="@id/main_fragment" />
+        <action
+            android:id="@+id/action_ShowSimFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
     </fragment>
 </navigation>

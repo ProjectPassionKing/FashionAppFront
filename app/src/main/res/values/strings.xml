@@ -56,6 +56,7 @@
     <string name="more_req_cordi">코디 팁 알려줘</string>
     <string name="more_req_detail">체형에 대해 더 자세하게 알려줘</string>
     <string name="more_req_diagnosis">체형진단해줘</string>
+    <string name="more_req_sim">버츄얼 옷장</string>
 
     <!--    <string name="ask_wether">날씨에 맞는 옷 추천해줘</string>-->
 
@@ -86,6 +87,7 @@
     <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴</string>
     <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
+    <string name="sim_fragment_label" />
 
     <!--  Wave type  -->'
 
