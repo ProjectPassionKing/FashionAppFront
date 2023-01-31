@@ -49,13 +49,15 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/click_image"
         app:layout_constraintEnd_toEndOf="@+id/click_image"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toTopOf="@+id/click_image" />
+        app:layout_constraintTop_toTopOf="@+id/click_image"
+        app:layout_constraintVertical_bias="0.046" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
