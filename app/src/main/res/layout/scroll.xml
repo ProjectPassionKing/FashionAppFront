@@ -55,6 +55,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.296"
             app:layout_constraintStart_toEndOf="@+id/more_request_btn2" />
+
+        <android.widget.Button
+            android:id="@+id/more_request_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/text_button"
+            android:text="버츄얼 옷장"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.296"
+            app:layout_constraintStart_toEndOf="@+id/more_request_btn2" />
+
     </LinearLayout>
 
 </HorizontalScrollView>

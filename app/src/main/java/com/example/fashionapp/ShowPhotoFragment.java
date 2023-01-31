@@ -117,7 +117,7 @@ public class ShowPhotoFragment extends Fragment {
                     .build();
 
             Request request = new Request.Builder()
-                    .url("http://172.23.247.89:5000")
+                    .url("http://172.23.247.89:5000/pred")
                     .post(requestBody)
                     .build();
 
