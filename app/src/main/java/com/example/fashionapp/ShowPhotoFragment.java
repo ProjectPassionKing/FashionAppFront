@@ -31,6 +31,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.HttpResponse;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -116,17 +117,38 @@ public class ShowPhotoFragment extends Fragment {
                     .build();
 
             Request request = new Request.Builder()
-                    .url("https://fashionback.azurewebsites.net/predict")
+                    .url("http://10.0.2.2:5000/predict")
                     .post(requestBody)
                     .build();
 
             try {
-                client.newCall(request).execute();
+                Response response = client.newCall(request).execute();
+                String responseBodyString = response.body().string();
+                System.out.println(responseBodyString);
+
+                try {
+                    JSONObject jsonObject = new JSONObject(responseBodyString);
+                    String data = jsonObject.getString("prediction");
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            prediction.setText(data);
+                        }
+                    });
+
+                    response.close();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         }).start();
+
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
