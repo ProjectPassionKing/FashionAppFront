@@ -80,8 +80,6 @@ public class MainFragment extends Fragment {
             e.printStackTrace();
         }
 
-
-
         binding.weatherApi.addView(weatherView);
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +96,6 @@ public class MainFragment extends Fragment {
             public boolean onTouch(View view, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_UP){
                     startRecording();
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        stopRecording();
-                    }
                 }
                 return false;
             }
@@ -115,7 +110,6 @@ public class MainFragment extends Fragment {
 
         @Override
         public void onBeginningOfSpeech() {
-            //사용자가 말하기 시작
         }
 
         @Override
@@ -130,13 +124,11 @@ public class MainFragment extends Fragment {
 
         @Override
         public void onEndOfSpeech() {
-            //사용자가 말을 멈추면 호출
-            //인식 결과에 따라 onError나 onResults가 호출됨
         }
 
         @Override
         public void onError(int error) {    //토스트 메세지로 에러 출력
-            String message;
+            String message = null;
             switch (error) {
                 case SpeechRecognizer.ERROR_AUDIO:
                     message = "오디오 에러";
@@ -161,10 +153,9 @@ public class MainFragment extends Fragment {
                     message = "말하는 시간초과";
                     break;
                 default:
-                    message = "알 수 없는 오류임";
                     break;
             }
-            Toast.makeText(getContext(), "에러가 발생하였습니다. : " + message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
 
         //인식 결과가 준비되면 호출
@@ -192,6 +183,10 @@ public class MainFragment extends Fragment {
                     NavHostFragment.findNavController(MainFragment.this)
                             .navigate(R.id.action_MainFragment_to_CordiTipFragment);
                 }
+                else if (s.contains("옷장")) {
+                    NavHostFragment.findNavController(MainFragment.this)
+                            .navigate(R.id.action_MainFragment_to_TakeSimFragment);
+                }
             }
 
         }
@@ -211,6 +206,7 @@ public class MainFragment extends Fragment {
         speechRecognizer=SpeechRecognizer.createSpeechRecognizer(getContext());
         speechRecognizer.setRecognitionListener(listener);
         speechRecognizer.startListening(intent);
+        Toast.makeText(getContext(), "녹음중입니다.", Toast.LENGTH_SHORT).show();
     }
 
     private void stopRecording(){
