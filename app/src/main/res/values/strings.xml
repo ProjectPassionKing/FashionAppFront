@@ -15,6 +15,9 @@
     <string name="ninth_fragment_label">Ninth Fragment</string>
     <string name="tenth_fragment_label">Tenth Fragment</string>
     <string name="eleventh_fragment_label">Eleventh Fragment</string>
+    <string name="sim_fragment_label">Sim Fragment</string>
+    <string name="show_sim_fragment_label">Show Sim Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 

@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_MainFragment_to_CordiTipFragment"
             app:destination="@id/CordiTipFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_TakeSimFragment"
+            app:destination="@id/TakeSimFragment" />
     </fragment>
 
     <fragment
@@ -196,7 +199,7 @@
     <fragment
         android:id="@+id/ShowSimFragment"
         android:name="com.example.fashionapp.ShowSimFragment"
-        android:label="@string/tenth_fragment_label"
+        android:label="@string/show_sim_fragment_label"
         tools:layout="@layout/fragment_show_sim">
 
         <action
