@@ -7,12 +7,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,7 +36,7 @@ import okhttp3.Response;
 public class ShowSimFragment extends Fragment {
 
     private FragmentShowSimBinding binding;
-    ImageView click_image_id;
+    ImageView sim_image_id;
     TextView prediction;
 
     ActivityResultLauncher<Intent> activityResultLauncher;
@@ -69,15 +67,15 @@ public class ShowSimFragment extends Fragment {
         }
 
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
-        click_image_id = getView().findViewById(R.id.click_image);
-        click_image_id.setImageBitmap(bitmap);
+        sim_image_id = getView().findViewById(R.id.sim_image);
+        sim_image_id.setImageBitmap(bitmap);
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     Bitmap photo = (Bitmap) result.getData().getExtras().get("data");
-                    click_image_id.setImageBitmap(photo);
+                    sim_image_id.setImageBitmap(photo);
                 }
             }
         });
@@ -111,7 +109,7 @@ public class ShowSimFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        click_image_id.setImageBitmap(decodedByte);
+                        sim_image_id.setImageBitmap(decodedByte);
                     }
                 });
 
