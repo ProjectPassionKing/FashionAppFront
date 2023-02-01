@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/main_fragment"
         android:name="com.example.fashionapp.MainFragment"
-        android:label="@string/second_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_main">
 
         <action
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/diagnosis_fragment"
         android:name="com.example.fashionapp.DiagnosisFragment"
-        android:label="@string/third_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_diagnosis">
 
         <action
@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/ResultFragment"
         android:name="com.example.fashionapp.ResultFragment"
-        android:label="@string/fourth_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_result">
 
         <action
@@ -76,7 +76,7 @@
     <fragment
         android:id="@+id/DetailFragment"
         android:name="com.example.fashionapp.DetailFragment"
-        android:label="@string/fifth_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_detail">
 
         <action
@@ -92,7 +92,7 @@
     <fragment
         android:id="@+id/CordiTipFragment"
         android:name="com.example.fashionapp.CordiTipFragment"
-        android:label="@string/sixth_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_cordi_tip">
 
         <action
@@ -108,7 +108,7 @@
     <fragment
         android:id="@+id/RecommandFragment"
         android:name="com.example.fashionapp.RecommandFragment"
-        android:label="@string/seventh_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_recommand">
 
         <action
@@ -121,7 +121,7 @@
     <fragment
         android:id="@+id/TakePhotoFragment"
         android:name="com.example.fashionapp.TakePhotoFragment"
-        android:label="@string/eight_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_take_photo">
 
         <action
@@ -137,7 +137,7 @@
     <fragment
         android:id="@+id/TakeSimFragment"
         android:name="com.example.fashionapp.TakeSimFragment"
-        android:label="@string/sim_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_take_sim">
 
         <action
@@ -153,7 +153,7 @@
     <fragment
         android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.AllInOneFragment"
-        android:label="@string/ninth_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_all_in_one">
 
         <action
@@ -186,7 +186,7 @@
     <fragment
         android:id="@+id/ShowPhotoFragment"
         android:name="com.example.fashionapp.ShowPhotoFragment"
-        android:label="@string/tenth_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_show_photo">
 
         <action
@@ -199,7 +199,7 @@
     <fragment
         android:id="@+id/ShowSimFragment"
         android:name="com.example.fashionapp.ShowSimFragment"
-        android:label="@string/show_sim_fragment_label"
+        android:label=""
         tools:layout="@layout/fragment_show_sim">
 
         <action
