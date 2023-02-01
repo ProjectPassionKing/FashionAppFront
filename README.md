@@ -1,3 +1,17 @@
-# FashionApp
-Android app for Fashion Project  
-Refer to other repo for main codes.
+# Dress Up With A.
+
+SKT FLY AI 2기의 최종 프로젝트  
+기존 A. 어플리케이션에 AI 스타일링 기능을 구현  
+
+## 모델팀
+이수연, 강민규, 김하늘
+
+## 개발팀  
+윤민석, 이수정, 하지현
+
+
+## 기능
+1. 문항을 통한 체형 진단
+2. 진단 결과를 이용하여 11번가 옷 추천
+3. 옷을 촬영하면 CV를 통해 유사한 옷 추천
+4. 옷을 가상으로 입어볼 수 있는 버츄얼 옷장
