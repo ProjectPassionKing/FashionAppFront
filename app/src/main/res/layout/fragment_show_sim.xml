@@ -14,16 +14,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    tools:context=".ShowPhotoFragment">
-
-    <ImageView
-        android:id="@+id/click_image"
-        android:layout_width="309dp"
-        android:layout_height="356dp"
-        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera_button" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
