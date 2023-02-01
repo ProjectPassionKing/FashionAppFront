@@ -14,6 +14,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ShowPhotoFragment">
+
+    <ImageView
+        android:id="@+id/click_image"
+        android:layout_width="309dp"
+        android:layout_height="356dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camera_button" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
@@ -29,6 +39,22 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
+
+    <TextView
+        android:id="@+id/prediction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/click_image"
+        app:layout_constraintEnd_toEndOf="@+id/click_image"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/click_image"
+        app:layout_constraintTop_toTopOf="@+id/click_image"
+        app:layout_constraintVertical_bias="0.046" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
