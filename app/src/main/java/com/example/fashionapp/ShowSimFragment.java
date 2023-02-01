@@ -38,7 +38,6 @@ import okhttp3.Response;
 public class ShowSimFragment extends Fragment {
 
     private FragmentShowSimBinding binding;
-    Button camera_open_id;
     ImageView click_image_id;
     TextView prediction;
 
@@ -72,8 +71,6 @@ public class ShowSimFragment extends Fragment {
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
         click_image_id = getView().findViewById(R.id.click_image);
         click_image_id.setImageBitmap(bitmap);
-
-        camera_open_id = getView().findViewById(R.id.camera_button);
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
@@ -139,13 +136,6 @@ public class ShowSimFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
                         .navigate(R.id.action_ShowSimFragment_to_AllinOneFragment);
-            }
-        });
-        binding.cameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                activityResultLauncher.launch(camera_intent);
             }
         });
     }
