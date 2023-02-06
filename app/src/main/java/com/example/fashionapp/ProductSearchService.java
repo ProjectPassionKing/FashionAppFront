@@ -21,7 +21,7 @@ import java.util.List;
 public class ProductSearchService {
 
     private String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
-    private String otherurl = "&apiCode=ProductSearch&keyword=";
+    private String otherurl = "&apiCode=ProductSearch&sortCd=CP&keyword=";
     private String key = BuildConfig.SEARCH_KEY;
     private String keyword; // 검색할 키워드
 
@@ -31,7 +31,6 @@ public class ProductSearchService {
 
     public List<Product> search() throws IOException, XmlPullParserException {
         List<Product> list = null;
-//        keyword = "브이넥";
         URL url = new URL(rurl+key+otherurl+keyword);
 
         URLConnection urlCon = url.openConnection();
@@ -40,7 +39,6 @@ public class ProductSearchService {
         XmlPullParser parser = factory.newPullParser();
 
         parser.setInput(new InputStreamReader(urlCon.getInputStream(), "EUC-KR"));
-//        InputStream is = urlCon.getInputStream();
 
         int eventType = parser.getEventType();
         Product p = null;
@@ -71,10 +69,10 @@ public class ProductSearchService {
                                     p.setProductCode(parser.nextText());
                                 break;
                             case "ProductName":
-                                if (p!=null)
-                                    p.setProductName(parser.nextText());
+                                assert p != null;
+                                p.setProductName(parser.nextText());
                                 break;
-                            case "ProductImage":
+                            case "ProductImage300":
                                 if (p!=null)
                                     p.setProductImage(parser.nextText());
                                 break;
@@ -116,6 +114,7 @@ public class ProductSearchService {
             eventType = parser.next();
         }
 
+        assert p != null;
         return list;
     }
 }

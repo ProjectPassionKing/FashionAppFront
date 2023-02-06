@@ -80,8 +80,6 @@ public class MainFragment extends Fragment {
             e.printStackTrace();
         }
 
-
-
         binding.weatherApi.addView(weatherView);
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {

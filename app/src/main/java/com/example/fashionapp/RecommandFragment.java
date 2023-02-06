@@ -59,20 +59,12 @@ public class RecommandFragment extends Fragment {
             }
         });
 
-        productList = new ArrayList<Product>();
-
-        ProductSearchService service = new ProductSearchService("브이넥");
-//        ProductSearchThread pthread = new ProductSearchThread(service, handler);
-//        pthread.start();
-
+        String keyword = "브이넥";
+        SearchAPI searchAPI = new SearchAPI(getContext());
+        searchAPI.callapi(getActivity(),keyword);
+        binding.searchView.addView(searchAPI);
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
-        new Thread(()->{
-            try {
-                service.search();
-            } catch (IOException | XmlPullParserException e) {
-                e.printStackTrace();
-            }
-        }).start();
+
         binding.scrollview.addView(moreScrollView);
     }
 
