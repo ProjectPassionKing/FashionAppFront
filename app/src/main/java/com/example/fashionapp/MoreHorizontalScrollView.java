@@ -35,7 +35,6 @@ public class MoreHorizontalScrollView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 String btnTxt = (String) ((Button) (findViewById(R.id.more_request_btn1))).getText();
-                System.out.println("***"+btnTxt);
                 changeFragment(fragment, btnTxt);
 
             }
@@ -45,8 +44,6 @@ public class MoreHorizontalScrollView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 String btnTxt = (String) ((Button) (findViewById(R.id.more_request_btn2))).getText();
-                System.out.println("***"+btnTxt);
-
                 changeFragment(fragment, btnTxt);
             }
         });
@@ -55,16 +52,12 @@ public class MoreHorizontalScrollView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 String btnTxt = (String) ((Button) (findViewById(R.id.more_request_btn3))).getText();
-                System.out.println("***"+btnTxt);
                 changeFragment(fragment, btnTxt);
             }
         });
     }
 
     private void changeTxt(Fragment fragment) {
-        //현재 fragment에 따라서 문구 변경(btn1만?)
-        //메인, 체형진단(사진), 결과, 자세히, 코디 팁, 추천
-        System.out.println(fragment.getClass()+"*****");
 
         if(fragment.getClass() == ResultFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_detail));

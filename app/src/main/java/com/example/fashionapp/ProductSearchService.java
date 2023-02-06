@@ -1,0 +1,121 @@
+package com.example.fashionapp;
+
+import android.os.Build;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ProductSearchService {
+
+    private String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
+    private String otherurl = "&apiCode=ProductSearch&keyword=";
+    private String key = BuildConfig.SEARCH_KEY;
+    private String keyword; // 검색할 키워드
+
+    public ProductSearchService(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public List<Product> search() throws IOException, XmlPullParserException {
+        List<Product> list = null;
+//        keyword = "브이넥";
+        URL url = new URL(rurl+key+otherurl+keyword);
+
+        URLConnection urlCon = url.openConnection();
+
+        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        XmlPullParser parser = factory.newPullParser();
+
+        parser.setInput(new InputStreamReader(urlCon.getInputStream(), "EUC-KR"));
+//        InputStream is = urlCon.getInputStream();
+
+        int eventType = parser.getEventType();
+        Product p = null;
+
+//        XmlPullParser.TEXT //4
+
+        while (eventType != XmlPullParser.END_DOCUMENT) {
+            switch (eventType) {
+                case XmlPullParser.END_DOCUMENT: //1
+                    break;
+                case XmlPullParser.START_DOCUMENT: //0
+                    list = new ArrayList<Product>();
+                    break;
+                case XmlPullParser.END_TAG: //3
+                    String tag = parser.getName();
+                    if (tag.equals("Product")) {
+                        list.add(p);
+                        p = null; //초기화
+                    }
+                case XmlPullParser.START_TAG: //2
+                    tag = parser.getName();
+                        switch (tag) {
+                            case "Product":
+                                p = new Product();
+                                break;
+                            case "ProductCode":
+                                if (p!=null)
+                                    p.setProductCode(parser.nextText());
+                                break;
+                            case "ProductName":
+                                if (p!=null)
+                                    p.setProductName(parser.nextText());
+                                break;
+                            case "ProductImage":
+                                if (p!=null)
+                                    p.setProductImage(parser.nextText());
+                                break;
+                            case "ProductPrice":
+                                if (p!=null)
+                                    p.setProductPrice(parser.nextText());
+                                break;
+                            case "Seller":
+                                assert p != null;
+                                p.setSeller(parser.nextText());
+                                break;
+                            case "Rating":
+                                assert p != null;
+                                p.setRating(parser.nextText());
+                                break;
+                            case "DetailPageUrl":
+                                assert p != null;
+                                p.setProductDetailUrl(parser.nextText());
+                                break;
+                            case "SalePrice":
+                                assert p != null;
+                                p.setSalePrice(parser.nextText());
+                                break;
+                            case "Delivery":
+                                assert p != null;
+                                p.setDelivery(parser.nextText());
+                                break;
+                            case "ReviewCount":
+                                assert p != null;
+                                p.setReviewCount(parser.nextText());
+                                break;
+                            case "BuySatisfy":
+                                assert p != null;
+                                p.setBuySatisfy(parser.nextText());
+                                break;
+                        }
+                    }
+
+            eventType = parser.next();
+        }
+
+        return list;
+    }
+}
