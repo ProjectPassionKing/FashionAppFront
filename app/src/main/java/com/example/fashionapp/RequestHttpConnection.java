@@ -37,7 +37,7 @@ public class RequestHttpConnection {
         String ydate = LocalDate.now().minusDays(1).toString().replaceAll("-", "");
         String ctime = LocalTime.now().minusHours(1).toString().substring(0, 2) + "00";
 
-        String service_key = "byka7IIvsckHZJ1Gmr7CQMbdVSnXEjP4AFAbPrThEKFDRRCRmH9r%2FYtjgdch%2BDfTx11uQrrUp7Ukw03rATjLcw%3D%3D";
+        String service_key = BuildConfig.WEATHER_KEY;
         String num_of_rows = "290";
         String page_num = "1";
         String data_type = "JSON";

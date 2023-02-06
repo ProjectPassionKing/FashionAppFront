@@ -2,6 +2,8 @@ package com.example.fashionapp;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +12,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
-public class RecommandFragment extends Fragment {
+import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class RecommandFragment extends Fragment {
+    private List<Product> productList;
     private MediaPlayer mediaPlayer;
     private FragmentRecommandBinding binding;
 
@@ -51,10 +59,27 @@ public class RecommandFragment extends Fragment {
             }
         });
 
-
+        String keyword = "브이넥";
+        SearchAPI searchAPI = new SearchAPI(getContext());
+        searchAPI.callapi(getActivity(),keyword);
+        binding.searchView.addView(searchAPI);
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+
         binding.scrollview.addView(moreScrollView);
     }
+
+//    private Handler handler = new Handler() {
+//        public void handleMessage(Message msg) {
+//            super.handleMessage(msg);
+//            if (msg.what == 1) {
+//                if (msg.arg2 == 10) {
+//                    productList.clear();
+//                    productList.addAll((List<Product>) msg.obj);
+//                }
+//            }
+//        }
+//    };
+
 
     @Override
     public void onDestroyView() {
