@@ -168,8 +168,8 @@
     </fragment>
 
     <action
-        android:id="@+id/action_global_diagnosis_fragment"
-        app:destination="@id/diagnosis_fragment" />
+        android:id="@+id/action_global_DiagnosisSelectFragment"
+        app:destination="@id/DiagnosisSelectFragment" />
     <action
         android:id="@+id/action_global_TakePhotoFragment"
         app:destination="@id/TakePhotoFragment" />
@@ -209,4 +209,34 @@
             android:id="@+id/action_ShowSimFragment_to_AllinOneFragment"
             app:destination="@id/AllinOneFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/DiagnosisSelectFragment"
+        android:name="com.example.fashionapp.DiagnosisSelectFragment"
+        android:label=""
+        tools:layout="@layout/fragment_diagnosis_select">
+
+        <action
+            android:id="@+id/action_DiagnosisSelectFragment_to_MainFragment"
+            app:destination="@id/main_fragment" />
+        <action
+            android:id="@+id/action_DiagnosisSelectFragment_to_AllinOneFragment"
+            app:destination="@id/AllinOneFragment" />
+        <action
+            android:id="@+id/action_DiagnosisSelectFragment_to_DiagnosisFragment"
+            app:destination="@id/diagnosis_fragment" />
+        <action
+            android:id="@+id/action_DiagnosisSelectFragment_to_DiagnosisPicFragment"
+            app:destination="@id/DiagnosisPicFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DiagnosisPicFragment"
+        android:name="com.example.fashionapp.DiagnosisPicFragment"
+        android:label=""
+        tools:layout="@layout/fragment_diagnosis_pic">
+    </fragment>
+
+
+
 </navigation>

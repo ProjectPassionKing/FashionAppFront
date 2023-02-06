@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_DiagnosisSelectFragment_to_MainFragment" type="id" />
+    <item name="action_DiagnosisSelectFragment_to_AllinOneFragment" type="id" />
+    <item name="diagnosis_pic_fragment" type="id" />
+</resources>

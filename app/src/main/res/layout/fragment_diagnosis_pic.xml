@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiagnosisPicFragment">
+
+    <ImageView
+        android:id="@+id/avatar_img"
+        android:layout_width="310dp"
+        android:layout_height="351dp"
+        android:contentDescription="character"
+        android:src="@drawable/character"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <TextView
+        android:id="@+id/adot_talk_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나와 가장 비슷한 사진은?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <ImageButton
+        android:id="@+id/menu_hamburger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@android:color/transparent"
+        android:text="Menu"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052"
+        app:srcCompat="@drawable/hamburger_menu" />
+
+
+    <ImageButton
+        android:id="@+id/home_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_circle"
+        android:text="@string/menu_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.414"
+        app:srcCompat="@drawable/home_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
