@@ -3,8 +3,8 @@ package com.example.fashionapp;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -14,7 +14,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.List;
 
-public class SearchAPI extends HorizontalScrollView {
+public class SearchAPI extends LinearLayout {
 
     public SearchAPI(Context context) {
         super(context);
@@ -23,7 +23,7 @@ public class SearchAPI extends HorizontalScrollView {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.search_api, this, true);
+        inflater.inflate(R.layout.searchresult, this, true);
     }
 
     public void callapi(Activity activity, String keyword){

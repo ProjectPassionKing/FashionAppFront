@@ -21,7 +21,7 @@ import java.util.List;
 public class ProductSearchService {
 
     private String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
-    private String otherurl = "&apiCode=ProductSearch&sortCd=CP&keyword=";
+    private String otherurl = "&pageSize=5&apiCode=ProductSearch&sortCd=CP&keyword=";
     private String key = BuildConfig.SEARCH_KEY;
     private String keyword; // 검색할 키워드
 

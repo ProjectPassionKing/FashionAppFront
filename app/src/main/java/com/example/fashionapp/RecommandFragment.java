@@ -7,9 +7,11 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -19,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecommandFragment extends Fragment {
-    private List<Product> productList;
     private MediaPlayer mediaPlayer;
     private FragmentRecommandBinding binding;
 
@@ -60,25 +61,29 @@ public class RecommandFragment extends Fragment {
         });
 
         String keyword = "브이넥";
-        SearchAPI searchAPI = new SearchAPI(getContext());
-        searchAPI.callapi(getActivity(),keyword);
-        binding.searchView.addView(searchAPI);
+        new Thread(() -> {
+            ProductSearchService service = new ProductSearchService(keyword);
+            try {
+                List<Product> productList = service.search();
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (Product p : productList) {
+                            SearchLayout searchLayout = new SearchLayout(getContext(), p);
+                            binding.searchLinear.addView(searchLayout);
+                        }
+                    }
+                });
+            } catch (IOException | XmlPullParserException e) {
+                e.printStackTrace();
+            }
+
+        }).start();
+
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
 
         binding.scrollview.addView(moreScrollView);
     }
-
-//    private Handler handler = new Handler() {
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if (msg.what == 1) {
-//                if (msg.arg2 == 10) {
-//                    productList.clear();
-//                    productList.addAll((List<Product>) msg.obj);
-//                }
-//            }
-//        }
-//    };
 
 
     @Override
