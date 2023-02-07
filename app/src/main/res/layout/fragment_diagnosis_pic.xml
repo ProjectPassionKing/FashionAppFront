@@ -4,47 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowPhotoFragment">
-
-    <ImageView
-        android:id="@+id/click_image"
-        android:layout_width="396dp"
-        android:layout_height="686dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/home_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".DiagnosisPicFragment">
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="이 옷이네요!"
+        android:layout_marginTop="52dp"
+        android:text="나와 가장 비슷한 사진은?"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toTopOf="@+id/click_image" />
-
-    <TextView
-        android:id="@+id/prediction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="197dp"
-        android:layout_marginEnd="199dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
+        app:layout_constraintBottom_toTopOf="@+id/straight_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
@@ -62,18 +37,47 @@
         app:srcCompat="@drawable/hamburger_menu" />
 
 
-    <android.widget.Button
-        android:id="@+id/confirm_button"
-        android:layout_width="237dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/text_square"
-        android:text="확인"
+    <ImageButton
+        android:id="@+id/straight_pic"
+        android:layout_width="174dp"
+        android:layout_height="217dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/home_btn"
+        app:srcCompat="@raw/straight"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="127dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageButton
+        android:id="@+id/natural_pic"
+        android:layout_width="173dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wave_pic"
+        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
+        app:srcCompat="@raw/natural" />
+
+    <ImageButton
+        android:id="@+id/wave_pic"
+        android:layout_width="174dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
+        app:srcCompat="@raw/wave" />
 
     <ImageButton
         android:id="@+id/home_btn"
@@ -89,5 +93,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.414"
         app:srcCompat="@drawable/home_button" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

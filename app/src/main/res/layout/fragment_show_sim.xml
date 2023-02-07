@@ -7,6 +7,16 @@
     tools:context=".ShowSimFragment">
 
     <ImageView
+        android:id="@+id/click_image"
+        android:layout_width="391dp"
+        android:layout_height="700dp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
         android:id="@+id/sim_image"
         android:layout_width="409dp"
         android:layout_height="729dp"
@@ -21,17 +31,17 @@
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="4dp"
         android:text="옷을 입었어요!"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/menu_hamburger"
-        app:layout_constraintEnd_toEndOf="@+id/sim_image"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toEndOf="@+id/menu_hamburger"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
+
 
     <ImageButton
         android:id="@+id/menu_hamburger"

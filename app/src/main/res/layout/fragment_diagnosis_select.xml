@@ -4,47 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowPhotoFragment">
+    tools:context=".DiagnosisSelectFragment">
 
     <ImageView
-        android:id="@+id/click_image"
-        android:layout_width="396dp"
-        android:layout_height="686dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/home_btn"
+        android:id="@+id/avatar_img"
+        android:layout_width="310dp"
+        android:layout_height="351dp"
+        android:contentDescription="character"
+        android:src="@drawable/character"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="이 옷이네요!"
+        android:text="어떻게 진단할까요?"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toTopOf="@+id/click_image" />
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.135" />
 
-    <TextView
-        android:id="@+id/prediction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="197dp"
-        android:layout_marginEnd="199dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25dp"
+
+    <android.widget.Button
+        android:id="@+id/pic_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/select_textbox"
+        android:text="그림으로 진단하기"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
+        app:layout_constraintBottom_toTopOf="@+id/options_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <android.widget.Button
+        android:id="@+id/options_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/select_textbox"
+        android:text="선택지로 진단하기"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/home_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
@@ -62,19 +82,6 @@
         app:srcCompat="@drawable/hamburger_menu" />
 
 
-    <android.widget.Button
-        android:id="@+id/confirm_button"
-        android:layout_width="237dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/text_square"
-        android:text="확인"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/home_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageButton
         android:id="@+id/home_btn"
         android:layout_width="wrap_content"
@@ -89,5 +96,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.414"
         app:srcCompat="@drawable/home_button" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
