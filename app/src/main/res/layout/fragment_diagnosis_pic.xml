@@ -6,33 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".DiagnosisPicFragment">
 
-    <ImageView
-        android:id="@+id/avatar_img"
-        android:layout_width="310dp"
-        android:layout_height="351dp"
-        android:contentDescription="character"
-        android:src="@drawable/character"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
-
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:text="나와 가장 비슷한 사진은?"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
-        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
-        app:layout_constraintStart_toStartOf="@+id/avatar_img"
-        app:layout_constraintTop_toTopOf="@+id/avatar_img"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintBottom_toTopOf="@+id/straight_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
@@ -49,6 +36,44 @@
         app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/hamburger_menu" />
 
+
+    <ImageButton
+        android:id="@+id/straight_pic"
+        android:layout_width="174dp"
+        android:layout_height="217dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
+        android:textColor="@color/black"
+        app:srcCompat="@raw/straight"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="127dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageButton
+        android:id="@+id/natural_pic"
+        android:layout_width="173dp"
+        android:layout_height="222dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
+        android:textColor="@color/black"
+        app:srcCompat="@raw/natural"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="360dp" />
+
+    <ImageButton
+        android:id="@+id/wave_pic"
+        android:layout_width="174dp"
+        android:layout_height="224dp"
+        android:background="@drawable/shadow_button_layer_list"
+        android:scaleType="fitXY"
+        android:textColor="@color/black"
+        app:srcCompat="@raw/wave"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="360dp" />
 
     <ImageButton
         android:id="@+id/home_btn"
