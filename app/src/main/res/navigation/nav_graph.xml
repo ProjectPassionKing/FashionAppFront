@@ -233,5 +233,12 @@
         android:name="com.example.fashionapp.DiagnosisPicFragment"
         android:label=""
         tools:layout="@layout/fragment_diagnosis_pic">
+    <action
+        android:id="@+id/action_DiagnosisPicFragment_to_MainFragment"
+        app:destination="@id/main_fragment" />
+    <action
+        android:id="@+id/action_DiagnosisPicFragment_to_AllinOneFragment"
+        app:destination="@id/AllinOneFragment" />
+
     </fragment>
 </navigation>

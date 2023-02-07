@@ -36,14 +36,14 @@ public class DiagnosisPicFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_MainFragment);
+                        .navigate(R.id.action_DiagnosisPicFragment_to_MainFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_DiagnosisPicFragment_to_AllinOneFragment);
             }
         });
     }
