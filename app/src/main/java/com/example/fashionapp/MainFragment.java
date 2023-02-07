@@ -1,8 +1,11 @@
 package com.example.fashionapp;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -30,6 +33,8 @@ public class MainFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     private FragmentMainBinding binding;
     private ImageButton recordButton;
+    private SharedPreferences prefs;
+    private static final String AUDIO_PLAYED = "audio_played";
 
     Intent intent;
     SpeechRecognizer speechRecognizer;
@@ -42,14 +47,8 @@ public class MainFragment extends Fragment {
 
     ) {
         binding = FragmentMainBinding.inflate(inflater, container, false);
-
         return binding.getRoot();
     }
-
-    public void playSound() {
-        mediaPlayer.start();
-    }
-
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -60,8 +59,14 @@ public class MainFragment extends Fragment {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getActivity().getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"ko-KR");   //한국어
 
-        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
-        playSound();
+        prefs = getActivity().getPreferences(MODE_PRIVATE);
+        boolean audioPlayed = prefs.getBoolean(AUDIO_PLAYED, false);
+
+        if (!audioPlayed) {
+            mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
+            mediaPlayer.start();
+            prefs.edit().putBoolean(AUDIO_PLAYED, true).apply();
+        }
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,11 +215,6 @@ public class MainFragment extends Fragment {
         Toast.makeText(getContext(), "녹음중입니다.", Toast.LENGTH_SHORT).show();
     }
 
-    private void stopRecording(){
-        speechRecognizer.stopListening();   //녹음 중지
-        Toast.makeText(getContext(), "음성 기록을 중지합니다.", Toast.LENGTH_SHORT).show();
-    }
-
     private void CheckPermission() {
         //안드로이드 버전이 6.0 이상
         if (Build.VERSION.SDK_INT >= 23) {
@@ -232,6 +232,12 @@ public class MainFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
     }
 
 }
