@@ -18,6 +18,7 @@ import com.example.fashionapp.databinding.FragmentRecommandBinding;
 public class RecommandFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     private FragmentRecommandBinding binding;
+    public static String topbottom;
 
     @Override
     public View onCreateView(
@@ -56,7 +57,6 @@ public class RecommandFragment extends Fragment {
         });
 
         String keyword = "여자 브이넥 니트"; //앞 fragment에서 받아올 것
-        String topbottom = "상의";
         searchThread(keyword, topbottom);
 
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);

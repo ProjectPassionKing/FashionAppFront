@@ -35,11 +35,13 @@ public class WeatherView extends ConstraintLayout {
         {
             RequestHttpConnection con = new RequestHttpConnection();
             try {
-                Map<String, String> result = con.callApi(context);
+//                Map<String, String> result = con.callApi(context);
+                Weather result = con.callApi(context);
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        weather(result);
+                        setWeatherUI(result);
+//                        weather(result);
                     }
                 });
             } catch (IOException | JSONException | NoSuchAlgorithmException | KeyManagementException | CertificateException | KeyStoreException | NoSuchProviderException e) {
@@ -47,6 +49,23 @@ public class WeatherView extends ConstraintLayout {
             }
         }).start();
 
+    }
+
+    private void setWeatherUI(Weather weather){
+        String c = getTxtfromStr(R.string.temperature);
+
+        ((TextView) findViewById(R.id.temperature_txt)).setText(weather.getTmp()+c);
+        ((TextView) findViewById(R.id.mtemperature_txt)).setText(weather.getMinTmp() +c + "/" + weather.getMaxTmp()+c);
+
+        String sno = weather.getSnow();
+        String sky = weather.getSky();
+        String pty = weather.getRain();
+        String pcp = weather.getRainper();
+
+        if (!sno.equals("적설없응")){
+            skycondition(sky, pty, sno);
+        }
+        skycondition(sky, pty, pcp);
     }
 
     private void weather(Map<String, String> result) {
