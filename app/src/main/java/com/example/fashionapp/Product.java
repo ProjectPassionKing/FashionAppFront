@@ -54,21 +54,6 @@ public class Product {
         this.productPrice = productPrice;
     }
 
-    public String getSeller() {
-        return seller;
-    }
-
-    public void setSeller(String seller) {
-        this.seller = seller;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public void setRating(String rating) {
-        this.rating = rating;
-    }
 
     public String getSalePrice() {
         return salePrice;
@@ -76,14 +61,6 @@ public class Product {
 
     public void setSalePrice(String salePrice) {
         this.salePrice = salePrice;
-    }
-
-    public String getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(String delivery) {
-        this.delivery = delivery;
     }
 
     public String getReviewCount() {

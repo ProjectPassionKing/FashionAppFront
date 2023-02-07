@@ -21,7 +21,8 @@ import java.util.List;
 public class ProductSearchService {
 
     private String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
-    private String otherurl = "&pageSize=5&apiCode=ProductSearch&sortCd=CP&keyword=";
+    String psize = "10";
+    private String otherurl = "&pageSize="+psize+"&apiCode=ProductSearch&sortCd=CP&keyword=";
     private String key = BuildConfig.SEARCH_KEY;
     private String keyword; // 검색할 키워드
 
@@ -80,14 +81,6 @@ public class ProductSearchService {
                                 if (p!=null)
                                     p.setProductPrice(parser.nextText());
                                 break;
-                            case "Seller":
-                                assert p != null;
-                                p.setSeller(parser.nextText());
-                                break;
-                            case "Rating":
-                                assert p != null;
-                                p.setRating(parser.nextText());
-                                break;
                             case "DetailPageUrl":
                                 assert p != null;
                                 p.setProductDetailUrl(parser.nextText());
@@ -96,10 +89,6 @@ public class ProductSearchService {
                                 assert p != null;
                                 p.setSalePrice(parser.nextText());
                                 break;
-                            case "Delivery":
-                                assert p != null;
-                                p.setDelivery(parser.nextText());
-                                break;
                             case "ReviewCount":
                                 assert p != null;
                                 p.setReviewCount(parser.nextText());
@@ -107,6 +96,10 @@ public class ProductSearchService {
                             case "BuySatisfy":
                                 assert p != null;
                                 p.setBuySatisfy(parser.nextText());
+                                break;
+                            case "Discount":
+                                assert p!=null;
+                                p.setBenefit(parser.nextText());
                                 break;
                         }
                     }

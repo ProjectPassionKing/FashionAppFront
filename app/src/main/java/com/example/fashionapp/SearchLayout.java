@@ -15,12 +15,10 @@ import com.example.fashionapp.databinding.SearchresultBinding;
 import java.util.Map;
 
 public class SearchLayout extends LinearLayout {
-    private SearchresultBinding binding;
 
     public SearchLayout(Context context) {
         super(context);
     }
-
     public SearchLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
@@ -33,12 +31,13 @@ public class SearchLayout extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.searchresult, this, true);
 
-        String imgurl = searchresult.getProductImage();
-        ImageView imgv = (ImageView) findViewById(R.id.search_img);
-        TextView txtview = (TextView) findViewById(R.id.search_name);
-        Glide.with(this).load(imgurl).into(imgv);
-        System.out.println(searchresult.getProductDetailUrl());
-        txtview.setText(searchresult.getProductName().substring(0, 20)+"...");
+        Glide.with(this).load(searchresult.getProductImage()).into((ImageView) findViewById(R.id.search_img));
+        String pname = searchresult.getProductName();
+        if (pname.length()>18) pname = pname.substring(0, 18)+"…";
+        ((TextView) findViewById(R.id.search_name)).setText(pname);
 
+        String discount = searchresult.getBenefit();
+        if (!discount.equals("0"))
+            ((TextView)findViewById(R.id.product_price)).setText("₩"+searchresult.getSalePrice()+'\n'+discount +"원 할인중!");
     }
 }
