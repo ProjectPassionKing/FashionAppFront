@@ -45,6 +45,15 @@ public class CordiTipFragment extends Fragment {
                         .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }
         });
+
+        binding.cordi3rd.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(CordiTipFragment.this)
+                        .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
+            }
+        });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

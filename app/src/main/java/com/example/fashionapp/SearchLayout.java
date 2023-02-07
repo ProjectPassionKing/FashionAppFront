@@ -33,7 +33,7 @@ public class SearchLayout extends LinearLayout {
 
         Glide.with(this).load(searchresult.getProductImage()).into((ImageView) findViewById(R.id.search_img));
         String pname = searchresult.getProductName();
-        if (pname.length()>18) pname = pname.substring(0, 18)+"…";
+        if (pname.length()>18) pname = pname.substring(0, 17)+"…";
         ((TextView) findViewById(R.id.search_name)).setText(pname);
 
         String discount = searchresult.getBenefit();

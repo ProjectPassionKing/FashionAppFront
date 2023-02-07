@@ -83,6 +83,7 @@ public class RecommandFragment extends Fragment {
                 for (Product p : productList) {
                     SearchLayout searchLayout = new SearchLayout(getContext(), p);
                     binding.searchLinear.addView(searchLayout);
+
                     binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl),topbottom));
                     gotoProductpage(searchLayout, p);
                 }
