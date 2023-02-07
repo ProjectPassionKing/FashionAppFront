@@ -1,22 +1,13 @@
 package com.example.fashionapp;
-
-import static android.app.Activity.RESULT_OK;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
@@ -37,9 +28,6 @@ public class ShowPhotoFragment extends Fragment {
     private FragmentShowPhotoBinding binding;
     ImageView click_image_id;
     TextView prediction;
-    Button camera_open_id;
-
-    ActivityResultLauncher<Intent> activityResultLauncher;
 
     @Override
     public View onCreateView(
@@ -70,18 +58,6 @@ public class ShowPhotoFragment extends Fragment {
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
         click_image_id = getView().findViewById(R.id.click_image);
         click_image_id.setImageBitmap(bitmap);
-        camera_open_id = getView().findViewById(R.id.camera_button);
-
-        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-            @Override
-            public void onActivityResult(ActivityResult result) {
-                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                    Bitmap photo = (Bitmap) result.getData().getExtras().get("data");
-                    click_image_id.setImageBitmap(photo);
-                }
-            }
-        });
-
         prediction = getView().findViewById(R.id.prediction);
 
         File finalMostRecentFile = mostRecentFile;
