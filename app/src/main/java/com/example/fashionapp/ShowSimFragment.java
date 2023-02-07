@@ -80,8 +80,6 @@ public class ShowSimFragment extends Fragment {
             }
         });
 
-        prediction = getView().findViewById(R.id.prediction);
-
         File finalMostRecentFile = mostRecentFile;
 
         new Thread(() ->

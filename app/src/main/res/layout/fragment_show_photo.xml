@@ -13,8 +13,10 @@
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/home_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
@@ -32,13 +34,13 @@
         app:layout_constraintTop_toTopOf="@+id/click_image" />
 
     <TextView
-        android:id="@+id/prediction"
+        android:id="@+id/top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="197dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="199dp"
-        android:text="Prediction"
+        android:text="top"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="25dp"
@@ -46,6 +48,20 @@
         app:layout_constraintEnd_toEndOf="@+id/click_image"
         app:layout_constraintStart_toStartOf="@+id/click_image"
         app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
+
+    <TextView
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="bottom"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"

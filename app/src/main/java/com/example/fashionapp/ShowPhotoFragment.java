@@ -27,7 +27,8 @@ public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
     ImageView click_image_id;
-    TextView prediction;
+    TextView top;
+    TextView bottom;
 
     @Override
     public View onCreateView(
@@ -58,7 +59,9 @@ public class ShowPhotoFragment extends Fragment {
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
         click_image_id = getView().findViewById(R.id.click_image);
         click_image_id.setImageBitmap(bitmap);
-        prediction = getView().findViewById(R.id.prediction);
+
+        top = getView().findViewById(R.id.top);
+        bottom = getView().findViewById(R.id.bottom);
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -83,12 +86,14 @@ public class ShowPhotoFragment extends Fragment {
 
                 try {
                     JSONObject jsonObject = new JSONObject(responseBodyString);
-                    String data = jsonObject.getString("prediction");
+                    String top_data = jsonObject.getString("top");
+                    String bottom_data = jsonObject.getString("bottom");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            prediction.setText(data);
+                            top.setText(top_data);
+                            bottom.setText(bottom_data);
                         }
                     });
 
