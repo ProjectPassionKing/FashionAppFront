@@ -39,6 +39,31 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_DiagnosisPicFragment_to_MainFragment);
             }
         });
+
+        binding.straightPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResultFragment.result = "Straight";
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+            }
+        });
+        binding.naturalPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResultFragment.result = "Natural";
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+            }
+        });
+        binding.wavePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ResultFragment.result = "Wave";
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+            }
+        });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

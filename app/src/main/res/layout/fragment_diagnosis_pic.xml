@@ -57,23 +57,27 @@
         android:id="@+id/natural_pic"
         android:layout_width="173dp"
         android:layout_height="222dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/shadow_button_layer_list"
         android:scaleType="fitXY"
         android:textColor="@color/black"
-        app:srcCompat="@raw/natural"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wave_pic"
+        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
+        app:srcCompat="@raw/natural" />
 
     <ImageButton
         android:id="@+id/wave_pic"
         android:layout_width="174dp"
         android:layout_height="224dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/shadow_button_layer_list"
         android:scaleType="fitXY"
         android:textColor="@color/black"
-        app:srcCompat="@raw/wave"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
+        app:srcCompat="@raw/wave" />
 
     <ImageButton
         android:id="@+id/home_btn"

@@ -239,6 +239,9 @@
     <action
         android:id="@+id/action_DiagnosisPicFragment_to_AllinOneFragment"
         app:destination="@id/AllinOneFragment" />
+    <action
+        android:id="@+id/action_DiagnosisPicFragment_to_ResultFragment"
+        app:destination="@id/ResultFragment" />
 
     </fragment>
 </navigation>

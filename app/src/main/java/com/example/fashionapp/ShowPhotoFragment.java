@@ -142,13 +142,6 @@ public class ShowPhotoFragment extends Fragment {
                         .navigate(R.id.action_ShowPhotoFragment_to_AllinOneFragment);
             }
         });
-        binding.cameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                activityResultLauncher.launch(camera_intent);
-            }
-        });
     }
 
 
