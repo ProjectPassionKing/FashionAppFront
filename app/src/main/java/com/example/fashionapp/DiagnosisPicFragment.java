@@ -44,6 +44,7 @@ public class DiagnosisPicFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ResultFragment.result = "Straight";
+                ResultFragment.result_audio = R.raw.straightresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
             }
@@ -52,6 +53,7 @@ public class DiagnosisPicFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ResultFragment.result = "Natural";
+                ResultFragment.result_audio = R.raw.naturalresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
             }
@@ -60,6 +62,7 @@ public class DiagnosisPicFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ResultFragment.result = "Wave";
+                ResultFragment.result_audio = R.raw.waveresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
             }
