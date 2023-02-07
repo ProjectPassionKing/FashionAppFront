@@ -1,24 +1,22 @@
 package com.example.fashionapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
-import com.example.fashionapp.databinding.FragmentRecommandBinding;
-
+import androidx.navigation.fragment.NavHostFragment;;
 import org.xmlpull.v1.XmlPullParserException;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
 public class RecommandFragment extends Fragment {
     private MediaPlayer mediaPlayer;
@@ -71,6 +69,14 @@ public class RecommandFragment extends Fragment {
                         for (Product p : productList) {
                             SearchLayout searchLayout = new SearchLayout(getContext(), p);
                             binding.searchLinear.addView(searchLayout);
+                            searchLayout.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setData(Uri.parse(p.getProductDetailUrl()));
+                                    startActivity(intent);
+                                }
+                            });
                         }
                     }
                 });

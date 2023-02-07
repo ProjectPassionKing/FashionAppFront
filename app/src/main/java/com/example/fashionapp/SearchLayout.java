@@ -10,10 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.example.fashionapp.databinding.SearchresultBinding;
 
 import java.util.Map;
 
 public class SearchLayout extends LinearLayout {
+    private SearchresultBinding binding;
+
     public SearchLayout(Context context) {
         super(context);
     }
@@ -34,6 +37,8 @@ public class SearchLayout extends LinearLayout {
         ImageView imgv = (ImageView) findViewById(R.id.search_img);
         TextView txtview = (TextView) findViewById(R.id.search_name);
         Glide.with(this).load(imgurl).into(imgv);
-        txtview.setText(searchresult.getProductName());
+        System.out.println(searchresult.getProductDetailUrl());
+        txtview.setText(searchresult.getProductName().substring(0, 20)+"...");
+
     }
 }
