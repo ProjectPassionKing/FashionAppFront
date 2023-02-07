@@ -2,6 +2,9 @@ plugins {
     id 'com.android.application'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace 'com.example.fashionapp'
     compileSdk 32
@@ -12,8 +15,10 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String", "WEATHER_KEY", properties.getProperty("weather_key"))
+        buildConfigField("String", "SEARCH_KEY", properties.getProperty("search_key"))
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -30,6 +35,7 @@ android {
         viewBinding true
     }
 }
+
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'

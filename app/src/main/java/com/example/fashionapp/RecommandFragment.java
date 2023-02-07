@@ -1,17 +1,21 @@
 package com.example.fashionapp;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.fragment.NavHostFragment;;
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.IOException;
+import java.util.List;
 import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
 public class RecommandFragment extends Fragment {
-
     private MediaPlayer mediaPlayer;
     private FragmentRecommandBinding binding;
 
@@ -51,9 +55,51 @@ public class RecommandFragment extends Fragment {
             }
         });
 
+        String keyword = "여자 브이넥 니트"; //앞 fragment에서 받아올 것
+        String topbottom = "상의";
+        searchThread(keyword, topbottom);
 
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+
         binding.scrollview.addView(moreScrollView);
+    }
+
+    private void searchThread(String keyword, String topbottom){
+        new Thread(() -> {
+            ProductSearchService service = new ProductSearchService(keyword);
+            try {
+                List<Product> productList = service.search();
+                addSearchView(productList, topbottom);
+            } catch (IOException | XmlPullParserException e) {
+                e.printStackTrace();
+            }
+        }).start();
+    }
+
+    private void addSearchView(List<Product> productList, String topbottom){
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                for (Product p : productList) {
+                    SearchLayout searchLayout = new SearchLayout(getContext(), p);
+                    binding.searchLinear.addView(searchLayout);
+
+                    binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl),topbottom));
+                    gotoProductpage(searchLayout, p);
+                }
+            }
+        });
+    }
+
+    private void gotoProductpage(SearchLayout searchLayout, Product p){
+        searchLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(p.getProductDetailUrl()));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -72,8 +72,8 @@
 <!--    에이닷이 말하는 대사들-->
     <string name="weather_main">점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?</string>
     <string name="type_detail">%1$s Type에 \n 대해 내가 자세히 \n 알려줄게!</string>
-    <string name="recommand_cl">어울리는 %1$s를 \n 추천해줄게요!</string>
-    <string name="cordi_tip">%1$s \n 코디 팁이야!</string>
+    <string name="recommand_cl">어울리는 %s를 \n 추천해줄게요!</string>
+    <string name="cordi_tip">%$s \n 코디 팁이야!</string>
     <string name="result_type">체형 진단 결과가 나왔어요!</string>
     <string name="take_photo">사진을 찍어주세요!</string>
     <string name="diagnosis">진단을 진행할게요! \n 해당하는 칸을 눌러주세요</string>
@@ -81,7 +81,6 @@
 <!--    square box-->
     <string name="link_11st">누르면 11번가 링크로 이동해요</string>
     <string name="other_recommand">다른 옷 추천 보기</string>
-
 
 <!--Straight type-->
     <string name="straight_fabric">어울리는 소재는 면, 울(모), 데님, 가죽입니다.</string>
