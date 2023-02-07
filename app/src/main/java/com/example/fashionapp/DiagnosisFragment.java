@@ -95,6 +95,7 @@ public class DiagnosisFragment extends Fragment {
             Map.Entry<Character, Integer> maxEntry = null;
             int maxValue = Collections.max(map.values());
             String maxKey = "";
+            int maxAudio = 0;
             ArrayList<String> keys = new ArrayList<>();
             int count = 0;
 
@@ -142,21 +143,22 @@ public class DiagnosisFragment extends Fragment {
             }
             
             switch (maxKey) {
-                case "A":
-                    maxKey = "Straight";
-                    break;
                 case "B":
                     maxKey = "Wave";
+                    maxAudio = R.raw.waveresult;
                     break;
                 case "C":
                     maxKey = "Natural";
+                    maxAudio = R.raw.naturalresult;
                     break;
                 default:
                     maxKey = "Straight";
+                    maxAudio = R.raw.straightresult;
                     break;
             }
             
             ResultFragment.result = maxKey;
+            ResultFragment.result_audio = maxAudio;
 
             NavHostFragment.findNavController(DiagnosisFragment.this)
                     .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);

@@ -40,6 +40,7 @@ public class ResultFragment extends Fragment {
 
     private MediaPlayer mediaPlayer;
     private FragmentResultBinding binding;
+    public static int result_audio;
     public static String result;
 
     @Override
@@ -64,7 +65,7 @@ public class ResultFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightresult);
+        mediaPlayer = MediaPlayer.create(this.getContext(), result_audio);
         playSound();
 
 
