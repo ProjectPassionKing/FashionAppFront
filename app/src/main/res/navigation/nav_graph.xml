@@ -166,7 +166,6 @@
             android:id="@+id/action_AllinOneFragment_to_RecommandFragment"
             app:destination="@id/RecommandFragment" />
     </fragment>
-
     <action
         android:id="@+id/action_global_DiagnosisSelectFragment"
         app:destination="@id/DiagnosisSelectFragment" />
@@ -229,14 +228,10 @@
             android:id="@+id/action_DiagnosisSelectFragment_to_DiagnosisPicFragment"
             app:destination="@id/DiagnosisPicFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/DiagnosisPicFragment"
         android:name="com.example.fashionapp.DiagnosisPicFragment"
         android:label=""
         tools:layout="@layout/fragment_diagnosis_pic">
     </fragment>
-
-
-
 </navigation>
