@@ -30,9 +30,9 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
 public class RequestHttpConnection {
-
+    private Weather weather;
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public Map<String, String> callApi(Context fcontext) throws IOException, JSONException, NoSuchAlgorithmException, KeyManagementException, CertificateException, KeyStoreException, NoSuchProviderException {
+    public Weather callApi(Context fcontext) throws IOException, JSONException, NoSuchAlgorithmException, KeyManagementException, CertificateException, KeyStoreException, NoSuchProviderException {
 
         String ydate = LocalDate.now().minusDays(1).toString().replaceAll("-", "");
         String ctime = LocalTime.now().minusHours(1).toString().substring(0, 2) + "00";
@@ -96,19 +96,31 @@ public class RequestHttpConnection {
 
         JSONObject mainObject = new JSONObject(text);
         JSONArray itemArray = mainObject.getJSONObject("response").getJSONObject("body").getJSONObject("items").getJSONArray("item");
-
+        weather = new Weather();
         Map<String, String> result = new HashMap<>();
         for (int i = 0; i < itemArray.length(); i++) {
             JSONObject item = itemArray.getJSONObject(i);
             String category = item.getString("category");
             String value = item.getString("fcstValue");
-            if (item.getString("category").equals("TMN") || item.getString("category").equals("TMX")) {
-                result.put(category, value);
+            if (item.getString("fcstTime").equals("0600") && category.equals("TMN")) {
+                weather.setMinTmp(value);
+//                result.put(category, value);
             }
+            if(item.getString("fcstTime").equals("1500") && category.equals("TMX")){
+                weather.setMaxTmp(value);
+//                result.put(category, value);
+            }
+
             if (item.getString("fcstTime").equals(ctime)) {
-                result.put(category, value);
+                if (category.equals("TMP")) weather.setTmp(value);
+                if (category.equals("SKY")) weather.setSky(value);
+                if (category.equals("PTY")) weather.setRain(value);
+                if (category.equals("PCP")) weather.setRainper(value);
+                if (category.equals("SNO")) weather.setSnow(value);
+//                result.put(category, value);
             }
         }
-        return result;
+//        return result;
+        return weather;
     }
 }

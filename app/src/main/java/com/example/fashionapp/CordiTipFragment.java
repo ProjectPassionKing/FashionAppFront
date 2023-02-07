@@ -14,6 +14,7 @@ import com.example.fashionapp.databinding.FragmentCordiTipBinding;
 public class CordiTipFragment extends Fragment {
     private FragmentCordiTipBinding binding;
 
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -41,15 +42,16 @@ public class CordiTipFragment extends Fragment {
         binding.cordi2nd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RecommandFragment.topbottom = "상의";
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }
         });
 
         binding.cordi3rd.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
+                RecommandFragment.topbottom = "하의";
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }
