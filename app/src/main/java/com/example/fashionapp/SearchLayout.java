@@ -6,13 +6,8 @@ import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-
 import com.bumptech.glide.Glide;
-import com.example.fashionapp.databinding.SearchresultBinding;
-
-import java.util.Map;
 
 public class SearchLayout extends LinearLayout {
 

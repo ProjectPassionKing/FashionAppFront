@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import org.jetbrains.annotations.NotNull;
-import java.util.Objects;
 
 //@SuppressLint("ViewConstructor")
 public class MoreHorizontalScrollView extends LinearLayout {

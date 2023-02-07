@@ -133,16 +133,14 @@ public class MainFragment extends Fragment {
         }
 
         @Override
-        public void onError(int error) {    //토스트 메세지로 에러 출력
+        public void onError(int error) {
             String message = null;
             switch (error) {
                 case SpeechRecognizer.ERROR_AUDIO:
                     message = "오디오 에러";
                     break;
                 case SpeechRecognizer.ERROR_CLIENT:
-                    //message = "클라이언트 에러";
-                    //stopListening을 호출하면 발생하는 에러
-                    return; //토스트 메세지 출력 X
+                    return;
                 case SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS:
                     message = "퍼미션 없음";
                     break;
@@ -164,12 +162,11 @@ public class MainFragment extends Fragment {
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
 
-        //인식 결과가 준비되면 호출
+
         @Override
         public void onResults(Bundle bundle) {
             ArrayList<String> matches = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);    //인식 결과를 담은 ArrayList
 
-            //인식 결과
             String newText="";
             for (int i = 0; i < matches.size() ; i++) {
                 newText += matches.get(i);

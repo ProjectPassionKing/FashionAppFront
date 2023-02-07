@@ -2,7 +2,6 @@ package com.example.fashionapp;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -22,15 +20,12 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.databinding.FragmentTakePhotoBinding;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 public class TakePhotoFragment extends Fragment {
 
@@ -70,9 +65,9 @@ public class TakePhotoFragment extends Fragment {
                     File image = null;
                     try {
                         image = File.createTempFile(
-                                imageFileName,  /* prefix */
-                                ".jpg",         /* suffix */
-                                storageDir      /* directory */
+                                imageFileName,
+                                ".jpg",
+                                storageDir
                         );
                     } catch (IOException e) {
                         e.printStackTrace();

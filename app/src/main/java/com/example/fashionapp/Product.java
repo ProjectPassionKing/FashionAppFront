@@ -6,10 +6,7 @@ public class Product {
     private String productImage;
     private String productDetailUrl;
     private String productPrice;
-    private String seller;
-    private String rating;
     private String salePrice;
-    private String delivery;
     private String reviewCount;
     private String buySatisfy;
     private String benefit;
