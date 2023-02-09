@@ -1,5 +1,6 @@
 package com.example.fashionapp.Model.Entity.search;
 
+import com.google.gson.annotations.SerializedName;
 import com.tickaroo.tikxml.annotation.Element;
 import com.tickaroo.tikxml.annotation.PropertyElement;
 import com.tickaroo.tikxml.annotation.Xml;
