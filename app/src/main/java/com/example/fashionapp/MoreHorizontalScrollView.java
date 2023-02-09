@@ -62,6 +62,11 @@ public class MoreHorizontalScrollView extends LinearLayout {
                 changeFragment(fragment, btnTxt);
             }
         });
+
+        Button take_sim_btn = findViewById(R.id.more_request_btn4);
+        if(fragment.getClass() != ResultFragment.class) {
+            take_sim_btn.setVisibility(View.GONE);
+        }
     }
 
     private void changeTxt(Fragment fragment) {
