@@ -1,4 +1,4 @@
-package com.example.fashionapp.Model;
+package com.example.fashionapp.Model.Entity;
 
 public class Weather {
     private String maxTmp;

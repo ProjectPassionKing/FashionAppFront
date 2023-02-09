@@ -14,10 +14,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.List;
 
-import com.example.fashionapp.Model.Product;
+import com.example.fashionapp.Model.Entity.Product;
 import com.example.fashionapp.Model.ProductSearchService;
 import com.example.fashionapp.R;
-import com.example.fashionapp.SearchLayout;
 import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
 public class RecommandFragment extends Fragment {

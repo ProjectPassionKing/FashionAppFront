@@ -17,17 +17,14 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-import com.example.fashionapp.Model.Weather;
+
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.WeatherViewModel;
-import com.example.fashionapp.WeatherView;
 import com.example.fashionapp.databinding.FragmentMainBinding;
 
 import java.io.IOException;
@@ -62,7 +59,7 @@ public class MainFragment extends Fragment {
             e.printStackTrace();
         }
         weatherViewModel.getData().observe(getViewLifecycleOwner(), weather -> {
-            WeatherView weatherView = new WeatherView(getActivity());
+            FirstFragment.WeatherView weatherView = new FirstFragment.WeatherView(getActivity());
             weatherView.setWeatherUI(weather);
             binding.weatherApi.addView(weatherView);
         });
@@ -95,17 +92,6 @@ public class MainFragment extends Fragment {
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
-
-
-//        WeatherView weatherView = new WeatherView(getContext());
-//        try {
-//            weatherView.connectapi(getContext(), getActivity());
-//
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
-//        binding.weatherApi.addView(weatherView);
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override

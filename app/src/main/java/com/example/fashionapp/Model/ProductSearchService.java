@@ -1,7 +1,7 @@
 package com.example.fashionapp.Model;
 
 import com.example.fashionapp.BuildConfig;
-import com.example.fashionapp.Model.Product;
+import com.example.fashionapp.Model.Entity.Product;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -29,7 +29,7 @@ public class ProductSearchService {
     public List<Product> search() throws IOException, XmlPullParserException {
         List<Product> list = null;
         URL url = new URL(rurl+key+otherurl+keyword);
-
+        System.out.println(url);
         URLConnection urlCon = url.openConnection();
 
         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();

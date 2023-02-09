@@ -8,11 +8,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.fashionapp.BuildConfig;
 import com.example.fashionapp.Model.Entity.WeatherItem;
-import com.example.fashionapp.Model.Entity.WeatherResponse;
 import com.example.fashionapp.Model.Entity.WeatherResult;
-import com.example.fashionapp.Model.Weather;
+import com.example.fashionapp.Model.Entity.Weather;
 import com.example.fashionapp.Model.WeatherAPI;
 import com.example.fashionapp.R;
 import com.google.gson.Gson;
@@ -41,7 +39,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class WeatherViewModel extends AndroidViewModel {
     private MutableLiveData<Weather> lweather = new MutableLiveData<>();

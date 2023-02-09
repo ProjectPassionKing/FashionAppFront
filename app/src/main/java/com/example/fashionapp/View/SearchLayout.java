@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
-import com.example.fashionapp.Model.Product;
+import com.example.fashionapp.Model.Entity.Product;
+import com.example.fashionapp.R;
 
 public class SearchLayout extends LinearLayout {
 
