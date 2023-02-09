@@ -30,7 +30,7 @@ public class SearchLayout extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.searchresult, this, true);
 
-        Glide.with(this).load(searchresult.getProductImage()).into((ImageView) findViewById(R.id.search_img));
+        Glide.with(this).load(searchresult.getProductImage300()).into((ImageView) findViewById(R.id.search_img));
         String pname = searchresult.getProductName();
         if (pname.length()>18) pname = pname.substring(0, 17)+"…";
         ((TextView) findViewById(R.id.search_name)).setText(pname);

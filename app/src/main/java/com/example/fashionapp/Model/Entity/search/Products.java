@@ -10,16 +10,6 @@ import java.util.List;
 public class Products {
     @Element(name = "Product")
     private List<Product> product;
-    @PropertyElement(name = "TotalCount")
-    private int totalCount;
-
-    public int getTotalCount() {
-        return totalCount;
-    }
-
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
 
     public void setProduct(List<Product> product) {
         this.product = product;

@@ -72,7 +72,7 @@ public class ProductSearchService {
                                 break;
                             case "ProductImage300":
                                 if (p!=null)
-                                    p.setProductImage(parser.nextText());
+                                    p.setProductImage300(parser.nextText());
                                 break;
                             case "ProductPrice":
                                 if (p!=null)

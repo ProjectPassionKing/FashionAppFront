@@ -37,6 +37,14 @@ public class RecommandFragment extends Fragment {
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
         searchViewModel.getAPI(getContext(), keyword);
+        searchViewModel.getData().observe(getViewLifecycleOwner(), product ->{
+            for (Product p : product){
+                SearchLayout searchLayout = new SearchLayout(getContext(), p);
+                binding.searchLinear.addView(searchLayout);
+                binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl),topbottom));
+                gotoProductpage(searchLayout, p);
+            }
+        });
 
         return binding.getRoot();
 

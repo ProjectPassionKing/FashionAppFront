@@ -13,18 +13,6 @@ public class ProductResponse {
     @Element(name = "Products")
     private Products products;
 
-    public ProductRequest getRequest() {
-        return request;
-    }
-
-    public void setRequest(ProductRequest request) {
-        this.request = request;
-    }
-
-    @Element(name = "Request")
-    private ProductRequest request;
-
-
     public Products getProducts() {
         return products;
     }
