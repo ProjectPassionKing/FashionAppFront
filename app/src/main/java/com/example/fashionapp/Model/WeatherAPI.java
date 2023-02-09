@@ -1,9 +1,7 @@
 package com.example.fashionapp.Model;
 
 import com.example.fashionapp.BuildConfig;
-import com.example.fashionapp.Model.Entity.WeatherBody;
-import com.example.fashionapp.Model.Entity.WeatherResponse;
-import com.example.fashionapp.Model.Entity.WeatherResult;
+import com.example.fashionapp.Model.Entity.weather.WeatherResult;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

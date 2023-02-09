@@ -44,6 +44,7 @@ public class CordiTipFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 RecommandFragment.topbottom = "상의";
+                RecommandFragment.keyword = "브이넥 니트";
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }
@@ -53,6 +54,7 @@ public class CordiTipFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 RecommandFragment.topbottom = "하의";
+                RecommandFragment.keyword = "일자핏 바지";
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
             }

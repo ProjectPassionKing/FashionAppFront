@@ -9,20 +9,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.List;
 
-import com.example.fashionapp.Model.Entity.Product;
+import com.example.fashionapp.Model.Entity.search.Product;
 import com.example.fashionapp.Model.ProductSearchService;
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SearchViewModel;
 import com.example.fashionapp.databinding.FragmentRecommandBinding;
 
 public class RecommandFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     private FragmentRecommandBinding binding;
     public static String topbottom;
+    private SearchViewModel searchViewModel;
+    public static String keyword;
 
     @Override
     public View onCreateView(
@@ -31,6 +35,9 @@ public class RecommandFragment extends Fragment {
     ) {
 
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
+        searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
+        searchViewModel.getAPI(getContext(), keyword);
+
         return binding.getRoot();
 
     }
@@ -60,8 +67,6 @@ public class RecommandFragment extends Fragment {
             }
         });
 
-        String keyword = "여자 브이넥 니트"; //앞 fragment에서 받아올 것
-        searchThread(keyword, topbottom);
 
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
 

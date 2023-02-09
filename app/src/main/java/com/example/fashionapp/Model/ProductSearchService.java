@@ -1,7 +1,8 @@
 package com.example.fashionapp.Model;
 
 import com.example.fashionapp.BuildConfig;
-import com.example.fashionapp.Model.Entity.Product;
+import com.example.fashionapp.Model.Entity.search.Product;
+import com.example.fashionapp.Model.Entity.search.ProductBenefit;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -85,17 +86,19 @@ public class ProductSearchService {
                                 assert p != null;
                                 p.setSalePrice(parser.nextText());
                                 break;
-                            case "ReviewCount":
-                                assert p != null;
-                                p.setReviewCount(parser.nextText());
-                                break;
-                            case "BuySatisfy":
-                                assert p != null;
-                                p.setBuySatisfy(parser.nextText());
-                                break;
+//                            case "ReviewCount":
+//                                assert p != null;
+//                                p.setReviewCount(parser.nextText());
+//                                break;
+//                            case "BuySatisfy":
+//                                assert p != null;
+//                                p.setBuySatisfy(parser.nextText());
+//                                break;
                             case "Discount":
                                 assert p!=null;
-                                p.setBenefit(parser.nextText());
+                                ProductBenefit benefit = new ProductBenefit();
+                                benefit.setDiscount(parser.nextText());
+                                p.setBenefit(benefit);
                                 break;
                         }
                     }

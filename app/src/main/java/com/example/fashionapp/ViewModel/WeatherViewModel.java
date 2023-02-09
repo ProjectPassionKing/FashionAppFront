@@ -2,20 +2,16 @@ package com.example.fashionapp.ViewModel;
 
 import android.app.Application;
 import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
-import com.example.fashionapp.Model.Entity.WeatherItem;
-import com.example.fashionapp.Model.Entity.WeatherResult;
-import com.example.fashionapp.Model.Entity.Weather;
+import com.example.fashionapp.Model.Entity.weather.WeatherResult;
+import com.example.fashionapp.Model.Entity.weather.Weather;
 import com.example.fashionapp.Model.WeatherAPI;
 import com.example.fashionapp.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyManagementException;
@@ -28,11 +24,9 @@ import java.security.cert.CertificateFactory;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
-
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -119,8 +113,8 @@ public class WeatherViewModel extends AndroidViewModel {
                 if (response.isSuccessful()){
                     WeatherResult wresult = response.body();
 
-                    List<WeatherItem> items = wresult.getWeatherResponse().getWeatherBody().getItmes().getItem();
-                    for(WeatherItem i: items){
+                    List<WeatherResult.WeatherItem> items = wresult.getWeatherResponse().getWeatherBody().getItmes().getItem();
+                    for(WeatherResult.WeatherItem i: items){
                         String category = i.getCategory();
                         String value = i.getFcstValue();
                         if (i.getFcstTime().equals("0600") && category.equals("TMN")) {

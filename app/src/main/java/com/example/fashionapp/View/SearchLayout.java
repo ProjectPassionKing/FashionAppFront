@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
-import com.example.fashionapp.Model.Entity.Product;
+import com.example.fashionapp.Model.Entity.search.Product;
 import com.example.fashionapp.R;
 
 public class SearchLayout extends LinearLayout {
@@ -35,7 +35,7 @@ public class SearchLayout extends LinearLayout {
         if (pname.length()>18) pname = pname.substring(0, 17)+"…";
         ((TextView) findViewById(R.id.search_name)).setText(pname);
 
-        String discount = searchresult.getBenefit();
+        String discount = searchresult.getBenefit().getDiscount();
         if (!discount.equals("0"))
             ((TextView)findViewById(R.id.product_price)).setText("₩"+searchresult.getSalePrice()+'\n'+discount +"원 할인중!");
     }

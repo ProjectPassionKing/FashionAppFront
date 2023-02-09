@@ -17,7 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.fashionapp.Model.Entity.Weather;
+import com.example.fashionapp.Model.Entity.weather.Weather;
 import com.example.fashionapp.R;
 import com.example.fashionapp.databinding.FragmentFirstBinding;
 
