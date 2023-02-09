@@ -1,15 +1,36 @@
-package com.example.fashionapp;
+package com.example.fashionapp.Model.Entity.search;
 
+import com.google.gson.annotations.SerializedName;
+import com.tickaroo.tikxml.annotation.Element;
+import com.tickaroo.tikxml.annotation.PropertyElement;
+import com.tickaroo.tikxml.annotation.Xml;
+
+@Xml
 public class Product {
+    @PropertyElement(name = "ProductCode")
     private String productCode;
+    @PropertyElement(name="ProductName")
     private String productName;
-    private String productImage;
+    @PropertyElement(name="ProductImage300")
+    private String productImage300;
+    @PropertyElement(name="DetailPageUrl")
     private String productDetailUrl;
+    @PropertyElement(name="ProductPrice")
     private String productPrice;
+    @PropertyElement(name="SalePrice")
     private String salePrice;
-    private String reviewCount;
-    private String buySatisfy;
-    private String benefit;
+    @Element(name = "Benefit")
+    private ProductBenefit benefit;
+
+    //아래로는 안쓰는 거
+
+    public ProductBenefit getBenefit() {
+        return benefit;
+    }
+
+    public void setBenefit(ProductBenefit benefit) {
+        this.benefit = benefit;
+    }
 
     public String getProductCode() {
         return productCode;
@@ -25,14 +46,6 @@ public class Product {
 
     public void setProductName(String productName) {
         this.productName = productName;
-    }
-
-    public String getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
     }
 
     public String getProductDetailUrl() {
@@ -60,27 +73,11 @@ public class Product {
         this.salePrice = salePrice;
     }
 
-    public String getReviewCount() {
-        return reviewCount;
+    public String getProductImage300() {
+        return productImage300;
     }
 
-    public void setReviewCount(String reviewCount) {
-        this.reviewCount = reviewCount;
-    }
-
-    public String getBuySatisfy() {
-        return buySatisfy;
-    }
-
-    public void setBuySatisfy(String buySatisfy) {
-        this.buySatisfy = buySatisfy;
-    }
-
-    public String getBenefit() {
-        return benefit;
-    }
-
-    public void setBenefit(String benefit) {
-        this.benefit = benefit;
+    public void setProductImage300(String productImage300) {
+        this.productImage300 = productImage300;
     }
 }

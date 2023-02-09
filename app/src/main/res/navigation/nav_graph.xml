@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.fashionapp.FirstFragment"
+        android:name="com.example.fashionapp.View.FirstFragment"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.example.fashionapp.MainFragment"
+        android:name="com.example.fashionapp.View.MainFragment"
         android:label=""
         tools:layout="@layout/fragment_main">
 
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/diagnosis_fragment"
-        android:name="com.example.fashionapp.DiagnosisFragment"
+        android:name="com.example.fashionapp.View.DiagnosisFragment"
         android:label=""
         tools:layout="@layout/fragment_diagnosis">
 
@@ -59,7 +59,7 @@
 
     <fragment
         android:id="@+id/ResultFragment"
-        android:name="com.example.fashionapp.ResultFragment"
+        android:name="com.example.fashionapp.View.ResultFragment"
         android:label=""
         tools:layout="@layout/fragment_result">
 
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/DetailFragment"
-        android:name="com.example.fashionapp.DetailFragment"
+        android:name="com.example.fashionapp.View.DetailFragment"
         android:label=""
         tools:layout="@layout/fragment_detail">
 
@@ -91,7 +91,7 @@
     </fragment>
     <fragment
         android:id="@+id/CordiTipFragment"
-        android:name="com.example.fashionapp.CordiTipFragment"
+        android:name="com.example.fashionapp.View.CordiTipFragment"
         android:label=""
         tools:layout="@layout/fragment_cordi_tip">
 
@@ -107,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/RecommandFragment"
-        android:name="com.example.fashionapp.RecommandFragment"
+        android:name="com.example.fashionapp.View.RecommandFragment"
         android:label=""
         tools:layout="@layout/fragment_recommand">
 
@@ -120,7 +120,7 @@
     </fragment>
     <fragment
         android:id="@+id/TakePhotoFragment"
-        android:name="com.example.fashionapp.TakePhotoFragment"
+        android:name="com.example.fashionapp.View.TakePhotoFragment"
         android:label=""
         tools:layout="@layout/fragment_take_photo">
 
@@ -136,7 +136,7 @@
     </fragment>
     <fragment
         android:id="@+id/TakeSimFragment"
-        android:name="com.example.fashionapp.TakeSimFragment"
+        android:name="com.example.fashionapp.View.TakeSimFragment"
         android:label=""
         tools:layout="@layout/fragment_take_sim">
 
@@ -152,7 +152,7 @@
     </fragment>
     <fragment
         android:id="@+id/AllinOneFragment"
-        android:name="com.example.fashionapp.AllInOneFragment"
+        android:name="com.example.fashionapp.View.AllInOneFragment"
         android:label=""
         tools:layout="@layout/fragment_all_in_one">
 
@@ -184,7 +184,7 @@
 
     <fragment
         android:id="@+id/ShowPhotoFragment"
-        android:name="com.example.fashionapp.ShowPhotoFragment"
+        android:name="com.example.fashionapp.View.ShowPhotoFragment"
         android:label=""
         tools:layout="@layout/fragment_show_photo">
 
@@ -197,7 +197,7 @@
     </fragment>
     <fragment
         android:id="@+id/ShowSimFragment"
-        android:name="com.example.fashionapp.ShowSimFragment"
+        android:name="com.example.fashionapp.View.ShowSimFragment"
         android:label=""
         tools:layout="@layout/fragment_show_sim">
 
@@ -211,7 +211,7 @@
 
     <fragment
         android:id="@+id/DiagnosisSelectFragment"
-        android:name="com.example.fashionapp.DiagnosisSelectFragment"
+        android:name="com.example.fashionapp.View.DiagnosisSelectFragment"
         android:label=""
         tools:layout="@layout/fragment_diagnosis_select">
 
@@ -230,7 +230,7 @@
     </fragment>
     <fragment
         android:id="@+id/DiagnosisPicFragment"
-        android:name="com.example.fashionapp.DiagnosisPicFragment"
+        android:name="com.example.fashionapp.View.DiagnosisPicFragment"
         android:label=""
         tools:layout="@layout/fragment_diagnosis_pic">
     <action
