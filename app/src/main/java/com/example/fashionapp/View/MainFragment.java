@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,11 +17,24 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import com.example.fashionapp.Model.Weather;
+import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.WeatherViewModel;
+import com.example.fashionapp.WeatherView;
 import com.example.fashionapp.databinding.FragmentMainBinding;
+
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
 import java.util.ArrayList;
 import java.util.List;
 import androidx.annotation.RequiresApi;
@@ -30,6 +43,7 @@ public class MainFragment extends Fragment {
     private MediaPlayer mediaPlayer;
     private FragmentMainBinding binding;
     private ImageButton recordButton;
+    private WeatherViewModel weatherViewModel;
 
     Intent intent;
     SpeechRecognizer speechRecognizer;
@@ -39,10 +53,19 @@ public class MainFragment extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
-
     ) {
         binding = FragmentMainBinding.inflate(inflater, container, false);
-
+        weatherViewModel = new ViewModelProvider(this).get(WeatherViewModel.class);
+        try {
+            weatherViewModel.loadData(getContext());
+        } catch (CertificateException | IOException | KeyStoreException | NoSuchAlgorithmException | KeyManagementException e) {
+            e.printStackTrace();
+        }
+        weatherViewModel.getData().observe(getViewLifecycleOwner(), weather -> {
+            WeatherView weatherView = new WeatherView(getActivity());
+            weatherView.setWeatherUI(weather);
+            binding.weatherApi.addView(weatherView);
+        });
         return binding.getRoot();
     }
 
@@ -73,15 +96,16 @@ public class MainFragment extends Fragment {
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
 
-        WeatherView weatherView = new WeatherView(getContext());
-        try {
-            weatherView.connectapi(getContext(), getActivity());
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        WeatherView weatherView = new WeatherView(getContext());
+//        try {
+//            weatherView.connectapi(getContext(), getActivity());
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-        binding.weatherApi.addView(weatherView);
+//        binding.weatherApi.addView(weatherView);
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,7 +1,8 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import android.os.Bundle;
 
+import com.example.fashionapp.R;
 import com.example.fashionapp.databinding.ActivityStartBinding;
 import com.google.android.material.snackbar.Snackbar;
 

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import com.example.fashionapp.Model.Weather;
 import org.json.JSONException;
 import java.io.IOException;
 import java.security.KeyManagementException;
@@ -19,39 +20,17 @@ import java.security.cert.CertificateException;
 import java.util.Map;
 
 public class WeatherView extends ConstraintLayout {
-    public WeatherView(@NonNull Context context) {
-        super(context);
-        init(context);
+    public WeatherView(@NonNull Activity activity) {
+        super(activity.getApplicationContext());
+        init(activity);
     }
 
-    private void init(Context context) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    private void init(Activity activity) {
+        LayoutInflater inflater = (LayoutInflater) activity.getApplication().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.weather, this, true);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void connectapi(Context context, Activity activity) throws InterruptedException {
-        new Thread(() ->
-        {
-            RequestHttpConnection con = new RequestHttpConnection();
-            try {
-//                Map<String, String> result = con.callApi(context);
-                Weather result = con.callApi(context);
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        setWeatherUI(result);
-//                        weather(result);
-                    }
-                });
-            } catch (IOException | JSONException | NoSuchAlgorithmException | KeyManagementException | CertificateException | KeyStoreException | NoSuchProviderException e) {
-                e.printStackTrace();
-            }
-        }).start();
-
-    }
-
-    private void setWeatherUI(Weather weather){
+    public void setWeatherUI(Weather weather){
         String c = getTxtfromStr(R.string.temperature);
 
         ((TextView) findViewById(R.id.temperature_txt)).setText(weather.getTmp()+c);
@@ -66,28 +45,6 @@ public class WeatherView extends ConstraintLayout {
             skycondition(sky, pty, sno);
         }
         skycondition(sky, pty, pcp);
-    }
-
-    private void weather(Map<String, String> result) {
-        String c = getTxtfromStr(R.string.temperature);
-        if (!result.isEmpty()) {
-            String tmp = result.get("TMP") + c; //1시간 기온
-            String tmn = result.get("TMN") + c; //최저기온
-            String tmx = result.get("TMX") + c;//최고기온
-            String sky = result.get("SKY"); //하늘상태 맑음1 구름많음 3 흐림 4
-            String pty = result.get("PTY"); //강수형태 없음0 비1 비/눈2 눈3 소나기4
-            String pcp = "강수량: " + result.get("PCP") + "mm"; //강수량
-//            String pop = result.get("POP"); //강수확률 %
-            String sno = result.get("SNO"); //신적설 량 (cm)
-
-            if (!sno.equals("적설없응")){
-                skycondition(sky, pty, sno);
-            }
-            skycondition(sky, pty, pcp);
-
-            ((TextView) findViewById(R.id.temperature_txt)).setText(tmp);
-            ((TextView) findViewById(R.id.mtemperature_txt)).setText(tmn + "/" + tmx);
-        }
     }
 
     private void skycondition(String sky, String pty, String pcp) {

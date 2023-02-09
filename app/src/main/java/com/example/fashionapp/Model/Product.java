@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.Model;
 
 public class Product {
     private String productCode;

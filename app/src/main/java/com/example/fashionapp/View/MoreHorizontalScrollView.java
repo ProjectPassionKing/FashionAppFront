@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,8 +9,10 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.fashionapp.R;
+
 import org.jetbrains.annotations.NotNull;
-import java.util.Objects;
 
 //@SuppressLint("ViewConstructor")
 public class MoreHorizontalScrollView extends LinearLayout {

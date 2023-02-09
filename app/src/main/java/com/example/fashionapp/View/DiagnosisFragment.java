@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fashionapp.R;
 import com.example.fashionapp.databinding.FragmentDiagnosisBinding;
 
 import java.util.ArrayList;

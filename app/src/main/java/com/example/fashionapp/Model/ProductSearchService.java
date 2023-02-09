@@ -1,21 +1,17 @@
-package com.example.fashionapp;
+package com.example.fashionapp.Model;
 
-import android.os.Build;
+import com.example.fashionapp.BuildConfig;
+import com.example.fashionapp.Model.Product;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class ProductSearchService {

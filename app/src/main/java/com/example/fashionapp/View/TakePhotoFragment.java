@@ -1,4 +1,4 @@
-package com.example.fashionapp;
+package com.example.fashionapp.View;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.fashionapp.R;
 import com.example.fashionapp.databinding.FragmentTakePhotoBinding;
 
 import java.io.File;
@@ -30,7 +31,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 public class TakePhotoFragment extends Fragment {
 

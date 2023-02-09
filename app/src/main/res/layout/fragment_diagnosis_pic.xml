@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DiagnosisPicFragment">
+    tools:context=".View.DiagnosisPicFragment">
 
     <TextView
         android:id="@+id/adot_talk_txtview"
