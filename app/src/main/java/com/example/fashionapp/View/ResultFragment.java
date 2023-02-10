@@ -8,17 +8,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 import com.bumptech.glide.Glide;
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentResultBinding;
 
 public class ResultFragment extends Fragment {
-
     private MediaPlayer mediaPlayer;
     private FragmentResultBinding binding;
     public static int result_audio;
-    public static String result;
+    String diagnosis_result;
 
     @Override
     public View onCreateView(
@@ -31,7 +32,13 @@ public class ResultFragment extends Fragment {
         ImageView gifImageView = binding.getRoot().findViewById(R.id.diagnose_video);
         Glide.with(this).asGif().load(R.raw.diagnose_video).into(gifImageView);
 
-        binding.questionTxtview.setText(result);
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+            diagnosis_result = dresult;
+        });
+
+        binding.questionTxtview.setText(diagnosis_result);
         return binding.getRoot();
 
     }
@@ -45,7 +52,6 @@ public class ResultFragment extends Fragment {
         mediaPlayer = MediaPlayer.create(this.getContext(), result_audio);
         playSound();
 
-
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
 
@@ -53,9 +59,10 @@ public class ResultFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ResultFragment.this)
-                        .navigate(R.id.action_ResultFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
+
 
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override

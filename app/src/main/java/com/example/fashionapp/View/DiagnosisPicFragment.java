@@ -7,14 +7,16 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentDiagnosisPicBinding;
 
 
 public class DiagnosisPicFragment extends Fragment {
-
+    String result;
     private @NonNull
     FragmentDiagnosisPicBinding binding;
 
@@ -32,7 +34,11 @@ public class DiagnosisPicFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
+        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+            result = dresult;
+        });
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +50,7 @@ public class DiagnosisPicFragment extends Fragment {
         binding.straightPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ResultFragment.result = "Straight";
+                result = "Straight";
                 ResultFragment.result_audio = R.raw.straightresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
@@ -53,7 +59,7 @@ public class DiagnosisPicFragment extends Fragment {
         binding.naturalPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ResultFragment.result = "Natural";
+                result = "Natural";
                 ResultFragment.result_audio = R.raw.naturalresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
@@ -62,7 +68,7 @@ public class DiagnosisPicFragment extends Fragment {
         binding.wavePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ResultFragment.result = "Wave";
+                result = "Wave";
                 ResultFragment.result_audio = R.raw.waveresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);

@@ -21,9 +21,11 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentTakeSimBinding;
 
 import java.io.File;
@@ -37,6 +39,7 @@ public class TakeSimFragment extends Fragment {
     private FragmentTakeSimBinding binding;
     Button camera_open_id;
     ImageView click_image_id;
+    String diagnosis_result; //진단 결과
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
@@ -56,7 +59,12 @@ public class TakeSimFragment extends Fragment {
 
         camera_open_id = getView().findViewById(R.id.camera_button);
         click_image_id = getView().findViewById(R.id.click_image);
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
+        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+            diagnosis_result = dresult;
+            System.out.println("dresult: "+dresult);
+        });
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {

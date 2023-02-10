@@ -4,16 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentAllInOneBinding;
 
 public class AllInOneFragment extends Fragment {
-
+    String result; //진단 결과
     private FragmentAllInOneBinding binding;
 
     @Override
@@ -29,6 +29,11 @@ public class AllInOneFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+            result = dresult;
+        });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

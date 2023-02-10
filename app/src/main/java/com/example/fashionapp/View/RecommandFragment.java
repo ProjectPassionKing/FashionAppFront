@@ -30,6 +30,7 @@ public class RecommandFragment extends Fragment {
     private SearchViewModel searchViewModel;
     public static String keyword;
 
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -80,7 +81,7 @@ public class RecommandFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_RecommandFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +106,7 @@ public class RecommandFragment extends Fragment {
             }
         });
     }
+
 
     @Override
     public void onDestroyView() {

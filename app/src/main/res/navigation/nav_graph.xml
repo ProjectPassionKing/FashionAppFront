@@ -182,6 +182,11 @@
         android:id="@+id/action_global_TakeSimFragment"
         app:destination="@id/TakeSimFragment" />
 
+    <action
+        android:id="@+id/action_global_toHome"
+        app:destination="@+id/main_fragment"
+        />
+
     <fragment
         android:id="@+id/ShowPhotoFragment"
         android:name="com.example.fashionapp.View.ShowPhotoFragment"

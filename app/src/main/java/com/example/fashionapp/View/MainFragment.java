@@ -25,11 +25,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.WeatherViewModel;
 import com.example.fashionapp.databinding.FragmentMainBinding;
-
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;

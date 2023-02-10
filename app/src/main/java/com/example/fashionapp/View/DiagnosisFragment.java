@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentDiagnosisBinding;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DiagnosisFragment extends Fragment {
+    SharedViewModel sharedViewModel;
 
     private MediaPlayer mediaPlayer;
     private FragmentDiagnosisBinding binding;
@@ -62,7 +62,6 @@ public class DiagnosisFragment extends Fragment {
                 page += 1;
                 map.put("A", map.get("A")+1);
                 getPage();
-
             }
         });
         binding.answer2Btn.setOnClickListener(new View.OnClickListener() {
@@ -157,10 +156,11 @@ public class DiagnosisFragment extends Fragment {
                     maxAudio = R.raw.straightresult;
                     break;
             }
-            
-            ResultFragment.result = maxKey;
+
             ResultFragment.result_audio = maxAudio;
 
+            sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+            sharedViewModel.setResult(maxKey);
             NavHostFragment.findNavController(DiagnosisFragment.this)
                     .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
         } else {

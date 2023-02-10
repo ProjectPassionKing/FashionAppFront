@@ -1,8 +1,6 @@
 package com.example.fashionapp.ViewModel;
 
 import android.app.Application;
-import android.util.Xml;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
@@ -76,45 +74,10 @@ public class SearchViewModel extends AndroidViewModel {
                     String tag = parser.getName();
                     if (tag.equals("Product")) {
                         list.add(p);
-                        p = null; //�ʱ�ȭ
+                        p = null; //초기화
                     }
                 case XmlPullParser.START_TAG: //2
-                    tag = parser.getName();
-                    switch (tag) {
-                        case "Product":
-                            p = new Product();
-                            break;
-                        case "ProductCode":
-                            if (p!=null)
-                                p.setProductCode(parser.nextText());
-                            break;
-                        case "ProductName":
-                            assert p != null;
-                            p.setProductName(parser.nextText());
-                            break;
-                        case "ProductImage300":
-                            if (p!=null)
-                                p.setProductImage300(parser.nextText());
-                            break;
-                        case "ProductPrice":
-                            if (p!=null)
-                                p.setProductPrice(parser.nextText());
-                            break;
-                        case "DetailPageUrl":
-                            assert p != null;
-                            p.setProductDetailUrl(parser.nextText());
-                            break;
-                        case "SalePrice":
-                            assert p != null;
-                            p.setSalePrice(parser.nextText());
-                            break;
-                        case "Discount":
-                            assert p!=null;
-                            ProductBenefit benefit = new ProductBenefit();
-                            benefit.setDiscount(parser.nextText());
-                            p.setBenefit(benefit);
-                            break;
-                    }
+                    p = setProduct(parser, p);
             }
 
             eventType = parser.next();
@@ -124,6 +87,48 @@ public class SearchViewModel extends AndroidViewModel {
 
         searchresult.postValue(list);
         return searchresult;
+    }
+
+    @Nullable
+    private Product setProduct(XmlPullParser parser, Product p) throws IOException, XmlPullParserException {
+        String tag;
+        tag = parser.getName();
+        switch (tag) {
+            case "Product":
+                p = new Product();
+                break;
+            case "ProductCode":
+                if (p !=null)
+                    p.setProductCode(parser.nextText());
+                break;
+            case "ProductName":
+                assert p != null;
+                p.setProductName(parser.nextText());
+                break;
+            case "ProductImage300":
+                if (p !=null)
+                    p.setProductImage300(parser.nextText());
+                break;
+            case "ProductPrice":
+                if (p !=null)
+                    p.setProductPrice(parser.nextText());
+                break;
+            case "DetailPageUrl":
+                assert p != null;
+                p.setProductDetailUrl(parser.nextText());
+                break;
+            case "SalePrice":
+                assert p != null;
+                p.setSalePrice(parser.nextText());
+                break;
+            case "Discount":
+                assert p !=null;
+                ProductBenefit benefit = new ProductBenefit();
+                benefit.setDiscount(parser.nextText());
+                p.setBenefit(benefit);
+                break;
+        }
+        return p;
     }
 
     public LiveData<List<Product>> getAPI(String keyword) throws XmlPullParserException, IOException {
