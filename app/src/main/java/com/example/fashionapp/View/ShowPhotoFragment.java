@@ -117,13 +117,13 @@ public class ShowPhotoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_MainFragment);}
+                        .navigate(R.id.action_global_toHome);}
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_ShowPhotoFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

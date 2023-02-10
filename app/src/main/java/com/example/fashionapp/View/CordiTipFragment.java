@@ -32,7 +32,7 @@ public class CordiTipFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_CordiTipFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
 
@@ -46,7 +46,7 @@ public class CordiTipFragment extends Fragment {
                 RecommandFragment.topbottom = "상의";
                 RecommandFragment.keyword = "브이넥 니트";
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
+                        .navigate(R.id.action_global_RecommandFragment);
             }
         });
 
@@ -56,14 +56,14 @@ public class CordiTipFragment extends Fragment {
                 RecommandFragment.topbottom = "하의";
                 RecommandFragment.keyword = "일자핏 바지";
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_CordiTipFragment_to_RecommandFragment);
+                        .navigate(R.id.action_global_RecommandFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_SixthFragment_to_NinthFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

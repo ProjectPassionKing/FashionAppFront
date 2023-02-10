@@ -125,14 +125,14 @@ public class ShowSimFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
-                        .navigate(R.id.action_ShowSimFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
-                        .navigate(R.id.action_ShowSimFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

@@ -13,159 +13,85 @@
         <action
             android:id="@+id/action_FirstFragment_to_MainFragment"
             app:destination="@+id/main_fragment" />
+
     </fragment>
     <fragment
         android:id="@+id/main_fragment"
         android:name="com.example.fashionapp.View.MainFragment"
         android:label=""
-        tools:layout="@layout/fragment_main">
-
-        <action
-            android:id="@+id/action_MainFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-        <action
-            android:id="@+id/action_MainFragment_to_DiagnosisFragment"
-            app:destination="@id/diagnosis_fragment" />
-        <action
-            android:id="@+id/action_MainFragment_to_TakePhotoFragment"
-            app:destination="@id/TakePhotoFragment" />
-        <action
-            android:id="@+id/action_MainFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-        <action
-            android:id="@+id/action_MainFragment_to_CordiTipFragment"
-            app:destination="@id/CordiTipFragment" />
-        <action
-            android:id="@+id/action_MainFragment_to_TakeSimFragment"
-            app:destination="@id/TakeSimFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/diagnosis_fragment"
         android:name="com.example.fashionapp.View.DiagnosisFragment"
         android:label=""
-        tools:layout="@layout/fragment_diagnosis">
-
-        <action
-            android:id="@+id/action_DiagnosisFragment_to_ResultFragment"
-            app:destination="@id/ResultFragment" />
-        <action
-            android:id="@+id/action_DiagnosisFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-        <action
-            android:id="@+id/action_DiagnosisFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-    </fragment>
+        tools:layout="@layout/fragment_diagnosis" />
 
     <fragment
         android:id="@+id/ResultFragment"
         android:name="com.example.fashionapp.View.ResultFragment"
         android:label=""
-        tools:layout="@layout/fragment_result">
-
-        <action
-            android:id="@+id/action_ResultFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_ResultFragment_to_DetailFragment"
-            app:destination="@id/DetailFragment" />
-        <action
-            android:id="@+id/action_ResultFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_result" />
     <fragment
         android:id="@+id/DetailFragment"
         android:name="com.example.fashionapp.View.DetailFragment"
         android:label=""
-        tools:layout="@layout/fragment_detail">
+        tools:layout="@layout/fragment_detail" />
 
-        <action
-            android:id="@+id/action_DetailFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_DetailFragment_to_CordiTipFragment"
-            app:destination="@id/CordiTipFragment" />
-        <action
-            android:id="@+id/action_DetailFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/CordiTipFragment"
         android:name="com.example.fashionapp.View.CordiTipFragment"
         android:label=""
-        tools:layout="@layout/fragment_cordi_tip">
-
-        <action
-            android:id="@+id/action_CordiTipFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_CordiTipFragment_to_RecommandFragment"
-            app:destination="@id/RecommandFragment" />
-        <action
-            android:id="@+id/action_SixthFragment_to_NinthFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_cordi_tip" />
     <fragment
         android:id="@+id/RecommandFragment"
         android:name="com.example.fashionapp.View.RecommandFragment"
         android:label=""
-        tools:layout="@layout/fragment_recommand">
-
-        <action
-            android:id="@+id/action_RecommandFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_RecommandFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_recommand" />
     <fragment
         android:id="@+id/TakePhotoFragment"
         android:name="com.example.fashionapp.View.TakePhotoFragment"
         android:label=""
-        tools:layout="@layout/fragment_take_photo">
+        tools:layout="@layout/fragment_take_photo" />
 
-        <action
-            android:id="@+id/action_TakePhotoFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_TakePhototFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-        <action
-            android:id="@+id/action_TakePhototFragment_to_ShowPhotoFragment"
-            app:destination="@id/ShowPhotoFragment" />
-    </fragment>
     <fragment
         android:id="@+id/TakeSimFragment"
         android:name="com.example.fashionapp.View.TakeSimFragment"
         android:label=""
-        tools:layout="@layout/fragment_take_sim">
-
-        <action
-            android:id="@+id/action_TakeSimFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_TakeSimFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-        <action
-            android:id="@+id/action_TakeSimFragment_to_ShowSimFragment"
-            app:destination="@id/ShowSimFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_take_sim" />
     <fragment
         android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.View.AllInOneFragment"
         android:label=""
-        tools:layout="@layout/fragment_all_in_one">
+        tools:layout="@layout/fragment_all_in_one" />
 
-        <action
-            android:id="@+id/action_AllinOneFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_AllinOneFragment_to_DiagnosisFragment"
-            app:destination="@id/diagnosis_fragment" />
-        <action
-            android:id="@+id/action_AllinOneFragment_to_RecommandFragment"
-            app:destination="@id/RecommandFragment" />
-    </fragment>
+    <fragment
+        android:id="@+id/ShowPhotoFragment"
+        android:name="com.example.fashionapp.View.ShowPhotoFragment"
+        android:label=""
+        tools:layout="@layout/fragment_show_photo" />
+    <fragment
+        android:id="@+id/ShowSimFragment"
+        android:name="com.example.fashionapp.View.ShowSimFragment"
+        android:label=""
+        tools:layout="@layout/fragment_show_sim" />
+
+    <fragment
+        android:id="@+id/DiagnosisSelectFragment"
+        android:name="com.example.fashionapp.View.DiagnosisSelectFragment"
+        android:label=""
+        tools:layout="@layout/fragment_diagnosis_select" />
+
+    <fragment
+        android:id="@+id/DiagnosisPicFragment"
+        android:name="com.example.fashionapp.View.DiagnosisPicFragment"
+        android:label=""
+        tools:layout="@layout/fragment_diagnosis_pic" />
+
+    <action
+        android:id="@+id/action_global_AllInOneFragment"
+        app:destination="@+id/AllinOneFragment"/>
     <action
         android:id="@+id/action_global_DiagnosisSelectFragment"
         app:destination="@id/DiagnosisSelectFragment" />
@@ -184,69 +110,32 @@
 
     <action
         android:id="@+id/action_global_toHome"
-        app:destination="@+id/main_fragment"
-        />
-
-    <fragment
-        android:id="@+id/ShowPhotoFragment"
-        android:name="com.example.fashionapp.View.ShowPhotoFragment"
-        android:label=""
-        tools:layout="@layout/fragment_show_photo">
-
-        <action
-            android:id="@+id/action_ShowPhotoFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_ShowPhotoFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/ShowSimFragment"
-        android:name="com.example.fashionapp.View.ShowSimFragment"
-        android:label=""
-        tools:layout="@layout/fragment_show_sim">
-
-        <action
-            android:id="@+id/action_ShowSimFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_ShowSimFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/DiagnosisSelectFragment"
-        android:name="com.example.fashionapp.View.DiagnosisSelectFragment"
-        android:label=""
-        tools:layout="@layout/fragment_diagnosis_select">
-
-        <action
-            android:id="@+id/action_DiagnosisSelectFragment_to_MainFragment"
-            app:destination="@id/main_fragment" />
-        <action
-            android:id="@+id/action_DiagnosisSelectFragment_to_AllinOneFragment"
-            app:destination="@id/AllinOneFragment" />
-        <action
-            android:id="@+id/action_DiagnosisSelectFragment_to_DiagnosisFragment"
-            app:destination="@id/diagnosis_fragment" />
-        <action
-            android:id="@+id/action_DiagnosisSelectFragment_to_DiagnosisPicFragment"
-            app:destination="@id/DiagnosisPicFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/DiagnosisPicFragment"
-        android:name="com.example.fashionapp.View.DiagnosisPicFragment"
-        android:label=""
-        tools:layout="@layout/fragment_diagnosis_pic">
+        app:destination="@+id/main_fragment" />
     <action
-        android:id="@+id/action_DiagnosisPicFragment_to_MainFragment"
-        app:destination="@id/main_fragment" />
-    <action
-        android:id="@+id/action_DiagnosisPicFragment_to_AllinOneFragment"
-        app:destination="@id/AllinOneFragment" />
-    <action
-        android:id="@+id/action_DiagnosisPicFragment_to_ResultFragment"
-        app:destination="@id/ResultFragment" />
+        app:destination="@id/RecommandFragment"
+        android:id="@+id/action_global_RecommandFragment"/>
 
-    </fragment>
+    <action
+        app:destination="@+id/diagnosis_fragment"
+        android:id="@+id/action_global_diagnosisFragment" />
+
+    <action
+        app:destination="@+id/ResultFragment"
+        android:id="@+id/action_global_ResultFragment" />
+
+    <action
+        app:destination="@+id/DiagnosisPicFragment"
+        android:id="@+id/action_global_DiagnosisPicFragment" />
+
+    <action
+        app:destination="@+id/ShowPhotoFragment"
+        android:id="@+id/action_global_ShowPhotoFragment" />
+
+    <action
+        app:destination="@+id/ShowSimFragment"
+        android:id="@+id/action_global_ShowSimFragment" />
+
+    <action
+        app:destination="@+id/FirstFragment"
+        android:id="@+id/action_global_FirstFragment" />
 </navigation>

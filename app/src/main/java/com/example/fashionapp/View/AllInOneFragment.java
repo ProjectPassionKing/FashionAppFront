@@ -39,21 +39,21 @@ public class AllInOneFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(AllInOneFragment.this)
-                        .navigate(R.id.action_AllinOneFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.buttonEleventh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(AllInOneFragment.this)
-                        .navigate(R.id.action_AllinOneFragment_to_DiagnosisFragment);
+                        .navigate(R.id.action_global_DiagnosisSelectFragment);
             }
         });
         binding.buttonTwelfth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(AllInOneFragment.this)
-                        .navigate(R.id.action_AllinOneFragment_to_RecommandFragment);
+                        .navigate(R.id.action_global_RecommandFragment);
             }
         });
     }

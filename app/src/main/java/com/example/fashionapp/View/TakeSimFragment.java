@@ -95,7 +95,7 @@ public class TakeSimFragment extends Fragment {
                     }
 
                     NavHostFragment.findNavController(TakeSimFragment.this)
-                            .navigate(R.id.action_TakeSimFragment_to_ShowSimFragment);
+                            .navigate(R.id.action_global_ShowSimFragment);
                 }
             }
         });
@@ -104,14 +104,14 @@ public class TakeSimFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakeSimFragment.this)
-                        .navigate(R.id.action_TakeSimFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakeSimFragment.this)
-                        .navigate(R.id.action_TakeSimFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {

@@ -88,7 +88,7 @@ public class RecommandFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_RecommandFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
 

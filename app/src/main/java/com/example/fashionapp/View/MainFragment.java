@@ -91,7 +91,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_MainFragment_to_FirstFragment);
+                        .navigate(R.id.action_global_FirstFragment);
             }
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
@@ -101,7 +101,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_MainFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
 
@@ -187,17 +187,17 @@ public class MainFragment extends Fragment {
             for(String s: finalText){
                 if (s.contains("진단")) {
                     NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_MainFragment_to_DiagnosisFragment);
+                            .navigate(R.id.action_global_diagnosisFragment);
                 } else if (s.contains("비슷한")) {
                     NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_MainFragment_to_TakePhotoFragment);
+                            .navigate(R.id.action_global_TakePhotoFragment);
                 } else if (s.contains("코디")) {
                     NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_MainFragment_to_CordiTipFragment);
+                            .navigate(R.id.action_global_CordiTipFragment);
                 }
                 else if (s.contains("옷장")) {
                     NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_MainFragment_to_TakeSimFragment);
+                            .navigate(R.id.action_global_TakeSimFragment);
                 }
             }
 

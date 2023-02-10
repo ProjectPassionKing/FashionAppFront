@@ -53,7 +53,7 @@ public class DiagnosisFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_DiagnosisFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.answer1Btn.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +85,7 @@ public class DiagnosisFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisFragment.this)
-                        .navigate(R.id.action_DiagnosisFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }
@@ -161,8 +161,9 @@ public class DiagnosisFragment extends Fragment {
 
             sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
             sharedViewModel.setResult(maxKey);
+
             NavHostFragment.findNavController(DiagnosisFragment.this)
-                    .navigate(R.id.action_DiagnosisFragment_to_ResultFragment);
+                    .navigate(R.id.action_global_ResultFragment);
         } else {
             int resIdQ = getResources().getIdentifier("question_"+(page+1),
                     "string", getActivity().getPackageName());

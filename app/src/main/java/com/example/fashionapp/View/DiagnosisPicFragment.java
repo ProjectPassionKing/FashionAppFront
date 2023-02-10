@@ -35,15 +35,15 @@ public class DiagnosisPicFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-
         sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
             result = dresult;
         });
+
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisPicFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
 
@@ -53,7 +53,7 @@ public class DiagnosisPicFragment extends Fragment {
                 result = "Straight";
                 ResultFragment.result_audio = R.raw.straightresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+                        .navigate(R.id.action_global_ResultFragment);
             }
         });
         binding.naturalPic.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class DiagnosisPicFragment extends Fragment {
                 result = "Natural";
                 ResultFragment.result_audio = R.raw.naturalresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+                        .navigate(R.id.action_global_ResultFragment);
             }
         });
         binding.wavePic.setOnClickListener(new View.OnClickListener() {
@@ -71,14 +71,14 @@ public class DiagnosisPicFragment extends Fragment {
                 result = "Wave";
                 ResultFragment.result_audio = R.raw.waveresult;
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisPicFragment_to_ResultFragment);
+                        .navigate(R.id.action_global_ResultFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_DiagnosisPicFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

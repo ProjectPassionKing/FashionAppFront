@@ -36,28 +36,28 @@ public class DiagnosisSelectFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisSelectFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.picBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisSelectFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_DiagnosisPicFragment);
+                        .navigate(R.id.action_global_DiagnosisPicFragment);
             }
         });
         binding.optionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisSelectFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_DiagnosisFragment);
+                        .navigate(R.id.action_global_diagnosisFragment);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DiagnosisSelectFragment.this)
-                        .navigate(R.id.action_DiagnosisSelectFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

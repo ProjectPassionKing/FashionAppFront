@@ -83,7 +83,7 @@ public class TakePhotoFragment extends Fragment {
                     }
 
                     NavHostFragment.findNavController(TakePhotoFragment.this)
-                            .navigate(R.id.action_TakePhototFragment_to_ShowPhotoFragment);
+                            .navigate(R.id.action_global_ShowPhotoFragment);
                 }
             }
         });
@@ -92,14 +92,14 @@ public class TakePhotoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_TakePhotoFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
         binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_TakePhototFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {

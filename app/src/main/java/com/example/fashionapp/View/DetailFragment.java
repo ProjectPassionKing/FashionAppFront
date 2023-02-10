@@ -34,7 +34,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DetailFragment.this)
-                        .navigate(R.id.action_DetailFragment_to_MainFragment);
+                        .navigate(R.id.action_global_toHome);
             }
         });
 
@@ -45,7 +45,7 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(DetailFragment.this)
-                        .navigate(R.id.action_DetailFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }
