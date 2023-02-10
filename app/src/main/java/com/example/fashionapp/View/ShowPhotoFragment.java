@@ -3,6 +3,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +30,8 @@ import okhttp3.Response;
 public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
-    ImageView click_image_id;
-    TextView top;
-    TextView bottom;
+    ImageView top_image;
+    ImageView bottom_image;
 
     @Override
     public View onCreateView(
@@ -60,11 +60,8 @@ public class ShowPhotoFragment extends Fragment {
         }
 
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
-        click_image_id = getView().findViewById(R.id.click_image);
-        click_image_id.setImageBitmap(bitmap);
-
-        top = getView().findViewById(R.id.top);
-        bottom = getView().findViewById(R.id.bottom);
+        top_image = getView().findViewById(R.id.top_image);
+        bottom_image = getView().findViewById(R.id.bottom_image);
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -84,29 +81,31 @@ public class ShowPhotoFragment extends Fragment {
 
             try {
                 Response response = client.newCall(request).execute();
-                String responseBodyString = response.body().string();
-                System.out.println(responseBodyString);
+                String jsonString = response.body().string();
 
-                try {
-                    JSONObject jsonObject = new JSONObject(responseBodyString);
-                    String top_data = jsonObject.getString("top");
-                    String bottom_data = jsonObject.getString("bottom");
+                JSONObject files = new JSONObject(jsonString);
+                String file1_encoded = files.getString("file1");
+                String file2_encoded = files.getString("file2");
 
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            top.setText(top_data);
-                            bottom.setText(bottom_data);
-                        }
-                    });
+                byte[] file1_data = Base64.decode(file1_encoded, Base64.DEFAULT);
+                byte[] file2_data = Base64.decode(file2_encoded, Base64.DEFAULT);
 
-                    response.close();
+                Bitmap bitmap1 = BitmapFactory.decodeByteArray(file1_data, 0, file1_data.length);
+                Bitmap bitmap2 = BitmapFactory.decodeByteArray(file2_data, 0, file2_data.length);
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        top_image.setImageBitmap(bitmap1);
+                        bottom_image.setImageBitmap(bitmap2);
+                    }
+                });
+
+                response.close();
 
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
