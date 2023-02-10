@@ -25,7 +25,6 @@ public class DiagnosisPicFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentDiagnosisPicBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -34,10 +33,8 @@ public class DiagnosisPicFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
-            result = dresult;
-        });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +49,7 @@ public class DiagnosisPicFragment extends Fragment {
             public void onClick(View view) {
                 result = "Straight";
                 ResultFragment.result_audio = R.raw.straightresult;
+                sharedViewModel.setResult(result);
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_global_ResultFragment);
             }
@@ -61,6 +59,7 @@ public class DiagnosisPicFragment extends Fragment {
             public void onClick(View view) {
                 result = "Natural";
                 ResultFragment.result_audio = R.raw.naturalresult;
+                sharedViewModel.setResult(result);
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_global_ResultFragment);
             }
@@ -70,6 +69,7 @@ public class DiagnosisPicFragment extends Fragment {
             public void onClick(View view) {
                 result = "Wave";
                 ResultFragment.result_audio = R.raw.waveresult;
+                sharedViewModel.setResult(result);
                 NavHostFragment.findNavController(DiagnosisPicFragment.this)
                         .navigate(R.id.action_global_ResultFragment);
             }
