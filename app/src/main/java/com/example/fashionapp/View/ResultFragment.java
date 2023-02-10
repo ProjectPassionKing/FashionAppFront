@@ -32,13 +32,6 @@ public class ResultFragment extends Fragment {
         ImageView gifImageView = binding.getRoot().findViewById(R.id.diagnose_video);
         Glide.with(this).asGif().load(R.raw.diagnose_video).into(gifImageView);
 
-        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
-            diagnosis_result = dresult;
-        });
-
-        binding.questionTxtview.setText(diagnosis_result);
         return binding.getRoot();
 
     }
@@ -48,7 +41,19 @@ public class ResultFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
+
+
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+            diagnosis_result = dresult;
+            binding.questionTxtview.setText(diagnosis_result);
+        });
+
+
+
         mediaPlayer = MediaPlayer.create(this.getContext(), result_audio);
         playSound();
 
@@ -68,7 +73,7 @@ public class ResultFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ResultFragment.this)
-                        .navigate(R.id.action_ResultFragment_to_AllinOneFragment);
+                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }
