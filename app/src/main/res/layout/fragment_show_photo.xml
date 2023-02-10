@@ -6,62 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".View.ShowPhotoFragment">
 
-    <ImageView
-        android:id="@+id/click_image"
-        android:layout_width="396dp"
-        android:layout_height="686dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/home_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="이 옷이네요!"
+        android:layout_marginTop="104dp"
+        android:text="에이닷의 추천!"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toTopOf="@+id/click_image" />
-
-    <TextView
-        android:id="@+id/top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="197dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="199dp"
-        android:text="top"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/click_image"
-        app:layout_constraintStart_toStartOf="@+id/click_image"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
-
-    <TextView
-        android:id="@+id/bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="bottom"
-        android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/top_image"
+        android:layout_width="199dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
+
+    <ImageView
+        android:id="@+id/bottom_image"
+        android:layout_width="205dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_image"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/menu_hamburger"
