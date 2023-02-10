@@ -71,9 +71,9 @@
 
 <!--    에이닷이 말하는 대사들-->
     <string name="weather_main">점점 추워지는 날씨, 오늘은 \n 어떤 옷을 입고 나가볼까요?</string>
-    <string name="type_detail">%1$s Type에 \n 대해 내가 자세히 \n 알려줄게!</string>
+    <string name="type_detail">%s Type에 \n 대해 내가 자세히 \n 알려줄게!</string>
     <string name="recommand_cl">어울리는 %s를 \n 추천해줄게요!</string>
-    <string name="cordi_tip">%$s \n 코디 팁이야!</string>
+    <string name="cordi_tip">%s Type\n 코디 팁이야!</string>
     <string name="result_type">체형 진단 결과가 나왔어요!</string>
     <string name="take_photo">사진을 찍어주세요!</string>
     <string name="diagnosis">진단을 진행할게요! \n 해당하는 칸을 눌러주세요</string>
@@ -86,13 +86,22 @@
     <string name="straight_fabric">어울리는 소재는 면, 울(모), 데님, 가죽입니다.</string>
     <string name="straight_pattern">어울리는 패턴은 스트라이프, 도트, 플로랄, 보더입니다.</string>
     <string name="straight_total">전체적으로 균형잡힌 몸이며 오버핏보다는 정사이즈가 잘 어울려요.</string>
-    <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
+
+    <string name="straight_cordi_total">전체적으로 균형잡힌 몸이며 오버핏보다는 정사이즈가 잘 어울려요.</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥, 도트패턴</string>
     <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
+<!--    목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요 -->
 
-    <!--  Wave type  -->'
+    <!--  Wave type  -->
+    <string name="wave_cordi_total">전체적으로 뼈가 가늘고 상체는 짧게, 하체는 길어보이게 입는 것이 베스트</string>
+    <string name="wave_cordi_top">추천 상의는 \n 레이스, 프릴 블라우스가 베스트</string>
+    <string name="wave_cordi_bottom">추천 하의는 \n 하이웨스트 와이드 팬츠, A라인 또는 머메이드라인 스커트</string>
 
 <!--Neutral type-->
+    <string name="natural_cordi_total">여유있게 입고 살짝의 노출을 더하면 날씬해보여요.\n시크하고 세련된 이미지의 코디가 베스트</string>
+    <string name="natural_cordi_top">추천 상의는 \n 루즈핏, 와이드한 셔츠 및 자켓</string>
+    <string name="natural_cordi_bottom">추천 하의는 \n루즈하고 와이드한 핏, 핀턱이 들어간 슬랙스, 조거팬츠</string>
+
 
 
 
