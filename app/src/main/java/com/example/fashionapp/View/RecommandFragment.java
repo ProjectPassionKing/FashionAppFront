@@ -31,7 +31,6 @@ public class RecommandFragment extends Fragment {
     public static String topbottom;
     private SearchViewModel searchViewModel;
     public String keyword = "";
-    public static List<String> keylist;
     private SearchKeywordViewModel searchKeywordViewModel;
 
     @Override
@@ -39,16 +38,21 @@ public class RecommandFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
-         searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
+        return binding.getRoot();
+    }
+
+    public void playSound() {
+        mediaPlayer.start();
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
 
-//        keyword=searchKeywordViewModel.chooseKeyword();
         searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
             keyword = searchkeyword;
-
-
             new Thread(() -> {
                 try {
                     searchViewModel.callAPI(keyword);
@@ -58,16 +62,6 @@ public class RecommandFragment extends Fragment {
             }).start();
         });
 
-        return binding.getRoot();
-
-    }
-
-    public void playSound() {
-        mediaPlayer.start();
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         searchViewModel.getData().observe(getViewLifecycleOwner(), product -> {
             for (Product p : product) {
                 SearchLayout searchLayout = null;
@@ -103,7 +97,6 @@ public class RecommandFragment extends Fragment {
         binding.otherRecommandBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 NavHostFragment.findNavController(RecommandFragment.this).navigate(R.id.action_global_RecommandFragment);
             }
         });

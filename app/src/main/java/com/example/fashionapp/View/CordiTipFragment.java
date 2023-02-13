@@ -53,7 +53,6 @@ public class CordiTipFragment extends Fragment {
             binding.cordi1st.setText(getStringById("cordi", "total"));
             binding.cordi2nd.setText(getStringById("cordi", "top"));
             binding.cordi3rd.setText(getStringById("cordi", "bottom"));
-
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
@@ -93,7 +92,7 @@ public class CordiTipFragment extends Fragment {
 
     private void sendKeyList(String tb, String ktb) {
         RecommandFragment.topbottom = ktb;
-        RecommandFragment.keylist = Arrays.asList(getStringById("keyword", tb).split(","));
+//        RecommandFragment.keylist = Arrays.asList(getStringById("keyword", tb).split(","));
         searchKeywordViewModel.setFirstKeyList(new ArrayList<>(Arrays.asList(getStringById("keyword", tb).split(","))));
     }
 
