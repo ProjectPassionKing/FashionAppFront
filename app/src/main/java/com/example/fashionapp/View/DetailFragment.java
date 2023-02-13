@@ -41,13 +41,6 @@ public class DetailFragment extends Fragment {
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
 
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(DetailFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
     }
 
     @Override

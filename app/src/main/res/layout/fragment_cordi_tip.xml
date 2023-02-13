@@ -6,26 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".View.CordiTipFragment">
 
-    <ImageView
-        android:id="@+id/avatar_img"
-        android:layout_width="100dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="character"
-        android:src="@drawable/character_2"
-        app:layout_constraintEnd_toStartOf="@+id/adot_talk_txtview"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
-
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="56dp"
         android:background="@drawable/text_square"
         android:padding="20dp"
         android:text="@string/cordi_tip"
@@ -36,10 +23,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/avatar_img"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="character"
+        android:src="@drawable/character_2"
+        app:layout_constraintEnd_toStartOf="@+id/adot_talk_txtview"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/cordi_2nd"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_button"
+        android:padding="20dp"
+        android:text="@string/straight_cordi_top"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cordi_1st" />
+
+    <android.widget.Button
+        android:id="@+id/cordi_3rd"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_button"
+        android:padding="15dp"
+        android:text="@string/straight_cordi_bottom"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cordi_2nd" />
+
     <TextView
         android:id="@+id/cordi_1st"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:background="@drawable/text_square"
         android:gravity="center"
         android:padding="20dp"
@@ -47,40 +78,10 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <android.widget.Button
-        android:id="@+id/cordi_2nd"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/text_button"
-        android:padding="20dp"
-        android:text="@string/straight_cordi_top"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/cordi_1st"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <android.widget.Button
-        android:id="@+id/cordi_3rd"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/text_button"
-        android:padding="15dp"
-        android:text="@string/straight_cordi_bottom"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/cordi_2nd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
 
     <LinearLayout
         android:id="@+id/scrollview"
@@ -89,22 +90,6 @@
         android:background="@android:color/transparent"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/home_btn" />
-
-    <ImageButton
-        android:id="@+id/menu_hamburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@android:color/transparent"
-        android:text="Menu"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/hamburger_menu" />
-
 
     <ImageButton
         android:id="@+id/home_btn"

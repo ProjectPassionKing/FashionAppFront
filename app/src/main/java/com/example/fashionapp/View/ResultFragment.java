@@ -67,15 +67,6 @@ public class ResultFragment extends Fragment {
                         .navigate(R.id.action_global_toHome);
             }
         });
-
-
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ResultFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
     }
 
     @Override
