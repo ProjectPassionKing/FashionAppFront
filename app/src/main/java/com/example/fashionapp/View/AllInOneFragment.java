@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,6 +27,43 @@ public class AllInOneFragment extends Fragment {
     ) {
 
         binding = FragmentAllInOneBinding.inflate(inflater, container, false);
+
+        Spinner spinner1 = binding.getRoot().findViewById(R.id.spinner1);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"Option 1", "Option 2", "Option 3"});
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
+
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                // Do something with the selected item
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do something when nothing is selected
+            }
+        });
+
+        Spinner spinner2 = binding.getRoot().findViewById(R.id.spinner2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"Option 1", "Option 2", "Option 3"});
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) parent.getItemAtPosition(position);
+                // Do something with the selected item
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do something when nothing is selected
+            }
+        });
+
         return binding.getRoot();
 
     }

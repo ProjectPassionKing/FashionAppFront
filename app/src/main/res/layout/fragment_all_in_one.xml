@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".View.AllInOneFragment">
 
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="202dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_twelfth"></Spinner>
+
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
@@ -33,14 +44,29 @@
         android:id="@+id/button_eleventh"
         android:layout_width="205dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FFFFFF"
-        android:text="체형 진단"
         android:stateListAnimator="@null"
+        android:text="체형 진단"
         android:textColor="#000000"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/view2"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="203dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_eleventh"></Spinner>
 
     <ImageView
         android:id="@+id/imageView1"
@@ -59,24 +85,27 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="60dp"
         android:background="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="1dp" />
 
     <Button
         android:id="@+id/button_twelfth"
         android:layout_width="200dp"
         android:layout_height="47dp"
         android:backgroundTint="#FFFFFF"
-        android:text="옷 추천"
         android:stateListAnimator="@null"
+        android:text="옷 추천"
         android:textColor="#000000"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
-        app:layout_constraintVertical_bias="0.02"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintVertical_bias="0.129" />
 
     <ImageView
         android:id="@+id/avatar_img"
