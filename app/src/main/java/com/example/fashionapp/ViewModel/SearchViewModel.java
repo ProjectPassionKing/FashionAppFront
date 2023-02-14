@@ -1,11 +1,13 @@
 package com.example.fashionapp.ViewModel;
 
 import android.app.Application;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
 import com.example.fashionapp.BuildConfig;
 import com.example.fashionapp.Model.Entity.search.ProductBenefit;
 import com.example.fashionapp.Model.SearchAPI;
@@ -13,9 +15,11 @@ import com.example.fashionapp.Model.Entity.search.Product;
 import com.example.fashionapp.Model.Entity.search.ProductResponse;
 import com.tickaroo.tikxml.TikXml;
 import com.tickaroo.tikxml.retrofit.TikXmlConverterFactory;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -38,11 +42,12 @@ import retrofit2.Retrofit;
 
 public class SearchViewModel extends AndroidViewModel {
     private MutableLiveData<List<Product>> searchresult = new MutableLiveData<>();
+
     public SearchViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<List<Product>> getData(){
+    public LiveData<List<Product>> getData() {
         return searchresult;
     }
 
@@ -50,10 +55,10 @@ public class SearchViewModel extends AndroidViewModel {
 
         String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
         String psize = "10";
-        String otherurl = "&pageSize="+psize+"&apiCode=ProductSearch&sortCd=CP&keyword=";
-         String key = BuildConfig.SEARCH_KEY;
+        String otherurl = "&pageSize=" + psize + "&apiCode=ProductSearch&sortCd=CP&keyword=";
+        String key = BuildConfig.SEARCH_KEY;
         List<Product> list = null;
-        URL url = new URL(rurl+key+otherurl+keyword);
+        URL url = new URL(rurl + key + otherurl + keyword);
         URLConnection urlCon = url.openConnection();
 
         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -84,7 +89,6 @@ public class SearchViewModel extends AndroidViewModel {
         }
 
         assert p != null;
-
         searchresult.postValue(list);
         return searchresult;
     }
@@ -98,7 +102,7 @@ public class SearchViewModel extends AndroidViewModel {
                 p = new Product();
                 break;
             case "ProductCode":
-                if (p !=null)
+                if (p != null)
                     p.setProductCode(parser.nextText());
                 break;
             case "ProductName":
@@ -106,11 +110,11 @@ public class SearchViewModel extends AndroidViewModel {
                 p.setProductName(parser.nextText());
                 break;
             case "ProductImage300":
-                if (p !=null)
+                if (p != null)
                     p.setProductImage300(parser.nextText());
                 break;
             case "ProductPrice":
-                if (p !=null)
+                if (p != null)
                     p.setProductPrice(parser.nextText());
                 break;
             case "DetailPageUrl":
@@ -122,7 +126,7 @@ public class SearchViewModel extends AndroidViewModel {
                 p.setSalePrice(parser.nextText());
                 break;
             case "Discount":
-                assert p !=null;
+                assert p != null;
                 ProductBenefit benefit = new ProductBenefit();
                 benefit.setDiscount(parser.nextText());
                 p.setBenefit(benefit);
@@ -156,7 +160,7 @@ public class SearchViewModel extends AndroidViewModel {
 
                 ProductResponse presponse = response.body();
                 List<Product> productList = presponse.getProducts().getProduct();
-                for(Product p: productList){
+                for (Product p : productList) {
                     try {
                         String name = new String(p.getProductName().getBytes(), "euc-kr");
                         String name2 = new String(name.getBytes(StandardCharsets.UTF_8));
