@@ -21,5 +21,8 @@
 
     <style name="Theme.FashionApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.FashionApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.FashionApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

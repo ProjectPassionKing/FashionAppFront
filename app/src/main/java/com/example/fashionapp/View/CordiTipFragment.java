@@ -81,13 +81,6 @@ public class CordiTipFragment extends Fragment {
                         .navigate(R.id.action_global_RecommandFragment);
             }
         });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(CordiTipFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
     }
 
     private void sendKeyList(String tb, String ktb) {

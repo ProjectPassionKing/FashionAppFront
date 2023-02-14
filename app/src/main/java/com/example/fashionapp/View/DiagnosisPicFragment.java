@@ -74,13 +74,6 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_global_ResultFragment);
             }
         });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(DiagnosisPicFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
     }
 
     @Override

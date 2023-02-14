@@ -97,14 +97,6 @@ public class MainFragment extends Fragment {
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
 
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
-
         recordButton = getView().findViewById(R.id.mic_btn);
         binding.micBtn.setOnTouchListener(new View.OnTouchListener()  {
             @Override

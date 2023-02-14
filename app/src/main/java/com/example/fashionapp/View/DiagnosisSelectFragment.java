@@ -53,13 +53,6 @@ public class DiagnosisSelectFragment extends Fragment {
                         .navigate(R.id.action_global_diagnosisFragment);
             }
         });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(DiagnosisSelectFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
     }
 
     @Override

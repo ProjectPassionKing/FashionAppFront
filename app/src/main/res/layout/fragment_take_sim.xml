@@ -49,7 +49,7 @@
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:text="옷을 입혀볼게요!"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -57,23 +57,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
-
-    <ImageButton
-        android:id="@+id/menu_hamburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@android:color/transparent"
-        android:text="Menu"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/hamburger_menu" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/home_btn"

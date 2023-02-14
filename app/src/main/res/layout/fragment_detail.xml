@@ -4,27 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.DetailFragment">
+    tools:context=".View.DetailFragment"
+    tools:layout_editor_absoluteX="5dp"
+    tools:layout_editor_absoluteY="80dp">
 
     <ImageView
         android:id="@+id/avatar_img"
         android:layout_width="100dp"
         android:layout_height="200dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="character"
         android:src="@drawable/character_2"
         app:layout_constraintEnd_toStartOf="@+id/adot_talk_txtview"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menu_hamburger" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="45dp"
         android:background="@drawable/text_square"
         android:padding="20dp"
@@ -42,85 +44,64 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:orientation="horizontal"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/home_btn"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/home_btn" />
 
-    <ImageButton
-        android:id="@+id/menu_hamburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@android:color/transparent"
-        android:text="Menu"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/hamburger_menu" />
 
     <android.widget.TextView
         android:id="@+id/cordi_explain1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:paddingVertical="15dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/text_square"
         android:gravity="center"
+        android:paddingVertical="15dp"
         android:text="@string/straight_fabric"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cordi_explain2"
-        app:layout_constraintTop_toBottomOf="@+id/avatar_img"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/avatar_img"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
 
     <android.widget.TextView
         android:id="@+id/cordi_explain2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:paddingVertical="15dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/text_square"
         android:gravity="center"
+        android:paddingVertical="15dp"
         android:text="@string/straight_pattern"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/cordi_explain1"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cordi_explain1" />
 
     <android.widget.TextView
         android:id="@+id/cordi_explain3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:paddingVertical="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/text_square"
         android:gravity="center"
+        android:paddingVertical="15dp"
         android:text="@string/straight_total"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/cordi_explain2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cordi_explain2" />
 
     <ImageButton
         android:id="@+id/home_btn"

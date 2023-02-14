@@ -38,7 +38,6 @@ public class ShowSimFragment extends Fragment {
 
     private FragmentShowSimBinding binding;
     ImageView sim_image_id;
-    TextView prediction;
 
     ActivityResultLauncher<Intent> activityResultLauncher;
 
@@ -120,19 +119,11 @@ public class ShowSimFragment extends Fragment {
 
         }).start();
 
-
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowSimFragment.this)
                         .navigate(R.id.action_global_toHome);
-            }
-        });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ShowSimFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
             }
         });
     }

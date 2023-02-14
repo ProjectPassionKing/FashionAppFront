@@ -16,7 +16,25 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#D9D9D9"
-            app:popupTheme="@style/Theme.FashionApp.PopupOverlay" />
+            app:popupTheme="@style/Theme.FashionApp.PopupOverlay">
+
+            <ImageButton
+                android:id="@+id/menu_hamburger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Menu"
+                android:layout_gravity="right"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.052"
+                app:srcCompat="@drawable/hamburger_menu" />
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -111,19 +111,11 @@ public class ShowPhotoFragment extends Fragment {
 
         }).start();
 
-
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(ShowPhotoFragment.this)
                         .navigate(R.id.action_global_toHome);}
-        });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
         });
     }
 

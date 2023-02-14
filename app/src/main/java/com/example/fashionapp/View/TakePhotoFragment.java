@@ -95,13 +95,7 @@ public class TakePhotoFragment extends Fragment {
                         .navigate(R.id.action_global_toHome);
             }
         });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(TakePhotoFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
+
         binding.cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
