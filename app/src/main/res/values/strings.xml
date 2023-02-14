@@ -89,24 +89,24 @@
 
     <string name="straight_cordi_total">전체적으로 균형잡힌 몸이며 오버핏보다는 정사이즈가 잘 어울려요.</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥</string>
-    <string name="straight_cordi_bottom">추천 하의는 일자핏, 부츠컷, H라인, 슬림핏</string>
+    <string name="straight_cordi_bottom">추천 하의는 \n일자핏, 부츠컷, H라인, 슬림핏바지, 스키니진, 스트레이트핏 바지</string>
     <string name="straight_keyword_top">브이넥,라운드넥,스퀘어넥,유넥</string>
-    <string name="straight_keyword_bottom">일자핏 바지,부츠컷 바지,슬림핏 바지,H라인 스커트</string>
+    <string name="straight_keyword_bottom">일자핏 바지,부츠컷 바지,슬림핏 바지,H라인 스커트,스키니진,스트레이트핏 바지</string>
 <!--    목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요 -->
 
     <!--  Wave type  -->
     <string name="wave_cordi_total">전체적으로 뼈가 가늘고 상체는 짧게, 하체는 길어보이게 입는 것이 베스트</string>
-    <string name="wave_cordi_top">추천 상의는 \n 레이스, 프릴 블라우스가 베스트</string>
-    <string name="wave_cordi_bottom">추천 하의는 \n 하이웨스트 와이드 팬츠, A라인 또는 머메이드라인 스커트</string>
-    <string name="wave_keyword_top">레이스 블라우스,프릴 블라우스</string>
-    <string name="wave_keyword_bottom">하이웨스트 와이드 팬츠,A라인 스커트,머메이드라인 스커트</string>
+    <string name="wave_cordi_top">추천 상의는 \n터틀넥, 크롭 니트. 레이스 블라우스와 프릴 블라우스가 베스트</string>
+    <string name="wave_cordi_bottom">추천 하의는 \n 하이웨스트 바지, 와이드 슬랙스, A라인 또는 머메이드라인 스커트</string>
+    <string name="wave_keyword_top">레이스 블라우스,프릴 블라우스,터틀넥 니트,크롭 니트</string>
+    <string name="wave_keyword_bottom">하이웨스트 팬츠,A라인 스커트,머메이드라인 스커트,와이드 슬랙스</string>
 
 <!--Neutral type-->
     <string name="natural_cordi_total">여유있게 입고 살짝의 노출을 더하면 날씬해보여요.\n시크하고 세련된 이미지의 코디가 베스트</string>
     <string name="natural_cordi_top">추천 상의는 \n 루즈핏, 와이드한 셔츠 및 자켓</string>
     <string name="natural_cordi_bottom">추천 하의는 \n루즈하고 와이드한 핏, 핀턱이 들어간 슬랙스, 조거팬츠</string>
-    <string name="natural_keyword_top">루즈핏 셔츠,와이드 셔츠,루즈핏 자켓</string>
-    <string name="natural_keyword_bottom">루즈핏 슬랙스,와이드 슬랙스,핀턱 슬랙스,조거팬츠</string>
+    <string name="natural_keyword_top">루즈핏 셔츠,와이드 셔츠,루즈핏 자켓,테일러자켓,트위드 자켓</string>
+    <string name="natural_keyword_bottom">루즈핏 슬랙스,와이드 슬랙스,핀턱 슬랙스,조거팬츠,와이드 청바지</string>
 
 
 
