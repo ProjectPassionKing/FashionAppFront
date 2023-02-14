@@ -97,7 +97,35 @@ public class RecommandFragment extends Fragment {
         binding.otherRecommandBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(RecommandFragment.this).navigate(R.id.action_global_RecommandFragment);
+
+                binding.searchLinear.removeAllViewsInLayout();
+
+                searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
+                    keyword = searchkeyword;
+                    new Thread(() -> {
+                        try {
+                            searchViewModel.callAPI(keyword);
+                        } catch (XmlPullParserException | IOException e) {
+                            e.printStackTrace();
+                        }
+                    }).start();
+                });
+
+                searchViewModel.getData().observe(getViewLifecycleOwner(), product -> {
+                    for (Product p : product) {
+                        SearchLayout searchLayout = null;
+                        try {
+                            searchLayout = new SearchLayout(getContext(), p);
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+
+                        binding.searchLinear.addView(searchLayout);
+                        binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
+                        gotoProductpage(searchLayout, p);
+                    }
+                });
+//                NavHostFragment.findNavController(RecommandFragment.this).navigate(R.id.action_global_RecommandFragment);
             }
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
