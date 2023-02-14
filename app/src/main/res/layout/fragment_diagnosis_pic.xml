@@ -21,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    //해당 부분 수정하기
     <ImageButton
         android:id="@+id/straight_pic"
         android:layout_width="174dp"
