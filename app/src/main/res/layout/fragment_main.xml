@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/text_square"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,18 +26,18 @@
 
     <ImageView
         android:id="@+id/avatar_img"
-        android:layout_width="220dp"
-        android:layout_height="285dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="241dp"
+        android:layout_height="339dp"
         android:layout_marginTop="150dp"
+        android:layout_marginBottom="70dp"
         android:contentDescription="character"
         android:src="@drawable/character"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
@@ -48,10 +48,11 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:layout_marginBottom="-20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/avatar_img" />
+        app:layout_constraintBottom_toTopOf="@+id/avatar_img" />
 
     <LinearLayout
         android:id="@+id/scrollview"
