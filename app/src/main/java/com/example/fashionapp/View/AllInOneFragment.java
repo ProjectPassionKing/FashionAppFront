@@ -29,7 +29,7 @@ public class AllInOneFragment extends Fragment {
         binding = FragmentAllInOneBinding.inflate(inflater, container, false);
 
         Spinner spinner1 = binding.getRoot().findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"Option 1", "Option 2", "Option 3"});
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"체형 진단 진행 / 결과 보기", "유형 자세히", "코디 팁"});
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
 
@@ -47,7 +47,7 @@ public class AllInOneFragment extends Fragment {
         });
 
         Spinner spinner2 = binding.getRoot().findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"Option 1", "Option 2", "Option 3"});
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(binding.getRoot().getContext(), android.R.layout.simple_spinner_item, new String[]{"내가 입은 옷과 비슷한 옷", "체형에 어울리는 옷"});
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
 
