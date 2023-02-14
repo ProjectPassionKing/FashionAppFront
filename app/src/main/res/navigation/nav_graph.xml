@@ -32,12 +32,6 @@
         android:name="com.example.fashionapp.View.ResultFragment"
         android:label=""
         tools:layout="@layout/fragment_result" />
-    <fragment
-        android:id="@+id/DetailFragment"
-        android:name="com.example.fashionapp.View.DetailFragment"
-        android:label=""
-        tools:layout="@layout/fragment_detail" />
-
 
     <fragment
         android:id="@+id/CordiTipFragment"
@@ -101,9 +95,7 @@
     <action
         android:id="@+id/action_global_CordiTipFragment"
         app:destination="@id/CordiTipFragment" />
-    <action
-        android:id="@+id/action_global_DetailFragment"
-        app:destination="@id/DetailFragment" />
+
     <action
         android:id="@+id/action_global_TakeSimFragment"
         app:destination="@id/TakeSimFragment" />

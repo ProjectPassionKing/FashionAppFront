@@ -41,16 +41,18 @@ public class ResultFragment extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-
         super.onViewCreated(view, savedInstanceState);
-
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
-            diagnosis_result = dresult;
-            binding.questionTxtview.setText(diagnosis_result);
+            diagnosis_result = dresult.toLowerCase();
+            binding.resultTxtview.setText(dresult);
+            binding.resultExp1.setText(getStringById("total"));
+            binding.resultExp2.setText(getStringById("fabric"));
+            binding.resultExp3.setText(getStringById("pattern"));
         });
+
 
 
 
@@ -68,6 +70,13 @@ public class ResultFragment extends Fragment {
             }
         });
     }
+
+    private String getStringById(String category) {
+        int id =  getResources().getIdentifier(
+                diagnosis_result+"_"+category, "string", getActivity().getPackageName());
+        return getResources().getString(id);
+    }
+
 
     @Override
     public void onDestroyView() {

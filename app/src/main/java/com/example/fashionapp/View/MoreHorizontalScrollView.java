@@ -75,8 +75,6 @@ public class MoreHorizontalScrollView extends LinearLayout {
     private void changeTxt(Fragment fragment) {
 
         if(fragment.getClass() == ResultFragment.class) {
-            ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_detail));
-        } if(fragment.getClass() == DetailFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_cordi));
             ((Button) findViewById(R.id.more_request_btn3)).setText(getTxtfromStr(R.string.more_req_diagnosis));
 
@@ -95,7 +93,7 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_CordiTipFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_detail))) {
-            navFragment(fragment, R.id.action_global_DetailFragment);
+            navFragment(fragment, R.id.action_global_ResultFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_diagnosis))) {
             navFragment(fragment, R.id.action_global_DiagnosisSelectFragment);

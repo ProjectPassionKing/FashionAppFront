@@ -128,7 +128,7 @@ public class DiagnosisFragment extends Fragment {
                 int resIdC = getResources().getIdentifier("answer"+(page+1)+"_c",
                         "string", getActivity().getPackageName());
 
-                binding.questionTxtview.setText(getResources().getString(resIdQ));
+                binding.resultTxtview.setText(getResources().getString(resIdQ));
                 binding.answer1Btn.setText(getResources().getString(resIdA));
                 binding.answer2Btn.setText(getResources().getString(resIdB));
                 binding.answer3Btn.setText(getResources().getString(resIdC));
@@ -167,7 +167,7 @@ public class DiagnosisFragment extends Fragment {
             int resIdC = getResources().getIdentifier("answer"+(page+1)+"_c",
                     "string", getActivity().getPackageName());
 
-            binding.questionTxtview.setText(getResources().getString(resIdQ));
+            binding.resultTxtview.setText(getResources().getString(resIdQ));
             binding.answer1Btn.setText(getResources().getString(resIdA));
             binding.answer2Btn.setText(getResources().getString(resIdB));
             binding.answer3Btn.setText(getResources().getString(resIdC));

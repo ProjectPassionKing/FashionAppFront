@@ -85,7 +85,7 @@
 <!--Straight type-->
     <string name="straight_fabric">어울리는 소재는 면, 울(모), 데님, 가죽입니다. 모두 깔끔한 상태가 어울려요.</string>
     <string name="straight_pattern">어울리는 패턴은 스트라이프, 도트, 플로랄, 보더입니다. 모두 크기가 크고 대비가 강한 게 어울려요.</string>
-    <string name="straight_total">전체적으로 균형잡힌 몸이며 오버핏보다는 정사이즈가 잘 어울려요.</string>
+    <string name="straight_total">흉통이 넓고 허리가 짧은 편으로 오버핏보다는 정사이즈가 잘 어울려요.</string>
 
     <string name="straight_cordi_total">목이 짧아서 목선이 보이는 것이 베스트! \n 셔링, 주름, 프릴, 핀턱은 피해요</string>
     <string name="straight_cordi_top">추천 상의는 \n 브이넥, 라운드넥, 스퀘어넥, 유넥</string>
@@ -97,6 +97,8 @@
     <!--  Wave type  -->
     <string name="wave_fabric">어울리는 소재는 모헤어(두껍지 않은 것), 앙고라, 쉬폰, 에나멜입니다.</string>
     <string name="wave_pattern">어울리는 패턴은 도트, 플로랄, 레오파드, 지브라입니다. 모두 크기 작은 게 어울려요.</string>
+    <string name="wave_total">가는 뼈, 여리여리한 느낌, 둥근 어깨, 골반이 발달하고 허리가 길며 다리가 짧은 유형이에요.</string>
+
     <string name="wave_cordi_total">전체적으로 뼈가 가늘고 상체는 짧게, 하체는 길어보이게 입는 것이 베스트</string>
     <string name="wave_cordi_top">추천 상의는 \n터틀넥, 크롭 니트. 레이스 블라우스와 프릴 블라우스가 베스트</string>
     <string name="wave_cordi_bottom">추천 하의는 \n 하이웨스트 바지, 와이드 슬랙스, A라인 또는 머메이드라인 스커트</string>
@@ -106,6 +108,8 @@
 <!--Neutral type-->
     <string name="natural_fabric">어울리는 소재는 울, 트위드(브리티시), 코듀로이, 가죽(빈티지)입니다.</string>
     <string name="natural_pattern">어울리는 패턴은 페이즐리, 보타니컬, 카무플라주, 스트라이프입니다. 모두 작지 않고 어느 정도 큰 게 어울려요.</string>
+    <string name="natural_total">큰 골격과 평면적인 느낌, 직각어깨가 특징이에요</string>
+
     <string name="natural_cordi_total">여유있게 입고 살짝의 노출을 더하면 날씬해보여요.\n시크하고 세련된 이미지의 코디가 베스트</string>
     <string name="natural_cordi_top">추천 상의는 \n 루즈핏, 와이드한 셔츠 및 자켓</string>
     <string name="natural_cordi_bottom">추천 하의는 \n루즈하고 와이드한 핏, 핀턱이 들어간 슬랙스, 조거팬츠</string>
