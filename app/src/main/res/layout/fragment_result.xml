@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/question_txtview"
+        android:id="@+id/result_txtview"
         android:layout_width="237dp"
         android:layout_height="50dp"
         android:layout_marginTop="164dp"
@@ -49,11 +49,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/diagnose_video" />
 
+    <android.widget.TextView
+        android:id="@+id/result_exp1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/text_square"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/straight_total"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_txtview" />
+
+    <android.widget.TextView
+        android:id="@+id/result_exp2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_square"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/straight_fabric"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_exp1" />
+
+    <android.widget.TextView
+        android:id="@+id/result_exp3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/text_square"
+        android:gravity="center"
+        android:paddingVertical="15dp"
+        android:text="@string/straight_pattern"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_exp2" />
+
     <LinearLayout
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/home_btn" />
