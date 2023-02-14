@@ -34,7 +34,6 @@ public class RecommandFragment extends Fragment {
     public String keyword = "";
     private SearchKeywordViewModel searchKeywordViewModel;
     private SearchLayout searchLayout;
-    private long mLastClickTime = 0;
 
 
     @Override
@@ -44,12 +43,54 @@ public class RecommandFragment extends Fragment {
     ) {
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
         binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
+
+        return binding.getRoot();
+    }
+
+    public void playSound() {
+        mediaPlayer.start();
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        getAPIResult();
+
+        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightrecom);
+        playSound();
+
+        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecommandFragment.this)
+                        .navigate(R.id.action_global_toHome);
+            }
+        });
+        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(RecommandFragment.this)
+                        .navigate(R.id.action_global_AllInOneFragment);
+            }
+        });
+
+        binding.otherRecommandBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.searchLinear.removeAllViews();
+                searchKeywordViewModel.chooseKeyword();
+            }
+        });
+
+        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
+        binding.scrollview.addView(moreScrollView);
+    }
+
+    private void getAPIResult() {
         searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
-
         searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
             keyword = searchkeyword;
-            System.out.println("Search keyword: "+keyword);
             new Thread(() -> {
                 try {
                     searchViewModel.callAPI(keyword);
@@ -70,56 +111,6 @@ public class RecommandFragment extends Fragment {
                 gotoProductpage(searchLayout, p);
             }
         });
-
-
-        getAPIResult();
-        return binding.getRoot();
-    }
-
-    public void playSound() {
-        mediaPlayer.start();
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightrecom);
-        playSound();
-
-        binding.homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_global_toHome);
-            }
-        });
-        binding.menuHamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(RecommandFragment.this)
-                        .navigate(R.id.action_global_AllInOneFragment);
-            }
-        });
-
-
-        binding.otherRecommandBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("클릭 횟수 확인");
-                binding.searchLinear.removeAllViews();
-
-                searchKeywordViewModel.chooseKeyword();
-
-//                getAPIResult();
-            }
-        });
-        MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
-        binding.scrollview.addView(moreScrollView);
-    }
-
-    private void getAPIResult() {
-
 
     }
 

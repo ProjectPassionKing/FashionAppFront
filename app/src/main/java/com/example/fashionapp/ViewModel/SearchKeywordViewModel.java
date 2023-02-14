@@ -1,12 +1,10 @@
 package com.example.fashionapp.ViewModel;
 
 import android.app.Application;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -23,24 +21,20 @@ public class SearchKeywordViewModel extends AndroidViewModel {
     //처음에만
     public void setFirstKeyList(List<String> keywords) {
         firstKeys = new ArrayList<>(keywords);
-        resetkeyword(keywords);
-    }
-
-    //초기화
-    public void resetkeyword(List<String> keys) {
-        keywordList.postValue(new ArrayList<>(keys));
+        keywordList.postValue(new ArrayList<>(keywords));
     }
 
     public LiveData<String> chooseKeyword() {
         Random rand = new Random();
         List<String> keygroup = keywordList.getValue();
         int idx = rand.nextInt(keygroup.size());
-        keyword.postValue(keygroup.get(idx));
+        keyword.setValue(keygroup.get(idx));
         keygroup.remove(idx);
         if (keygroup.size() == 0) {
-            resetkeyword(firstKeys);
-        }else
-            keywordList.postValue(keygroup);
+            keygroup = new ArrayList<>(firstKeys);
+            keygroup.remove(keyword.getValue());
+        }
+        keywordList.setValue(keygroup);
 
         return keyword;
     }

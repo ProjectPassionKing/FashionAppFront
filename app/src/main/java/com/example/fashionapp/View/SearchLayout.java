@@ -11,10 +11,8 @@ import com.bumptech.glide.Glide;
 import com.example.fashionapp.Model.Entity.search.Product;
 import com.example.fashionapp.R;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 
 public class SearchLayout extends LinearLayout {
-
     public SearchLayout(Context context) {
         super(context);
     }
@@ -29,7 +27,6 @@ public class SearchLayout extends LinearLayout {
     private void init(Context context, Product searchresult) throws UnsupportedEncodingException {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.searchresult, this, true);
-
         setUI(searchresult);
     }
 
@@ -37,9 +34,8 @@ public class SearchLayout extends LinearLayout {
         Glide.with(this).load(searchresult.getProductImage300()).into((ImageView) findViewById(R.id.search_img));
 
         String name = searchresult.getProductName();
-        String pname = new String(searchresult.getProductName().getBytes(StandardCharsets.UTF_8));
-        if (pname.length()>18) pname = pname.substring(0, 17)+"…";
-        ((TextView) findViewById(R.id.search_name)).setText(pname);
+        if (name.length()>18) name = name.substring(0, 17)+"…";
+        ((TextView) findViewById(R.id.search_name)).setText(name);
 
         String discount = searchresult.getBenefit().getDiscount();
         if (!discount.equals("0"))
