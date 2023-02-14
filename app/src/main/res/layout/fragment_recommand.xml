@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/avatar_img"
-        android:layout_width="300dp"
-        android:layout_height="329dp"
+        android:layout_width="288dp"
+        android:layout_height="318dp"
         android:contentDescription="character"
         android:src="@drawable/character"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,14 +28,14 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_marginTop="-10dp"
         app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        android:layout_marginBottom="-30dp"
         app:layout_constraintStart_toStartOf="@+id/avatar_img"
-        app:layout_constraintTop_toTopOf="@+id/avatar_img"
+        app:layout_constraintBottom_toTopOf="@+id/avatar_img"
         app:layout_constraintVertical_bias="0.135" />
 
     <android.widget.Button
-        android:id="@+id/question_txtview"
+        android:id="@+id/result_txtview"
         android:layout_width="237dp"
         android:layout_height="50dp"
         android:background="@drawable/text_square"
@@ -43,7 +43,7 @@
         android:text="@string/link_11st"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
@@ -58,10 +58,11 @@
         android:text="@string/other_recommand"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintVertical_bias="0.0" />
 
     <HorizontalScrollView
@@ -71,7 +72,7 @@
         app:layout_constraintBottom_toTopOf="@+id/scrollview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/other_recommand_btn"
         >
 
