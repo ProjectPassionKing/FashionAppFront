@@ -20,24 +20,15 @@ public class SearchKeywordViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public LiveData<List<String>> getKeyList() {
-        return keywordList;
-    }
-    public List<String> getFirstKeys()
-    {
-        return firstKeys;
-    }
     //처음에만
     public void setFirstKeyList(List<String> keywords) {
         firstKeys = new ArrayList<>(keywords);
-//        keyList.postValue(keywords);
         resetkeyword(keywords);
     }
 
     //초기화
     public void resetkeyword(List<String> keys) {
         keywordList.postValue(new ArrayList<>(keys));
-//        keywordList.postValue(keys);
     }
 
     public LiveData<String> chooseKeyword() {
@@ -48,7 +39,7 @@ public class SearchKeywordViewModel extends AndroidViewModel {
         keygroup.remove(idx);
         if (keygroup.size() == 0) {
             resetkeyword(firstKeys);
-        } else
+        }else
             keywordList.postValue(keygroup);
 
         return keyword;

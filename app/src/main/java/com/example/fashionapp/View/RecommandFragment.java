@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,9 @@ public class RecommandFragment extends Fragment {
     private SearchViewModel searchViewModel;
     public String keyword = "";
     private SearchKeywordViewModel searchKeywordViewModel;
+    private SearchLayout searchLayout;
+    private long mLastClickTime = 0;
+
 
     @Override
     public View onCreateView(
@@ -39,20 +43,13 @@ public class RecommandFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-    }
-
-    public void playSound() {
-        mediaPlayer.start();
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
         searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
 
         searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
             keyword = searchkeyword;
+            System.out.println("Search keyword: "+keyword);
             new Thread(() -> {
                 try {
                     searchViewModel.callAPI(keyword);
@@ -64,17 +61,28 @@ public class RecommandFragment extends Fragment {
 
         searchViewModel.getData().observe(getViewLifecycleOwner(), product -> {
             for (Product p : product) {
-                SearchLayout searchLayout = null;
                 try {
                     searchLayout = new SearchLayout(getContext(), p);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
                 binding.searchLinear.addView(searchLayout);
-                binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
                 gotoProductpage(searchLayout, p);
             }
         });
+
+
+        getAPIResult();
+        return binding.getRoot();
+    }
+
+    public void playSound() {
+        mediaPlayer.start();
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
 
         mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightrecom);
         playSound();
@@ -94,42 +102,25 @@ public class RecommandFragment extends Fragment {
             }
         });
 
+
         binding.otherRecommandBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("클릭 횟수 확인");
+                binding.searchLinear.removeAllViews();
 
-                binding.searchLinear.removeAllViewsInLayout();
+                searchKeywordViewModel.chooseKeyword();
 
-                searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
-                    keyword = searchkeyword;
-                    new Thread(() -> {
-                        try {
-                            searchViewModel.callAPI(keyword);
-                        } catch (XmlPullParserException | IOException e) {
-                            e.printStackTrace();
-                        }
-                    }).start();
-                });
-
-                searchViewModel.getData().observe(getViewLifecycleOwner(), product -> {
-                    for (Product p : product) {
-                        SearchLayout searchLayout = null;
-                        try {
-                            searchLayout = new SearchLayout(getContext(), p);
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-
-                        binding.searchLinear.addView(searchLayout);
-                        binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
-                        gotoProductpage(searchLayout, p);
-                    }
-                });
-//                NavHostFragment.findNavController(RecommandFragment.this).navigate(R.id.action_global_RecommandFragment);
+//                getAPIResult();
             }
         });
         MoreHorizontalScrollView moreScrollView = new MoreHorizontalScrollView(this);
         binding.scrollview.addView(moreScrollView);
+    }
+
+    private void getAPIResult() {
+
+
     }
 
     private void gotoProductpage(SearchLayout searchLayout, Product p) {

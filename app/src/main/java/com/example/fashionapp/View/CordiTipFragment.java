@@ -63,9 +63,7 @@ public class CordiTipFragment extends Fragment {
         binding.cordi2nd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                RecommandFragment.topbottom = "상의";
                 sendKeyList("top", "상의");
-//                RecommandFragment.keyword = getStringById("keyword", "top");
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_global_RecommandFragment);
             }
@@ -74,9 +72,7 @@ public class CordiTipFragment extends Fragment {
         binding.cordi3rd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-//                RecommandFragment.topbottom = "하의";
                 sendKeyList("bottom", "하의");
-//                RecommandFragment.keyword = getStringById("keyword", "bottom");
                 NavHostFragment.findNavController(CordiTipFragment.this)
                         .navigate(R.id.action_global_RecommandFragment);
             }
@@ -92,7 +88,6 @@ public class CordiTipFragment extends Fragment {
 
     private void sendKeyList(String tb, String ktb) {
         RecommandFragment.topbottom = ktb;
-//        RecommandFragment.keylist = Arrays.asList(getStringById("keyword", tb).split(","));
         searchKeywordViewModel.setFirstKeyList(new ArrayList<>(Arrays.asList(getStringById("keyword", tb).split(","))));
     }
 
