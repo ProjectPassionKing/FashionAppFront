@@ -96,7 +96,7 @@
 
     <!--  Wave type  -->
     <string name="wave_fabric">어울리는 소재는 모헤어(두껍지 않은 것), 앙고라, 쉬폰, 에나멜입니다.</string>
-    <string name="wave_pattern">어울리는 패턴은 도트, 플로랄, 레오파드, 지브라입니다. 모두 크기 작은 게 어울려요.</string>
+    <string name="wave_pattern">어울리는 패턴은 도트, 플로랄, 레오파드, \n지브라입니다. 모두 크기가 작은 게 어울려요.</string>
     <string name="wave_total">가는 뼈, 여리여리한 느낌, 둥근 어깨,\n골반이 발달하고 허리가 길며 다리가 짧은 유형이에요.</string>
 
     <string name="wave_cordi_total">전체적으로 뼈가 가늘고 상체는 짧게,\n하체는 길어보이게 입는 것이 베스트</string>
