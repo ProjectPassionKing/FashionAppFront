@@ -30,7 +30,7 @@ import okhttp3.Response;
 public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
-    ImageView top_image;
+    ImageView result_image;
 
     @Override
     public View onCreateView(
@@ -59,7 +59,7 @@ public class ShowPhotoFragment extends Fragment {
         }
 
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
-        top_image = getView().findViewById(R.id.top_image);
+        result_image = getView().findViewById(R.id.result_image);
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -91,7 +91,7 @@ public class ShowPhotoFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        top_image.setImageBitmap(bitmap1);
+                        result_image.setImageBitmap(bitmap1);
                     }
                 });
 
