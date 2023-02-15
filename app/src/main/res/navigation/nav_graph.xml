@@ -62,6 +62,12 @@
         tools:layout="@layout/fragment_show_photo" />
 
     <fragment
+        android:id="@+id/DiagnosisGenderFragment"
+        android:name="com.example.fashionapp.View.DiagnosisGenderFragment"
+        android:label=""
+        tools:layout="@layout/fragment_diagnosis_gender" />
+
+    <fragment
         android:id="@+id/DiagnosisSelectFragment"
         android:name="com.example.fashionapp.View.DiagnosisSelectFragment"
         android:label=""
@@ -112,6 +118,10 @@
     <action
         app:destination="@+id/ShowSimFragment"
         android:id="@+id/action_global_ShowSimFragment" />
+
+    <action
+        app:destination="@+id/DiagnosisGenderFragment"
+        android:id="@+id/action_global_DiagnosisGenderFragment" />
 
     <action
         app:destination="@+id/FirstFragment"

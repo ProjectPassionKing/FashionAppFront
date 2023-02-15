@@ -179,7 +179,7 @@ public class MainFragment extends Fragment {
             for(String s: finalText){
                 if (s.contains("진단")) {
                     NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_global_diagnosisFragment);
+                            .navigate(R.id.action_global_DiagnosisGenderFragment);
                 } else if (s.contains("비슷한")) {
                     NavHostFragment.findNavController(MainFragment.this)
                             .navigate(R.id.action_global_TakePhotoFragment);

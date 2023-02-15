@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.DiagnosisGenderFragment">
+
+    <ImageView
+        android:id="@+id/avatar_img"
+        android:layout_width="310dp"
+        android:layout_height="351dp"
+        android:contentDescription="character"
+        android:src="@drawable/character"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <TextView
+        android:id="@+id/adot_talk_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성별부터 알려주세요!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.135" />
+
+
+    <android.widget.Button
+        android:id="@+id/fem_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/select_textbox"
+        android:text="여성"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
+
+    <android.widget.Button
+        android:id="@+id/male_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/select_textbox"
+        android:text="남성"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fem_btn" />
+
+    <ImageButton
+        android:id="@+id/home_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/button_circle"
+        android:text="@string/menu_home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.414"
+        app:srcCompat="@drawable/home_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,7 +84,7 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_ResultFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_diagnosis))) {
-            navFragment(fragment, R.id.action_global_DiagnosisSelectFragment);
+            navFragment(fragment, R.id.action_global_DiagnosisGenderFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_photo))) {
             navFragment(fragment, R.id.action_global_TakePhotoFragment);

@@ -38,7 +38,7 @@ public class AllInOneFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 1) {
                     NavHostFragment.findNavController(AllInOneFragment.this)
-                            .navigate(R.id.action_global_DiagnosisSelectFragment);
+                            .navigate(R.id.action_global_DiagnosisGenderFragment);
                 }
 
                 if (position == 2) {
