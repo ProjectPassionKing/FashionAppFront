@@ -187,10 +187,6 @@ public class MainFragment extends Fragment {
                     NavHostFragment.findNavController(MainFragment.this)
                             .navigate(R.id.action_global_CordiTipFragment);
                 }
-                else if (s.contains("옷장")) {
-                    NavHostFragment.findNavController(MainFragment.this)
-                            .navigate(R.id.action_global_TakeSimFragment);
-                }
             }
 
         }

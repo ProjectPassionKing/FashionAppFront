@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="에이닷의 추천!"
+        android:text="에이닷의 추천 스타일!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -24,25 +24,15 @@
 
     <ImageView
         android:id="@+id/top_image"
-        android:layout_width="199dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
-
-    <ImageView
-        android:id="@+id/bottom_image"
-        android:layout_width="205dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="293dp"
+        android:layout_height="305dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toTopOf="@+id/confirm_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_image"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
+        app:layout_constraintVertical_bias="1.0" />
 
     <android.widget.Button
         android:id="@+id/confirm_button"

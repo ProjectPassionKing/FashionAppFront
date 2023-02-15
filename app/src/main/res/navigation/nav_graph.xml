@@ -50,11 +50,6 @@
         tools:layout="@layout/fragment_take_photo" />
 
     <fragment
-        android:id="@+id/TakeSimFragment"
-        android:name="com.example.fashionapp.View.TakeSimFragment"
-        android:label=""
-        tools:layout="@layout/fragment_take_sim" />
-    <fragment
         android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.View.AllInOneFragment"
         android:label=""
@@ -65,11 +60,6 @@
         android:name="com.example.fashionapp.View.ShowPhotoFragment"
         android:label=""
         tools:layout="@layout/fragment_show_photo" />
-    <fragment
-        android:id="@+id/ShowSimFragment"
-        android:name="com.example.fashionapp.View.ShowSimFragment"
-        android:label=""
-        tools:layout="@layout/fragment_show_sim" />
 
     <fragment
         android:id="@+id/DiagnosisSelectFragment"
@@ -95,10 +85,6 @@
     <action
         android:id="@+id/action_global_CordiTipFragment"
         app:destination="@id/CordiTipFragment" />
-
-    <action
-        android:id="@+id/action_global_TakeSimFragment"
-        app:destination="@id/TakeSimFragment" />
 
     <action
         android:id="@+id/action_global_toHome"
