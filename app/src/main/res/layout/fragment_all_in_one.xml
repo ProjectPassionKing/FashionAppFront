@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".View.AllInOneFragment">
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="202dp"
-        android:layout_height="42dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_twelfth"></Spinner>
-
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
@@ -56,17 +45,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
-
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="203dp"
-        android:layout_height="42dp"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="@+id/button_eleventh"
+        app:layout_constraintTop_toTopOf="@+id/button_eleventh"></Spinner>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="378dp"
+        android:layout_height="57dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_eleventh"></Spinner>
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"></Spinner>
 
     <ImageView
         android:id="@+id/imageView1"
@@ -85,10 +84,10 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/black"
         app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="37dp" />
 
     <Button
         android:id="@+id/button_twelfth"
@@ -105,7 +104,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_eleventh"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <ImageView
         android:id="@+id/avatar_img"
