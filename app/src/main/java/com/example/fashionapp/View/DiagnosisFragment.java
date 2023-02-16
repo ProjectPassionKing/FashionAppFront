@@ -153,7 +153,7 @@ public class DiagnosisFragment extends Fragment {
             ResultFragment.result_audio = maxAudio;
 
             sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-            sharedViewModel.setResult(maxKey);
+            sharedViewModel.setDiagnosisResult(maxKey);
 
             NavHostFragment.findNavController(DiagnosisFragment.this)
                     .navigate(R.id.action_global_ResultFragment);

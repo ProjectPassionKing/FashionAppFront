@@ -16,7 +16,6 @@ import com.example.fashionapp.databinding.FragmentDiagnosisGenderBinding;
 
 public class DiagnosisGenderFragment extends Fragment {
     SharedViewModel sharedViewModel;
-
     private FragmentDiagnosisGenderBinding binding;
 
     @Override
@@ -44,6 +43,7 @@ public class DiagnosisGenderFragment extends Fragment {
         binding.femBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sharedViewModel.setGenderResult("여자");
                 NavHostFragment.findNavController(DiagnosisGenderFragment.this)
                         .navigate(R.id.action_global_DiagnosisSelectFragment);
             }
@@ -51,6 +51,7 @@ public class DiagnosisGenderFragment extends Fragment {
         binding.maleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sharedViewModel.setGenderResult("남자");
                 NavHostFragment.findNavController(DiagnosisGenderFragment.this)
                         .navigate(R.id.action_global_DiagnosisSelectFragment);
 

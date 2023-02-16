@@ -9,21 +9,25 @@ import androidx.lifecycle.MutableLiveData;
 
 public class SharedViewModel extends AndroidViewModel {
     MutableLiveData<String> diagnosisresult = new MutableLiveData<>();
+    MutableLiveData<String> genderresult = new MutableLiveData<>();
 
     public SharedViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<String> getResult(){
+    public LiveData<String> getDiagnosisResult(){
         return diagnosisresult;
     }
-    public void setResult(String result){
+    public LiveData<String> getGenderResult(){
+        return genderresult;
+    }
 
+    public void setDiagnosisResult(String result){
         diagnosisresult.postValue(result);
     }
 
-    //앱 종료 또는 앱 시작 시에 초기화 진행
-    public void initResult(){
-        diagnosisresult.postValue("");
+    public void setGenderResult(String result){
+        genderresult.postValue(result);
     }
+
 }

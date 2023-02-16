@@ -79,7 +79,7 @@ public class AllInOneFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+        sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), dresult ->{
             result = dresult;
         });
 

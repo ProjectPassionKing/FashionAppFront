@@ -11,9 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
 
 import org.json.JSONException;
@@ -31,6 +33,7 @@ public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
     ImageView result_image;
+    SharedViewModel sharedViewModel;
 
     @Override
     public View onCreateView(
@@ -60,6 +63,8 @@ public class ShowPhotoFragment extends Fragment {
 
         Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
         result_image = getView().findViewById(R.id.result_image);
+        LiveData<String> diagnosis_result = sharedViewModel.getDiagnosisResult();
+        LiveData<String> gender_result = sharedViewModel.getGenderResult();
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -69,6 +74,8 @@ public class ShowPhotoFragment extends Fragment {
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
+                    .addFormDataPart("diagnosis", String.valueOf(diagnosis_result))
+                    .addFormDataPart("gender", String.valueOf(gender_result))
                     .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
                     .build();
 
