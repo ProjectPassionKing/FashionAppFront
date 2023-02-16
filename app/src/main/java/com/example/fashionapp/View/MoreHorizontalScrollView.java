@@ -8,14 +8,19 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
 //@SuppressLint("ViewConstructor")
 public class MoreHorizontalScrollView extends LinearLayout {
+    private String dresult;
+    SharedViewModel sharedViewModel;
 
     public MoreHorizontalScrollView(Fragment fragment) {
         super(fragment.getContext());
@@ -32,6 +37,7 @@ public class MoreHorizontalScrollView extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater) fragment.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.scroll, this, true);
         changeTxt(fragment);
+
 
         findViewById(R.id.more_request_btn1).setOnClickListener(new OnClickListener() {
             @Override
@@ -68,26 +74,32 @@ public class MoreHorizontalScrollView extends LinearLayout {
 
         } if(fragment.getClass() == RecommandFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_photo));
-            ((Button) findViewById(R.id.more_request_btn2)).setText(getTxtfromStr(R.string.more_req_detail));
-        }if(fragment.getClass() == CordiTipFragment.class){
-            ((Button) findViewById(R.id.more_request_btn3)).setText(getTxtfromStr(R.string.more_req_detail));
-
         }
     }
 
     private void changeFragment(Fragment fragment, String buttonTxt) {
+        sharedViewModel = new ViewModelProvider(fragment.requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getGenderResult().observe(fragment.getViewLifecycleOwner(), r->{
+            dresult = r;
+        });
 
-        if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
-            navFragment(fragment, R.id.action_global_CordiTipFragment);
-        }
-        if (buttonTxt.equals(getTxtfromStr(R.string.more_req_detail))) {
-            navFragment(fragment, R.id.action_global_ResultFragment);
-        }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_diagnosis))) {
             navFragment(fragment, R.id.action_global_DiagnosisGenderFragment);
         }
+        if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
+            if(dresult==null){
+                navFragment(fragment, R.id.action_global_DiagnosisGenderFragment);
+            } else {
+                navFragment(fragment, R.id.action_global_CordiTipFragment);
+            }
+        }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_photo))) {
-            navFragment(fragment, R.id.action_global_TakePhotoFragment);
+            if(dresult==null){
+                navFragment(fragment, R.id.action_global_DiagnosisGenderFragment);
+            }
+            else{
+                navFragment(fragment, R.id.action_global_TakePhotoFragment);
+            }
         }
     }
 
