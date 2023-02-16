@@ -45,7 +45,7 @@ public class ResultFragment extends Fragment {
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+        sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), dresult ->{
             diagnosis_result = dresult.toLowerCase();
             binding.resultTxtview.setText(dresult);
             binding.resultExp1.setText(getStringById("total"));

@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.bumptech.glide.request.RequestCoordinator;
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SearchKeywordViewModel;
 import com.example.fashionapp.ViewModel.SharedViewModel;
@@ -18,7 +17,6 @@ import com.example.fashionapp.databinding.FragmentCordiTipBinding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class CordiTipFragment extends Fragment {
     private FragmentCordiTipBinding binding;
@@ -47,7 +45,7 @@ public class CordiTipFragment extends Fragment {
             }
         });
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult->{
+        sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), dresult->{
             result = dresult.toLowerCase();
             binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.cordi_tip), dresult));
             binding.cordi1st.setText(getStringById("cordi", "total"));

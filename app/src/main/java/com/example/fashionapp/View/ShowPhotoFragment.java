@@ -11,9 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
 
 import org.json.JSONException;
@@ -30,8 +33,8 @@ import okhttp3.Response;
 public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
-    ImageView top_image;
-    ImageView bottom_image;
+    ImageView result_image;
+    SharedViewModel sharedViewModel;
 
     @Override
     public View onCreateView(
@@ -59,9 +62,10 @@ public class ShowPhotoFragment extends Fragment {
             }
         }
 
-        Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
-        top_image = getView().findViewById(R.id.top_image);
-        bottom_image = getView().findViewById(R.id.bottom_image);
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        result_image = getView().findViewById(R.id.result_image);
+        LiveData<String> diagnosis_result = sharedViewModel.getDiagnosisResult();
+        LiveData<String> gender_result = sharedViewModel.getGenderResult();
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -71,6 +75,8 @@ public class ShowPhotoFragment extends Fragment {
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
+                    .addFormDataPart("diagnosis", String.valueOf(diagnosis_result))
+                    .addFormDataPart("gender", String.valueOf(gender_result))
                     .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
                     .build();
 
@@ -85,19 +91,15 @@ public class ShowPhotoFragment extends Fragment {
 
                 JSONObject files = new JSONObject(jsonString);
                 String file1_encoded = files.getString("file1");
-                String file2_encoded = files.getString("file2");
 
                 byte[] file1_data = Base64.decode(file1_encoded, Base64.DEFAULT);
-                byte[] file2_data = Base64.decode(file2_encoded, Base64.DEFAULT);
 
                 Bitmap bitmap1 = BitmapFactory.decodeByteArray(file1_data, 0, file1_data.length);
-                Bitmap bitmap2 = BitmapFactory.decodeByteArray(file2_data, 0, file2_data.length);
 
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        top_image.setImageBitmap(bitmap1);
-                        bottom_image.setImageBitmap(bitmap2);
+                        result_image.setImageBitmap(bitmap1);
                     }
                 });
 

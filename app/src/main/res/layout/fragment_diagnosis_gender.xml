@@ -4,60 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.TakeSimFragment">
-
+    tools:context=".View.DiagnosisGenderFragment">
 
     <ImageView
         android:id="@+id/avatar_img"
         android:layout_width="310dp"
         android:layout_height="351dp"
-        android:layout_marginBottom="104dp"
         android:contentDescription="character"
         android:src="@drawable/character"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <android.widget.Button
-        android:id="@+id/camera_button"
-        android:layout_width="237dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/text_button"
-        android:text="@string/camera"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/avatar_img"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/click_image"
-        android:layout_width="328dp"
-        android:layout_height="391dp"
-        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera_button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="옷을 입혀볼게요!"
+        android:text="성별부터 알려주세요!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="@+id/avatar_img"
+        app:layout_constraintVertical_bias="0.135" />
+
+
+    <android.widget.Button
+        android:id="@+id/fem_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/select_textbox"
+        android:text="여성"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/avatar_img" />
+
+    <android.widget.Button
+        android:id="@+id/male_btn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/select_textbox"
+        android:text="남성"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fem_btn" />
 
     <ImageButton
         android:id="@+id/home_btn"

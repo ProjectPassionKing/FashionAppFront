@@ -50,11 +50,6 @@
         tools:layout="@layout/fragment_take_photo" />
 
     <fragment
-        android:id="@+id/TakeSimFragment"
-        android:name="com.example.fashionapp.View.TakeSimFragment"
-        android:label=""
-        tools:layout="@layout/fragment_take_sim" />
-    <fragment
         android:id="@+id/AllinOneFragment"
         android:name="com.example.fashionapp.View.AllInOneFragment"
         android:label=""
@@ -65,11 +60,12 @@
         android:name="com.example.fashionapp.View.ShowPhotoFragment"
         android:label=""
         tools:layout="@layout/fragment_show_photo" />
+
     <fragment
-        android:id="@+id/ShowSimFragment"
-        android:name="com.example.fashionapp.View.ShowSimFragment"
+        android:id="@+id/DiagnosisGenderFragment"
+        android:name="com.example.fashionapp.View.DiagnosisGenderFragment"
         android:label=""
-        tools:layout="@layout/fragment_show_sim" />
+        tools:layout="@layout/fragment_diagnosis_gender" />
 
     <fragment
         android:id="@+id/DiagnosisSelectFragment"
@@ -97,10 +93,6 @@
         app:destination="@id/CordiTipFragment" />
 
     <action
-        android:id="@+id/action_global_TakeSimFragment"
-        app:destination="@id/TakeSimFragment" />
-
-    <action
         android:id="@+id/action_global_toHome"
         app:destination="@+id/main_fragment" />
     <action
@@ -126,6 +118,10 @@
     <action
         app:destination="@+id/ShowSimFragment"
         android:id="@+id/action_global_ShowSimFragment" />
+
+    <action
+        app:destination="@+id/DiagnosisGenderFragment"
+        android:id="@+id/action_global_DiagnosisGenderFragment" />
 
     <action
         app:destination="@+id/FirstFragment"

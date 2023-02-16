@@ -38,7 +38,7 @@ public class AllInOneFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 1) {
                     NavHostFragment.findNavController(AllInOneFragment.this)
-                            .navigate(R.id.action_global_DiagnosisSelectFragment);
+                            .navigate(R.id.action_global_DiagnosisGenderFragment);
                 }
 
                 if (position == 2) {
@@ -53,7 +53,7 @@ public class AllInOneFragment extends Fragment {
         });
 
         Spinner spinner2 = binding.getRoot().findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(binding.getRoot().getContext(), R.layout.spinner_item, new String[]{"           옷 추천","           내가 입은 옷과 비슷한 옷", "           가상으로 옷 입어보기"});
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(binding.getRoot().getContext(), R.layout.spinner_item, new String[]{"         옷 추천","         내가 입은 옷과 비슷한 옷",});
         adapter2.setDropDownViewResource(R.layout.spinner_dropdown);
         spinner2.setAdapter(adapter2);
 
@@ -65,10 +65,6 @@ public class AllInOneFragment extends Fragment {
                             .navigate(R.id.action_global_TakePhotoFragment);
                 }
 
-                if (position == 2) {
-                    NavHostFragment.findNavController(AllInOneFragment.this)
-                            .navigate(R.id.action_global_TakeSimFragment);
-                }
             }
 
             @Override
@@ -83,7 +79,7 @@ public class AllInOneFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        sharedViewModel.getResult().observe(getViewLifecycleOwner(), dresult ->{
+        sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), dresult ->{
             result = dresult;
         });
 
