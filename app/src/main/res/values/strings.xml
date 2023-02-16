@@ -55,7 +55,7 @@
 
 <!--    스크롤 뷰 추가질문-->
     <string name="more_req_diagnosis_detail">더 자세하게 진단 받을게요</string>
-    <string name="more_req_photo">비슷한 옷 찾아줘</string>
+    <string name="more_req_photo">내 스타일과 비슷한 옷 찾아줘</string>
     <string name="more_req_cordi">코디 팁 알려줘</string>
     <string name="more_req_detail">체형에 대해 더 자세하게 알려줘</string>
     <string name="more_req_diagnosis">체형진단해줘</string>

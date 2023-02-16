@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="옷을 분석해볼게요!"
+        android:text="기존 스타일을 분석해볼게요!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
