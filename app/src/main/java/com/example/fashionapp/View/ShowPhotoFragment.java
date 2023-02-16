@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
@@ -61,7 +62,7 @@ public class ShowPhotoFragment extends Fragment {
             }
         }
 
-        Bitmap bitmap = BitmapFactory.decodeFile(mostRecentFile.getAbsolutePath());
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         result_image = getView().findViewById(R.id.result_image);
         LiveData<String> diagnosis_result = sharedViewModel.getDiagnosisResult();
         LiveData<String> gender_result = sharedViewModel.getGenderResult();
