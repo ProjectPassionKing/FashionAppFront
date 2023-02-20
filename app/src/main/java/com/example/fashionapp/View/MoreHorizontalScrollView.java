@@ -71,6 +71,14 @@ public class MoreHorizontalScrollView extends LinearLayout {
             }
         });
 
+        findViewById(R.id.more_request_btn5).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String btnTxt = (String) ((Button) (findViewById(R.id.more_request_btn5))).getText();
+                changeFragment(fragment, btnTxt);
+            }
+        });
+
         findViewById(R.id.more_request_btn6).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,6 +113,9 @@ public class MoreHorizontalScrollView extends LinearLayout {
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
             navFragment(fragment, R.id.action_global_VirtualFragment);
+        }
+        if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
+            navFragment(fragment, R.id.action_global_StudioFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
