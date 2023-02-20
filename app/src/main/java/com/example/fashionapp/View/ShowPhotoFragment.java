@@ -64,10 +64,11 @@ public class ShowPhotoFragment extends Fragment {
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         result_image = getView().findViewById(R.id.result_image);
-        LiveData<String> diagnosis_result = sharedViewModel.getDiagnosisResult();
-        LiveData<String> gender_result = sharedViewModel.getGenderResult();
 
         File finalMostRecentFile = mostRecentFile;
+
+        sharedViewModel.getGenderResult().observe(getViewLifecycleOwner(), gender_result ->{
+            sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), diagnosis_result ->{
 
         new Thread(() ->
         {
@@ -75,8 +76,8 @@ public class ShowPhotoFragment extends Fragment {
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
-                    .addFormDataPart("diagnosis", String.valueOf(diagnosis_result))
-                    .addFormDataPart("gender", String.valueOf(gender_result))
+                    .addFormDataPart("diagnosis", diagnosis_result)
+                    .addFormDataPart("gender", gender_result)
                     .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
                     .build();
 
@@ -112,6 +113,9 @@ public class ShowPhotoFragment extends Fragment {
             }
 
         }).start();
+
+            });
+        });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
