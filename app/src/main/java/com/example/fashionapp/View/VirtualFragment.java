@@ -34,7 +34,7 @@ public class VirtualFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         WebView webView = getActivity().findViewById(R.id.virtual_webview);
-        webView.loadUrl("https://github.com/soojlee0106/FashionApp/issues");
+        webView.loadUrl("http://20.249.18.129:5000/predict");
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
