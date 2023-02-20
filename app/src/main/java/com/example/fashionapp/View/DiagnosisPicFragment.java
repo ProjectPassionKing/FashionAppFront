@@ -44,7 +44,7 @@ public class DiagnosisPicFragment extends Fragment {
             }
         });
 
-        binding.straightPic.setOnClickListener(new View.OnClickListener() {
+        binding.straightPicW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 result = "Straight";
@@ -54,7 +54,7 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_global_ResultFragment);
             }
         });
-        binding.naturalPic.setOnClickListener(new View.OnClickListener() {
+        binding.naturalPicW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 result = "Natural";
@@ -64,7 +64,7 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_global_ResultFragment);
             }
         });
-        binding.wavePic.setOnClickListener(new View.OnClickListener() {
+        binding.wavePicW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 result = "Wave";

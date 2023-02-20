@@ -10,59 +10,84 @@
         android:id="@+id/adot_talk_txtview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="48dp"
         android:text="나와 가장 비슷한 사진은?"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/straight_pic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    //해당 부분 수정하기
-    <ImageButton
-        android:id="@+id/straight_pic"
-        android:layout_width="174dp"
-        android:layout_height="217dp"
-        android:background="@drawable/shadow_button_layer_list"
-        android:scaleType="fitXY"
-        android:textColor="@color/black"
-        app:srcCompat="@raw/straight"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="127dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
-        android:layout_marginTop="20dp"
-        />
 
-    <ImageButton
-        android:id="@+id/natural_pic"
-        android:layout_width="173dp"
-        android:layout_height="222dp"
+    <HorizontalScrollView
+        android:id="@+id/ask_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@drawable/shadow_button_layer_list_green"
-        android:scaleType="fitXY"
-        android:textColor="@color/black"
+        android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/wave_pic"
-        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
-        app:srcCompat="@raw/natural" />
-
-    <ImageButton
-        android:id="@+id/wave_pic"
-        android:layout_width="174dp"
-        android:layout_height="224dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/shadow_button_layer_list_orange"
-        android:scaleType="fitXY"
-        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/straight_pic"
-        app:srcCompat="@raw/wave" />
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/straight_pic_w"
+                android:layout_width="130dp"
+                android:layout_height="217dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shadow_button_layer_list"
+                android:scaleType="fitXY"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+                app:srcCompat="@raw/straight_woman"
+                tools:layout_editor_absoluteX="118dp"
+                tools:layout_editor_absoluteY="127dp" />
+
+            <ImageButton
+                android:id="@+id/wave_pic_w"
+                android:layout_width="130dp"
+                android:layout_height="217dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shadow_button_layer_list"
+                android:scaleType="fitXY"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+                app:srcCompat="@raw/wave_woman"
+                tools:layout_editor_absoluteX="118dp"
+                tools:layout_editor_absoluteY="127dp" />
+
+            <ImageButton
+                android:id="@+id/natural_pic_w"
+                android:layout_width="130dp"
+                android:layout_height="217dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shadow_button_layer_list"
+                android:scaleType="fitXY"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+                app:srcCompat="@raw/natural_woman"
+                tools:layout_editor_absoluteX="118dp"
+                tools:layout_editor_absoluteY="127dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <ImageButton
         android:id="@+id/home_btn"
