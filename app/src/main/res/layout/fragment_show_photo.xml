@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="인공지능의 분석!"
+        android:text="인공지능의 상의 하의 분석!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
