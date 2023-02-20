@@ -1,4 +1,5 @@
 package com.example.fashionapp.View;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -8,21 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SharedViewModel;
-import com.example.fashionapp.databinding.FragmentShowPhotoBinding;
+import com.example.fashionapp.databinding.FragmentShowStyleBinding;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
+
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -30,10 +32,10 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class ShowPhotoFragment extends Fragment {
+public class ShowStyleFragment extends Fragment {
 
-    private FragmentShowPhotoBinding binding;
-    ImageView box_image;
+    private FragmentShowStyleBinding binding;
+    ImageView result_image;
     SharedViewModel sharedViewModel;
 
     @Override
@@ -42,7 +44,7 @@ public class ShowPhotoFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentShowPhotoBinding.inflate(inflater, container, false);
+        binding = FragmentShowStyleBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -63,7 +65,7 @@ public class ShowPhotoFragment extends Fragment {
         }
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        box_image = getView().findViewById(R.id.box_image);
+        result_image = getView().findViewById(R.id.result_image);
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -91,16 +93,16 @@ public class ShowPhotoFragment extends Fragment {
                 String jsonString = response.body().string();
 
                 JSONObject files = new JSONObject(jsonString);
-                String box_photo_encoded = files.getString("box_photo");
+                String result_photo_encoded = files.getString("result_photo");
 
-                byte[] box_photo_data = Base64.decode(box_photo_encoded, Base64.DEFAULT);
+                byte[] result_photo_data = Base64.decode(result_photo_encoded, Base64.DEFAULT);
 
-                Bitmap box_image_bitmap = BitmapFactory.decodeByteArray(box_photo_data, 0, box_photo_data.length);
+                Bitmap result_image_bitmap = BitmapFactory.decodeByteArray(result_photo_data, 0, result_photo_data.length);
 
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        box_image.setImageBitmap(box_image_bitmap);
+                        result_image.setImageBitmap(result_image_bitmap);
                     }
                 });
 
@@ -117,17 +119,10 @@ public class ShowPhotoFragment extends Fragment {
             });
         });
 
-        binding.confirmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(ShowPhotoFragment.this)
-                        .navigate(R.id.action_global_ShowStyleFragment);}
-        });
-
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(ShowPhotoFragment.this)
+                NavHostFragment.findNavController(ShowStyleFragment.this)
                         .navigate(R.id.action_global_toHome);}
         });
     }
