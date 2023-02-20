@@ -65,7 +65,7 @@ public class ShowStyleFragment extends Fragment {
         }
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        result_image = getView().findViewById(R.id.box_image);
+        result_image = getView().findViewById(R.id.result_image);
 
         File finalMostRecentFile = mostRecentFile;
 
