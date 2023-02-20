@@ -1,10 +1,10 @@
 package com.example.fashionapp.View;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,7 +13,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.fashionapp.R;
 import com.example.fashionapp.databinding.FragmentVirtualBinding;
 
-import java.io.File;
 
 public class VirtualFragment extends Fragment {
 
@@ -26,6 +25,7 @@ public class VirtualFragment extends Fragment {
     ) {
 
         binding = FragmentVirtualBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
 
     }
@@ -33,17 +33,8 @@ public class VirtualFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        File mostRecentFile = null;
-        long mostRecentModified = Long.MIN_VALUE;
-
-        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-
-        for (File file : storageDir.listFiles()) {
-            if (file.isFile() && file.lastModified() > mostRecentModified) {
-                mostRecentFile = file;
-                mostRecentModified = file.lastModified();
-            }
-        }
+        WebView webView = getActivity().findViewById(R.id.virtual_webview);
+        webView.loadUrl("https://github.com/soojlee0106/FashionApp/issues");
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
