@@ -17,7 +17,6 @@ import com.example.fashionapp.ViewModel.SharedViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
-//@SuppressLint("ViewConstructor")
 public class MoreHorizontalScrollView extends LinearLayout {
     private String dresult;
     SharedViewModel sharedViewModel;
