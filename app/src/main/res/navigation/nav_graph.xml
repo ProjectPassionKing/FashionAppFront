@@ -85,6 +85,12 @@
         android:label=""
         tools:layout="@layout/fragment_show_style" />
 
+    <fragment
+        android:id="@+id/LookbookFragment"
+        android:name="com.example.fashionapp.View.LookbookFragment"
+        android:label=""
+        tools:layout="@layout/fragment_lookbook" />
+
     <action
         android:id="@+id/action_global_AllInOneFragment"
         app:destination="@+id/AllinOneFragment"/>
@@ -136,4 +142,8 @@
     <action
         app:destination="@+id/ShowStyleFragment"
         android:id="@+id/action_global_ShowStyleFragment" />
+
+    <action
+        app:destination="@+id/LookbookFragment"
+        android:id="@+id/action_global_LookbookFragment" />
 </navigation>

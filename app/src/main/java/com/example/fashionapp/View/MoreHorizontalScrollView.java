@@ -63,6 +63,13 @@ public class MoreHorizontalScrollView extends LinearLayout {
             }
         });
 
+        findViewById(R.id.more_request_btn6).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String btnTxt = (String) ((Button) (findViewById(R.id.more_request_btn6))).getText();
+                changeFragment(fragment, btnTxt);
+            }
+        });
     }
 
     private void changeTxt(Fragment fragment) {
@@ -84,6 +91,9 @@ public class MoreHorizontalScrollView extends LinearLayout {
 
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_diagnosis))) {
             navFragment(fragment, R.id.action_global_DiagnosisGenderFragment);
+        }
+        if (buttonTxt.equals(getTxtfromStr(R.string.more_req_lookbook))) {
+            navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
