@@ -33,7 +33,7 @@ import okhttp3.Response;
 public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
-    ImageView result_image;
+    ImageView box_image;
     SharedViewModel sharedViewModel;
 
     @Override
@@ -63,7 +63,7 @@ public class ShowPhotoFragment extends Fragment {
         }
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-        result_image = getView().findViewById(R.id.result_image);
+        box_image = getView().findViewById(R.id.box_image);
 
         File finalMostRecentFile = mostRecentFile;
 
@@ -91,16 +91,16 @@ public class ShowPhotoFragment extends Fragment {
                 String jsonString = response.body().string();
 
                 JSONObject files = new JSONObject(jsonString);
-                String file1_encoded = files.getString("file1");
+                String box_photo_encoded = files.getString("box_photo");
 
-                byte[] file1_data = Base64.decode(file1_encoded, Base64.DEFAULT);
+                byte[] box_photo_data = Base64.decode(box_photo_encoded, Base64.DEFAULT);
 
-                Bitmap bitmap1 = BitmapFactory.decodeByteArray(file1_data, 0, file1_data.length);
+                Bitmap box_image_bitmap = BitmapFactory.decodeByteArray(box_photo_data, 0, box_photo_data.length);
 
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        result_image.setImageBitmap(bitmap1);
+                        box_image.setImageBitmap(box_image_bitmap);
                     }
                 });
 

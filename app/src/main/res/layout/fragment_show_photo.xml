@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
-        android:text="에이닷의 추천 스타일!"
+        android:text="인공지능의 분석!"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/result_image"
+        android:id="@+id/box_image"
         android:layout_width="293dp"
         android:layout_height="305dp"
         android:layout_marginTop="56dp"
