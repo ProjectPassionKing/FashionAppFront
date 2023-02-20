@@ -54,6 +54,18 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_global_ResultFragment);
             }
         });
+
+        binding.straightPicM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                result = "Straight";
+                ResultFragment.result_audio = R.raw.straightresult;
+                sharedViewModel.setDiagnosisResult(result);
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_global_ResultFragment);
+            }
+        });
+
         binding.naturalPicW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +76,30 @@ public class DiagnosisPicFragment extends Fragment {
                         .navigate(R.id.action_global_ResultFragment);
             }
         });
+
+        binding.naturalPicM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                result = "Natural";
+                ResultFragment.result_audio = R.raw.naturalresult;
+                sharedViewModel.setDiagnosisResult(result);
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_global_ResultFragment);
+            }
+        });
+
         binding.wavePicW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                result = "Wave";
+                ResultFragment.result_audio = R.raw.waveresult;
+                sharedViewModel.setDiagnosisResult(result);
+                NavHostFragment.findNavController(DiagnosisPicFragment.this)
+                        .navigate(R.id.action_global_ResultFragment);
+            }
+        });
+
+        binding.wavePicM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 result = "Wave";
