@@ -24,12 +24,15 @@
 
     <ImageView
         android:id="@+id/box_image"
-        android:layout_width="327dp"
-        android:layout_height="360dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="328dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview" />
+        app:layout_constraintTop_toBottomOf="@+id/adot_talk_txtview"
+        app:layout_constraintVertical_bias="0.0" />
 
     <android.widget.Button
         android:id="@+id/confirm_button"

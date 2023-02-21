@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -34,6 +36,9 @@ public class ShowStyleFragment extends Fragment {
 
     private FragmentShowStyleBinding binding;
     ImageView result_image;
+    TextView outer_text;
+    TextView top_text;
+    TextView bottom_text;
     SharedViewModel sharedViewModel;
 
     @Override
@@ -66,9 +71,11 @@ public class ShowStyleFragment extends Fragment {
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         result_image = getView().findViewById(R.id.result_image);
+        outer_text = getView().findViewById(R.id.outer_text);
+        top_text = getView().findViewById(R.id.top_text);
+        bottom_text = getView().findViewById(R.id.bottom_text);
 
         File finalMostRecentFile = mostRecentFile;
-        System.out.println(mostRecentFile);
 
         sharedViewModel.getGenderResult().observe(getViewLifecycleOwner(), gender_result ->{
             sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), diagnosis_result ->{
@@ -95,6 +102,9 @@ public class ShowStyleFragment extends Fragment {
 
                         JSONObject files = new JSONObject(jsonString);
                         String result_photo_encoded = files.getString("result_photo");
+                        String outer_result = files.getString("outer");
+                        String top_result = files.getString("top");
+                        String bottom_result = files.getString("bottom");
 
                         byte[] result_photo_data = Base64.decode(result_photo_encoded, Base64.DEFAULT);
 
@@ -104,6 +114,9 @@ public class ShowStyleFragment extends Fragment {
                             @Override
                             public void run() {
                                 result_image.setImageBitmap(result_image_bitmap);
+                                outer_text.setText(outer_result);
+                                top_text.setText(top_result);
+                                bottom_text.setText(bottom_result);
                             }
                         });
 
