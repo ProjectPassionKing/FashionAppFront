@@ -1,10 +1,6 @@
 package com.example.fashionapp.View;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +16,12 @@ import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentLookbookBinding;
 
-import java.io.File;
-
 public class LookbookFragment extends Fragment {
 
     private FragmentLookbookBinding binding;
     ImageView box_image;
     SharedViewModel sharedViewModel;
+    boolean selected;
 
     @Override
     public View onCreateView(
@@ -45,11 +40,50 @@ public class LookbookFragment extends Fragment {
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         box_image = getView().findViewById(R.id.box_image);
+        selected = false;
 
         binding.guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Add change button
+                binding.guest.setSelected(!selected);
+                selected = !selected;
+            }
+        });
+
+        binding.casual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add change button
+                binding.casual.setSelected(!selected);
+                selected = !selected;
+            }
+        });
+
+        binding.date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add change button
+                binding.date.setSelected(!selected);
+                selected = !selected;
+            }
+        });
+
+        binding.sports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add change button
+                binding.sports.setSelected(!selected);
+                selected = !selected;
+            }
+        });
+
+        binding.work.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add change button
+                binding.work.setSelected(!selected);
+                selected = !selected;
             }
         });
 
