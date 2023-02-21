@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -40,23 +41,17 @@ public class LookbookFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        File mostRecentFile = null;
-        long mostRecentModified = Long.MIN_VALUE;
-
-        File storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-
-        for (File file : storageDir.listFiles()) {
-            if (file.isFile() && file.lastModified() > mostRecentModified) {
-                mostRecentFile = file;
-                mostRecentModified = file.lastModified();
-            }
-        }
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
         sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         box_image = getView().findViewById(R.id.box_image);
 
-        File finalMostRecentFile = mostRecentFile;
+        binding.guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Add change button
+            }
+        });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +65,7 @@ public class LookbookFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         binding = null;
     }
 
