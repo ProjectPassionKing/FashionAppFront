@@ -43,7 +43,6 @@ public class LookbookFragment extends Fragment {
         int id = getResources().getIdentifier(
                 category + num, "raw", getActivity().getPackageName());
         return id;
-//        return getResources().getResourceName(id);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -62,7 +61,7 @@ public class LookbookFragment extends Fragment {
                 binding.date.setSelected(false);
                 binding.sports.setSelected(false);
                 binding.work.setSelected(false);
-                v.setSelected(true);
+
                 String btnId = getResources().getResourceName(v.getId()).split("/")[1];
 
                 for (int i = 1; i < 10; i++) {
@@ -71,7 +70,7 @@ public class LookbookFragment extends Fragment {
                     imgbtn.setImageResource(getImageById(btnId, String.valueOf(i)));
                 }
 
-
+                v.setSelected(true);
             }
         };
 
@@ -80,7 +79,6 @@ public class LookbookFragment extends Fragment {
         binding.date.setOnClickListener(onClickListener);
         binding.sports.setOnClickListener(onClickListener);
         binding.work.setOnClickListener(onClickListener);
-
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
