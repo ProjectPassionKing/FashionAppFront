@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/ask_scroll"
         app:srcCompat="@raw/lookbook_back">
 
     </ImageView>
@@ -24,7 +23,7 @@
         android:id="@+id/ask_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -106,62 +105,6 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="130dp"
-        android:background="@android:color/transparent"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/lookbook_back"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <ImageButton
-            android:id="@+id/date_4"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
-            app:srcCompat="@raw/date4"
-            tools:layout_editor_absoluteX="118dp"
-            tools:layout_editor_absoluteY="127dp" />
-
-        <ImageButton
-            android:id="@+id/date_5"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
-            app:srcCompat="@raw/date5"
-            tools:layout_editor_absoluteX="118dp"
-            tools:layout_editor_absoluteY="127dp" />
-
-        <ImageButton
-            android:id="@+id/date_6"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/transparent"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
-            app:srcCompat="@raw/date6"
-            tools:layout_editor_absoluteX="118dp"
-            tools:layout_editor_absoluteY="127dp" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="400dp"
         android:layout_height="130dp"
@@ -219,11 +162,124 @@
             tools:layout_editor_absoluteY="127dp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="400dp"
+        android:layout_height="130dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/lookbook_back"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageButton
+            android:id="@+id/date_4"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date4"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+
+        <ImageButton
+            android:id="@+id/date_5"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date5"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+
+        <ImageButton
+            android:id="@+id/date_6"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date6"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="130dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/lookbook_back"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <ImageButton
+            android:id="@+id/date_7"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date7"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+
+        <ImageButton
+            android:id="@+id/date_8"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date8"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+
+        <ImageButton
+            android:id="@+id/date_9"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adot_talk_txtview"
+            app:srcCompat="@raw/date9"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="127dp" />
+    </LinearLayout>
+
     <ImageButton
         android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/button_circle"
         android:text="@string/menu_home"
         app:layout_constraintBottom_toBottomOf="parent"
