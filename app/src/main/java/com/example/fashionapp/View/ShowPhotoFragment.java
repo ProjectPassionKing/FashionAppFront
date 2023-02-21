@@ -8,10 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -28,7 +26,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
 
 public class ShowPhotoFragment extends Fragment {
 
@@ -66,6 +63,7 @@ public class ShowPhotoFragment extends Fragment {
         box_image = getView().findViewById(R.id.box_image);
 
         File finalMostRecentFile = mostRecentFile;
+        System.out.println(mostRecentFile);
 
         sharedViewModel.getGenderResult().observe(getViewLifecycleOwner(), gender_result ->{
             sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), diagnosis_result ->{
