@@ -53,9 +53,6 @@ public class ResultFragment extends Fragment {
             binding.resultExp3.setText(getStringById("pattern"));
         });
 
-
-
-
         mediaPlayer = MediaPlayer.create(this.getContext(), result_audio);
         playSound();
 
