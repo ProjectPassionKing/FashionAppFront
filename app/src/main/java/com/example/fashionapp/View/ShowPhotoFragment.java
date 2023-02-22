@@ -19,6 +19,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
+
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -72,7 +74,7 @@ public class ShowPhotoFragment extends Fragment {
 
             RequestBody requestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
-                    .addFormDataPart("diagnosis", diagnosis_result)
+                    .addFormDataPart("diagnosis", diagnosis_result.toLowerCase(Locale.ROOT))
                     .addFormDataPart("gender", gender_result)
                     .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
                     .build();

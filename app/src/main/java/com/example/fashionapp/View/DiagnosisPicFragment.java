@@ -1,5 +1,6 @@
 package com.example.fashionapp.View;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.example.fashionapp.databinding.FragmentDiagnosisPicBinding;
 
 public class DiagnosisPicFragment extends Fragment {
     String result;
+    private MediaPlayer mediaPlayer;
     private @NonNull
     FragmentDiagnosisPicBinding binding;
 
@@ -30,9 +32,15 @@ public class DiagnosisPicFragment extends Fragment {
 
     }
 
+    public void playSound() {
+        mediaPlayer.start();
+    }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.diagnose);
+        playSound();
 
         SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 

@@ -25,6 +25,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -86,7 +87,7 @@ public class ShowStyleFragment extends Fragment {
 
                     RequestBody requestBody = new MultipartBody.Builder()
                             .setType(MultipartBody.FORM)
-                            .addFormDataPart("diagnosis", diagnosis_result)
+                            .addFormDataPart("diagnosis", diagnosis_result.toLowerCase(Locale.ROOT))
                             .addFormDataPart("gender", gender_result)
                             .addFormDataPart("file","file.jpg", RequestBody.create(finalMostRecentFile, MultipartBody.FORM))
                             .build();
