@@ -85,6 +85,9 @@ public class MainFragment extends Fragment {
             mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
             mediaPlayer.start();
             prefs.edit().putBoolean(AUDIO_PLAYED, true).apply();
+        } else {
+            mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
+            mediaPlayer.start();
         }
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
