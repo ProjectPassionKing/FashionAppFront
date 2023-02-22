@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.fashionapp.R;
+import com.example.fashionapp.ViewModel.SearchKeywordViewModel;
 import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentShowStyleBinding;
 
@@ -26,6 +27,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -41,6 +45,7 @@ public class ShowStyleFragment extends Fragment {
     TextView top_text;
     TextView bottom_text;
     SharedViewModel sharedViewModel;
+    private List<String> keywords;
 
     @Override
     public View onCreateView(
@@ -106,7 +111,7 @@ public class ShowStyleFragment extends Fragment {
                         String outer_result = files.getString("outer");
                         String top_result = files.getString("top");
                         String bottom_result = files.getString("bottom");
-
+                        keywords = new ArrayList<>(Arrays.asList(result_photo_encoded, outer_result, top_result, bottom_result));
                         byte[] result_photo_data = Base64.decode(result_photo_encoded, Base64.DEFAULT);
 
                         Bitmap result_image_bitmap = BitmapFactory.decodeByteArray(result_photo_data, 0, result_photo_data.length);
@@ -132,6 +137,15 @@ public class ShowStyleFragment extends Fragment {
                 }).start();
 
             });
+        });
+
+        binding.searchBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                SearchKeywordViewModel searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
+                searchKeywordViewModel.setFirstKeyList(keywords);
+                NavHostFragment.findNavController(ShowStyleFragment.this).navigate(R.id.action_global_RecommandFragment);
+            }
         });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
