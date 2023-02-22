@@ -23,6 +23,7 @@ import com.example.fashionapp.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
+    private MediaPlayer mediaPlayer;
 
     @Override
     public View onCreateView(
@@ -57,9 +58,16 @@ public class FirstFragment extends Fragment {
 
     }
 
+    public void playSound() {
+        mediaPlayer.start();
+    }
+
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.introscreen);
+        playSound();
 
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
