@@ -1,6 +1,8 @@
 package com.example.fashionapp.View;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -112,10 +114,12 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
-            navFragment(fragment, R.id.action_global_VirtualFragment);
+            gotoPage();
+//            navFragment(fragment, R.id.action_global_VirtualFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
-            navFragment(fragment, R.id.action_global_StudioFragment);
+//            navFragment(fragment, R.id.action_global_StudioFragment);
+            gotoPage();
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
@@ -132,6 +136,12 @@ public class MoreHorizontalScrollView extends LinearLayout {
                 navFragment(fragment, R.id.action_global_TakePhotoFragment);
             }
         }
+    }
+
+    private void gotoPage(){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://20.249.96.207:5000/"));
+        getContext().startActivity(intent);
     }
 
     private String getTxtfromStr(int rString) {
