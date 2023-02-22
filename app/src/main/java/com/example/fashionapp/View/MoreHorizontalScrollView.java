@@ -114,12 +114,12 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
-            gotoPage();
+            gotoVirtualPage();
 //            navFragment(fragment, R.id.action_global_VirtualFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
 //            navFragment(fragment, R.id.action_global_StudioFragment);
-            gotoPage();
+            gotoStudioPage();
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
@@ -138,9 +138,15 @@ public class MoreHorizontalScrollView extends LinearLayout {
         }
     }
 
-    private void gotoPage(){
+    private void gotoVirtualPage(){
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://20.249.96.207:5000/"));
+        intent.setData(Uri.parse("http://20.249.81.245:5000/predict"));
+        getContext().startActivity(intent);
+    }
+
+    private void gotoStudioPage(){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://20.249.81.245:5000/design"));
         getContext().startActivity(intent);
     }
 
