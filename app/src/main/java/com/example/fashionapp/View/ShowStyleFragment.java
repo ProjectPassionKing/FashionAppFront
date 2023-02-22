@@ -10,27 +10,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SearchKeywordViewModel;
 import com.example.fashionapp.ViewModel.SharedViewModel;
 import com.example.fashionapp.databinding.FragmentShowStyleBinding;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -40,11 +35,11 @@ import okhttp3.Response;
 public class ShowStyleFragment extends Fragment {
 
     private FragmentShowStyleBinding binding;
-    ImageView result_image;
-    TextView outer_text;
-    TextView top_text;
-    TextView bottom_text;
-    SharedViewModel sharedViewModel;
+    private ImageView result_image;
+    private TextView outer_text;
+    private TextView top_text;
+    private TextView bottom_text;
+    private SharedViewModel sharedViewModel;
     private List<String> keywords;
 
     @Override
@@ -98,7 +93,7 @@ public class ShowStyleFragment extends Fragment {
                             .build();
 
                     Request request = new Request.Builder()
-                            .url("http://172.23.247.89:5000/pred")
+                            .url("https://fashionapp.azurewebsites.net/pred")
                             .post(requestBody)
                             .build();
 
@@ -111,7 +106,7 @@ public class ShowStyleFragment extends Fragment {
                         String outer_result = files.getString("outer");
                         String top_result = files.getString("top");
                         String bottom_result = files.getString("bottom");
-                        keywords = new ArrayList<>(Arrays.asList(result_photo_encoded, outer_result, top_result, bottom_result));
+                        keywords = new ArrayList<>(Arrays.asList(outer_result, top_result, bottom_result));
                         byte[] result_photo_data = Base64.decode(result_photo_encoded, Base64.DEFAULT);
 
                         Bitmap result_image_bitmap = BitmapFactory.decodeByteArray(result_photo_data, 0, result_photo_data.length);
@@ -125,17 +120,12 @@ public class ShowStyleFragment extends Fragment {
                                 bottom_text.setText(bottom_result);
                             }
                         });
-
                         response.close();
 
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (JSONException e) {
+                    } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
-
                 }).start();
-
             });
         });
 

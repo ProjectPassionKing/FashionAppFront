@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
-
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -30,8 +29,8 @@ import okhttp3.Response;
 public class ShowPhotoFragment extends Fragment {
 
     private FragmentShowPhotoBinding binding;
-    ImageView box_image;
-    SharedViewModel sharedViewModel;
+    private ImageView box_image;
+    private SharedViewModel sharedViewModel;
 
     @Override
     public View onCreateView(
@@ -80,14 +79,14 @@ public class ShowPhotoFragment extends Fragment {
                     .build();
 
             Request request = new Request.Builder()
-                    .url("http://172.23.247.89:5000/pred")
+                    .url("https://fashionapp.azurewebsites.net/pred")
                     .post(requestBody)
                     .build();
 
             try {
                 Response response = client.newCall(request).execute();
                 String jsonString = response.body().string();
-
+                System.out.println(jsonString);
                 JSONObject files = new JSONObject(jsonString);
                 String box_photo_encoded = files.getString("box_photo");
 

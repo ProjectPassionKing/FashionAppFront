@@ -38,7 +38,10 @@ public class RecommandFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentRecommandBinding.inflate(inflater, container, false);
-        binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
+        if (topbottom!=null)
+            binding.adotTalkTxtview.setText(String.format(getResources().getString(R.string.recommand_cl), topbottom));
+        else
+            binding.adotTalkTxtview.setText("추천 결과로 나온\n옷을 검색했어요!");
 
         return binding.getRoot();
     }

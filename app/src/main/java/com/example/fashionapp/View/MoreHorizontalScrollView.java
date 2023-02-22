@@ -10,13 +10,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SharedViewModel;
-
 import org.jetbrains.annotations.NotNull;
 
 public class MoreHorizontalScrollView extends LinearLayout {
@@ -114,12 +111,10 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
-            gotoVirtualPage();
-//            navFragment(fragment, R.id.action_global_VirtualFragment);
+            gotoPage("http://20.249.81.245:5000/predict");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
-//            navFragment(fragment, R.id.action_global_StudioFragment);
-            gotoStudioPage();
+            gotoPage("http://20.249.81.245:5000/design");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
@@ -138,15 +133,9 @@ public class MoreHorizontalScrollView extends LinearLayout {
         }
     }
 
-    private void gotoVirtualPage(){
+    private void gotoPage(String u){
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://20.249.81.245:5000/predict"));
-        getContext().startActivity(intent);
-    }
-
-    private void gotoStudioPage(){
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://20.249.81.245:5000/design"));
+        intent.setData(Uri.parse(u));
         getContext().startActivity(intent);
     }
 
