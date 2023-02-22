@@ -18,7 +18,4 @@ SKT FLY AI 2기의 최종 프로젝트
 
 
 ## 화면 UI
-<img src = "https://user-images.githubusercontent.com/55172514/216875158-d888f989-2380-4eae-9ecb-ccc5ed4d1ad8.png" width="40%" height="height 40%"> <img src = "https://user-images.githubusercontent.com/55172514/216875175-d2fd692d-e74a-4eb2-b4e9-33629ba88fbf.png" width="40%" height="height 40%">
-
-
-<img src = "https://user-images.githubusercontent.com/55172514/216875185-804b984a-87f5-4114-88a5-da7f270cf209.png" width="40%" height="height 40%">
+![lookbookg](https://user-images.githubusercontent.com/104475739/220559166-8939eb6f-e30e-4504-a04b-32d17fa85b81.gif)
