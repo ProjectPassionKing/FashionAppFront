@@ -82,15 +82,6 @@ public class MainFragment extends Fragment {
         prefs = getActivity().getPreferences(MODE_PRIVATE);
         boolean audioPlayed = prefs.getBoolean(AUDIO_PLAYED, false);
 
-        if (!audioPlayed) {
-            mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
-            mediaPlayer.start();
-            prefs.edit().putBoolean(AUDIO_PLAYED, true).apply();
-        } else {
-            mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.morning);
-            mediaPlayer.start();
-        }
-
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
