@@ -98,7 +98,7 @@ public class ShowStyleFragment extends Fragment {
                             .build();
 
                     Request request = new Request.Builder()
-                            .url("http://172.23.247.89:5000/pred")
+                            .url("https://fashionapp.azurewebsites.net/pred")
                             .post(requestBody)
                             .build();
 
