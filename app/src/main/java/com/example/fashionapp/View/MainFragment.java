@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
@@ -186,9 +187,20 @@ public class MainFragment extends Fragment {
                 } else if (s.contains("비슷한")) {
                     NavHostFragment.findNavController(MainFragment.this)
                             .navigate(R.id.action_global_TakePhotoFragment);
-                } else if (s.contains("코디")) {
+                } else if (s.contains("팁")) {
                     NavHostFragment.findNavController(MainFragment.this)
                             .navigate(R.id.action_global_CordiTipFragment);
+                } else if (s.contains("옷장")) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://20.249.81.245:5000/predict"));
+                    getContext().startActivity(intent);
+                } else if (s.contains("스튜디오")) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://20.249.81.245:5000/design"));
+                    getContext().startActivity(intent);
+                } else if (s.contains("스타그램")) {
+                    NavHostFragment.findNavController(MainFragment.this)
+                            .navigate(R.id.action_global_LookbookFragment);
                 }
             }
 
