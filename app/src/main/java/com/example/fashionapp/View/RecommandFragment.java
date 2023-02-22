@@ -89,8 +89,14 @@ public class RecommandFragment extends Fragment {
     private void getAPIResult() {
         searchKeywordViewModel = new ViewModelProvider(requireActivity()).get(SearchKeywordViewModel.class);
         searchViewModel = new ViewModelProvider(this).get(SearchViewModel.class);
+        SharedViewModel sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
         searchKeywordViewModel.chooseKeyword().observe(getViewLifecycleOwner(), searchkeyword ->{
             keyword = searchkeyword;
+            sharedViewModel.getGenderResult().observe(getViewLifecycleOwner(), genderResult ->{
+                keyword+=" "+genderResult;
+            });
+
+            System.out.println("keyword: "+keyword);
             new Thread(() -> {
                 try {
                     searchViewModel.callAPI(keyword);
