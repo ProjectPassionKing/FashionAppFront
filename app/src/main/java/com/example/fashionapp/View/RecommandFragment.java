@@ -4,22 +4,16 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 import com.example.fashionapp.Model.Entity.search.Product;
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SearchKeywordViewModel;
@@ -35,6 +29,7 @@ public class RecommandFragment extends Fragment {
     public String keyword = "";
     private SearchKeywordViewModel searchKeywordViewModel;
     private SearchLayout searchLayout;
+    SharedViewModel sharedViewModel;
 
 
     @Override
@@ -48,17 +43,28 @@ public class RecommandFragment extends Fragment {
         return binding.getRoot();
     }
 
-    public void playSound() {
-        mediaPlayer.start();
-    }
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         getAPIResult();
 
-        mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightrecom);
-        playSound();
+        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+        sharedViewModel.getDiagnosisResult().observe(getViewLifecycleOwner(), dresult ->{
+            String diagnosis_result = dresult.toLowerCase();
+
+            if (diagnosis_result.equals("straight")) {
+                mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.straightrecom);
+                mediaPlayer.start();}
+
+            if (diagnosis_result.equals("wave")) {
+                mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.waverecom);
+                mediaPlayer.start();}
+
+            if (diagnosis_result.equals("natural")) {
+                mediaPlayer = MediaPlayer.create(this.getContext(), R.raw.naturalrecom);
+                mediaPlayer.start();}
+
+        });
 
         binding.homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
