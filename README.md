@@ -1,3 +1,7 @@
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+
+
 <p align="center"><img src="https://user-images.githubusercontent.com/55172514/220561676-8f2aa69d-c052-4a56-8f70-b7c921a4a8b1.png" width=50% /></p>
 
 # Dress Up With A.
