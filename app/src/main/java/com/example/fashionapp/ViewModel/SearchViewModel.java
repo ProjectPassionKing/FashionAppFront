@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.fashionapp.BuildConfig;
 import com.example.fashionapp.Model.Entity.search.ProductBenefit;
@@ -52,6 +53,7 @@ public class SearchViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Product>> callAPI(String keyword) throws XmlPullParserException, IOException {
+
 
         String rurl = "http://openapi.11st.co.kr/openapi/OpenApiService.tmall?key=";
         String psize = "10";
