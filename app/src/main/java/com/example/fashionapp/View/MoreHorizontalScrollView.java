@@ -111,10 +111,10 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
-            gotoPage("http://20.249.81.245:5000/predict");
+            gotoPage("http://20.196.196.31:5000/predict");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
-            gotoPage("http://20.249.81.245:5000/design");
+            gotoPage("http://20.196.196.31:5000/design");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){

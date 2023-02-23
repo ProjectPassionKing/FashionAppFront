@@ -183,11 +183,11 @@ public class MainFragment extends Fragment {
                             .navigate(R.id.action_global_CordiTipFragment);
                 } else if (s.contains("옷장")) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://20.249.81.245:5000/predict"));
+                    intent.setData(Uri.parse("http://20.196.196.31:5000/predict"));
                     getContext().startActivity(intent);
                 } else if (s.contains("스튜디오")) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://20.249.81.245:5000/design"));
+                    intent.setData(Uri.parse("http://20.196.196.31:5000/design"));
                     getContext().startActivity(intent);
                 } else if (s.contains("스타그램")) {
                     NavHostFragment.findNavController(MainFragment.this)
