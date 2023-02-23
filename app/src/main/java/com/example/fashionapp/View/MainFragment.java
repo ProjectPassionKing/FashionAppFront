@@ -26,6 +26,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.fashionapp.BuildConfig;
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.WeatherViewModel;
 import com.example.fashionapp.databinding.FragmentMainBinding;
@@ -162,6 +164,7 @@ public class MainFragment extends Fragment {
         @Override
         public void onResults(Bundle bundle) {
             ArrayList<String> matches = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);    //인식 결과를 담은 ArrayList
+            String webUrl = BuildConfig.WEB_URL;
 
             String newText="";
             for (int i = 0; i < matches.size() ; i++) {
@@ -183,11 +186,11 @@ public class MainFragment extends Fragment {
                             .navigate(R.id.action_global_CordiTipFragment);
                 } else if (s.contains("옷장")) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://20.196.196.31:5000/predict"));
+                    intent.setData(Uri.parse(webUrl+"predict"));
                     getContext().startActivity(intent);
                 } else if (s.contains("스튜디오")) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://20.196.196.31:5000/design"));
+                    intent.setData(Uri.parse(webUrl+"design"));
                     getContext().startActivity(intent);
                 } else if (s.contains("스타그램")) {
                     NavHostFragment.findNavController(MainFragment.this)
