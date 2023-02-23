@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/text_button"
             android:text="@string/more_req_diagnosis"
             android:textColor="@color/black"
