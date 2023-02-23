@@ -17,6 +17,7 @@ android {
         versionName "1.0"
         buildConfigField("String", "WEATHER_KEY", properties.getProperty("weather_key"))
         buildConfigField("String", "SEARCH_KEY", properties.getProperty("search_key"))
+        buildConfigField("String", "WEB_URL", properties.getProperty("web_url"))
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
