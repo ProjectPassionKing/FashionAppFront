@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.fashionapp.BuildConfig;
 import com.example.fashionapp.R;
 import com.example.fashionapp.ViewModel.SharedViewModel;
 import org.jetbrains.annotations.NotNull;
@@ -99,6 +101,7 @@ public class MoreHorizontalScrollView extends LinearLayout {
     }
 
     private void changeFragment(Fragment fragment, String buttonTxt) {
+        String webUrl = BuildConfig.WEB_URL;
         sharedViewModel = new ViewModelProvider(fragment.requireActivity()).get(SharedViewModel.class);
         sharedViewModel.getGenderResult().observe(fragment.getViewLifecycleOwner(), r->{
             dresult = r;
@@ -111,10 +114,10 @@ public class MoreHorizontalScrollView extends LinearLayout {
             navFragment(fragment, R.id.action_global_LookbookFragment);
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_virtual))) {
-            gotoPage("http://20.196.196.31:5000/predict");
+            gotoPage(webUrl+"predict");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_studio))) {
-            gotoPage("http://20.196.196.31:5000/design");
+            gotoPage(webUrl+"design");
         }
         if (buttonTxt.equals(getTxtfromStr(R.string.more_req_cordi))) {
             if(dresult==null){
