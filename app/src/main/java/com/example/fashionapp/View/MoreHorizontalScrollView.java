@@ -94,9 +94,6 @@ public class MoreHorizontalScrollView extends LinearLayout {
         if(fragment.getClass() == ResultFragment.class) {
             ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_cordi));
             ((Button) findViewById(R.id.more_request_btn3)).setText(getTxtfromStr(R.string.more_req_diagnosis));
-
-        } if(fragment.getClass() == RecommandFragment.class) {
-            ((Button) findViewById(R.id.more_request_btn1)).setText(getTxtfromStr(R.string.more_req_photo));
         }
     }
 
